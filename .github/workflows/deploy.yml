@@ -51,6 +51,13 @@ jobs:
           npm test
           npm run build
 
+      - name: Crear páginas de entrada para ambas versiones
+        run: |
+          test -f oficial/build/404.html
+          test -f laboratorio/build/404.html
+          cp oficial/build/404.html oficial/build/index.html
+          cp laboratorio/build/404.html laboratorio/build/index.html
+
       - name: Incorporar laboratorio al sitio oficial
         run: |
           mkdir -p oficial/build/pruebas
