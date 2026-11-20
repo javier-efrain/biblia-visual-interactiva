@@ -1,0 +1,30 @@
+{
+  "book": "MRK",
+  "chapter": 2,
+  "sections": [
+    {
+      "id": "mrk-2-1",
+      "startVerse": 1,
+      "endVerse": 12,
+      "title": "Jesús sana a un paralítico"
+    },
+    {
+      "id": "mrk-2-2",
+      "startVerse": 13,
+      "endVerse": 17,
+      "title": "Jesús llama a Leví"
+    },
+    {
+      "id": "mrk-2-3",
+      "startVerse": 18,
+      "endVerse": 22,
+      "title": "Jesús y la pregunta sobre el ayuno"
+    },
+    {
+      "id": "mrk-2-4",
+      "startVerse": 23,
+      "endVerse": 28,
+      "title": "Jesús, Señor del sábado"
+    }
+  ]
+}

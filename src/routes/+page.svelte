@@ -1,6 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { onMount } from 'svelte';
+  import divisionesMarcos2 from '../lib/data/divisiones/marcos-2.json';
 
   type Versiculo = { verse: number; text: string };
   type Libro = { name: string; chapters: Record<string, Versiculo[]> };
@@ -16,6 +17,9 @@
   let seccion = $state<Seccion>('Biblia');
   let tamanoLetra = $state(19);
   let modoNoche = $state(false);
+  let modoLectura = $state<'Lectura' | 'Estudio' | 'Devocional'>('Estudio');
+  let temaLectura = $state('Clásico');
+  let estiloDivisiones = $state<'Editorial' | 'Minimalista' | 'Banner CSS' | 'Banner imagen'>('Editorial');
   let version = $state('local');
   let versiones = $state<VersionApi[]>([]);
   let librosApi = $state<LibroApi[]>([]);
@@ -32,6 +36,7 @@
 
   let totalCapitulos = $derived(libro ? Object.keys(libro.chapters).length : 0);
   let versiculos = $derived(libro?.chapters[String(capitulo)] ?? []);
+  let divisionesActuales = $derived(libroId === 41 && capitulo === 2 ? divisionesMarcos2.sections : []);
 
   let solicitudActual = 0;
 
@@ -174,13 +179,34 @@
             </div>
           </div>
           <div class="opcion-perfil">
+            <span>Modo nocturno</span>
+            <button class="alternar-perfil" onclick={() => modoNoche = !modoNoche}>{modoNoche ? 'Activado' : 'Desactivado'}</button>
+          </div>
+          <label class="opcion-perfil">
             <span>Modo de lectura</span>
-            <button class="alternar-perfil" onclick={() => modoNoche = !modoNoche}>{modoNoche ? '☀ Claro' : '☾ Noche'}</button>
-          </div>
-          <div class="proximas-preferencias">
-            <strong>Próximamente</strong>
-            <p>Fuente, Biblia preferida, estilos de lectura y preferencias guardadas.</p>
-          </div>
+            <select bind:value={modoLectura} aria-label="Modo de lectura">
+              <option value="Lectura">Lectura</option>
+              <option value="Estudio">Estudio</option>
+              <option value="Devocional">Devocional</option>
+            </select>
+          </label>
+          <p class="panel-nota">El modo Estudio es el predeterminado. Los recursos propios de cada modo se desarrollarán próximamente.</p>
+          <label class="opcion-perfil">
+            <span>Estilo de divisiones</span>
+            <select bind:value={estiloDivisiones} aria-label="Estilo de divisiones">
+              <option value="Editorial">Editorial</option>
+              <option value="Minimalista">Minimalista</option>
+              <option value="Banner CSS">Banner CSS</option>
+              <option value="Banner imagen">Banner con imagen</option>
+            </select>
+          </label>
+          <label class="opcion-perfil">
+            <span>Temas</span>
+            <select bind:value={temaLectura} aria-label="Tema de lectura">
+              <option value="Clásico">Clásico</option>
+            </select>
+          </label>
+          <p class="panel-nota">Más fuentes y estilos visuales estarán disponibles próximamente.</p>
           <p class="panel-nota">Por ahora no necesitás crear una cuenta.</p>
         </div>
       </details>
@@ -196,24 +222,13 @@
         <button class="volver" onclick={() => seccion = 'Biblia'}>Abrir la Biblia →</button>
       </section>
     {:else}
-      <div class="intro">
-        <p class="seccion">TU ESPACIO DE LECTURA</p>
-        <h1>La Biblia, a tu ritmo.</h1>
-        <p class="subtitulo">Elegí una traducción, buscá un pasaje y disfrutá de la lectura.</p>
+      <div class="lectura-encabezado">
+        <span>LECTOR BÍBLICO</span>
+        <span class="modo-actual">{modoLectura}</span>
       </div>
-      <div class="herramientas" aria-label="Preferencias de lectura">
-        <span>Lectura</span>
-        <div class="acciones-lectura">
-          <button onclick={() => tamanoLetra = Math.max(15, tamanoLetra - 1)} disabled={tamanoLetra === 15} aria-label="Reducir tamaño de letra">A−</button>
-          <span aria-live="polite">{tamanoLetra}px</span>
-          <button onclick={() => tamanoLetra = Math.min(26, tamanoLetra + 1)} disabled={tamanoLetra === 26} aria-label="Aumentar tamaño de letra">A+</button>
-          <button class="modo" onclick={() => modoNoche = !modoNoche}>{modoNoche ? '☀ Modo claro' : '☾ Modo noche'}</button>
-        </div>
-      </div>
-
     <section class="lector" aria-label="Lector de la Biblia">
       <div class="versiones">
-        <label for="version-biblia">Versión de la Biblia</label>
+        <label for="version-biblia">Traducción</label>
         <select id="version-biblia" value={version} onchange={(evento) => void elegirVersion(evento.currentTarget.value)}>
           <option value="local">Reina-Valera 1909 · Local</option>
           {#each versiones as opcion (opcion.id)}
@@ -239,7 +254,7 @@
             </select>
           </label>
         </div>
-        <article class="texto" style:--tamano-letra={`${tamanoLetra}px`}><p class="capitulo-titulo">{versiones.find((item) => item.id === version)?.name ?? 'Biblia'}</p><div class="contenido-api">{contenidoApi}</div></article>
+        <article class="texto" style:--tamano-letra={`${tamanoLetra}px`}><p class="capitulo-titulo">{librosApi.find((item) => item.id === libroApiId)?.name ?? 'Biblia'} {capitulosApi.find((item) => item.id === capituloApiId)?.number ?? ''}</p><div class="contenido-api">{contenidoApi}</div></article>
       {:else if libro}
         <div class="barra">
           <label class="selector selector-libro">
@@ -250,10 +265,6 @@
               {/each}
             </select>
           </label>
-          <div>
-            <p class="version">REINA-VALERA 1909</p>
-            <h2>{libro.name}</h2>
-          </div>
           <label class="selector">
             <span>Capítulo</span>
             <select
@@ -269,8 +280,19 @@
         </div>
 
         <article class="texto" style:--tamano-letra={`${tamanoLetra}px`}>
-          <p class="capitulo-titulo">CAPÍTULO {capitulo}</p>
+          <h2 class="titulo-lectura">{libro.name} {capitulo}</h2>
           {#each versiculos as versiculo (versiculo.verse)}
+            {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
+              {#if estiloDivisiones === 'Banner CSS' || estiloDivisiones === 'Banner imagen'}
+                <div class="banner-estudio" class:banner-imagen={estiloDivisiones === 'Banner imagen'} style:--banner-url={`url("${resolve('/')}banners/marcos-2.svg")`} aria-label={division.title}>
+                  <span class="banner-etiqueta">MARCOS 2 · BVI</span>
+                  <h3>{division.title}</h3>
+                  <span class="banner-referencia">Versículos {division.startVerse}–{division.endVerse}</span>
+                </div>
+              {:else}
+                <h3 class="titulo-division" class:editorial={estiloDivisiones === 'Editorial'} class:minimalista={estiloDivisiones === 'Minimalista'}>{division.title}</h3>
+              {/if}
+            {/each}
             <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
           {/each}
         </article>
@@ -305,6 +327,12 @@
   .proximas-preferencias { border-top: 1px solid #edf1ed; padding-top: 15px; font-size: 12px; color: #71827a; }
   .proximas-preferencias strong { color: #346b5e; }
   .proximas-preferencias p { margin: 7px 0 0; line-height: 1.5; }
+  .lectura-encabezado { display: flex; justify-content: space-between; align-items: center; margin: 0 0 12px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: #478376; }
+  .modo-actual { letter-spacing: 0; background: #e4efe7; padding: 6px 11px; border-radius: 20px; }
+  .titulo-lectura { font-size: 26px; margin: 0 0 24px; color: #397b70; }
+  .oscuro .titulo-lectura { color: #8ac5ad; }
+  .ir-preferido { width: 100%; margin-bottom: 12px; padding: 9px; }
+  .opcion-perfil select { max-width: 165px; min-width: 110px; padding: 7px; font-size: 12px; }
   .menu { display: flex; align-items: center; gap: 5px; }
   .menu button { background: transparent; color: #667a71; padding: 12px 15px; border-radius: 9px; font-size: 14px; }
   .menu button:hover { background: #f0f5f1; }
@@ -329,26 +357,42 @@
   .simbolo { color: #397b70; }
   .nombre { font-size: 13px; font-weight: 500; color: #71827a; letter-spacing: 0; padding-left: 8px; border-left: 1px solid #d8e2dc; }
   .etiqueta { background: #e8f1ec; color: #346b5e; border-radius: 99px; padding: 8px 13px; font-size: 12px; font-weight: 700; }
-  .contenedor { max-width: 850px; margin: 0 auto; padding: 58px 24px 32px; }
+  .contenedor { max-width: 850px; margin: 0 auto; padding: 26px 24px 32px; }
   .intro { text-align: center; margin-bottom: 40px; }
   .seccion, .version, .capitulo-titulo { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: #478376; }
   h1 { font-size: clamp(28px, 5vw, 42px); letter-spacing: -1.5px; margin: 12px 0; }
   .subtitulo { color: #75847e; margin: 0; }
   .lector { background: #fff; border: 1px solid #e3eae4; border-radius: 18px; box-shadow: 0 14px 45px #253a3610; overflow: hidden; }
-  .versiones { padding: 22px 36px; border-bottom: 1px solid #edf1ed; display: flex; flex-direction: column; gap: 8px; }
+  .versiones { padding: 12px 28px; border-bottom: 1px solid #edf1ed; display: flex; flex-direction: column; gap: 8px; }
   .versiones label { color: #478376; font-size: 12px; font-weight: 800; }
   .versiones select { width: 100%; max-width: 450px; }
   .aviso { color: #986f32; font-size: 12px; margin: 0; }
   .barra-api { justify-content: flex-start !important; }
   .contenido-api { white-space: pre-wrap; font: var(--tamano-letra, 19px)/1.85 Georgia, 'Times New Roman', serif; }
-  .barra { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 28px 36px; border-bottom: 1px solid #edf1ed; }
+  .barra { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 15px 28px; border-bottom: 1px solid #edf1ed; }
   .version { margin: 0 0 6px; }
   h2 { margin: 0; font-size: 29px; letter-spacing: -.7px; }
   .selector { display: flex; align-items: center; gap: 10px; color: #64786e; font-size: 13px; }
   .selector-libro select { max-width: 180px; width: 100%; }
   select { min-width: 76px; border: 1px solid #cbdcd2; background: #f8faf8; border-radius: 9px; padding: 10px; color: #253a36; font: inherit; }
-  .texto { padding: 34px 48px 42px; }
+  .texto { padding: 24px 40px 42px; }
   .capitulo-titulo { margin: 0 0 28px; }
+  .titulo-division { font-size: 18px; line-height: 1.4; font-weight: 700; color: #397b70; margin: 30px 0 14px; }
+  .oscuro .titulo-division { color: #8ac5ad; }
+  .titulo-division.editorial { text-align: center; font-family: Georgia, 'Times New Roman', serif; font-size: 21px; font-weight: 500; font-style: italic; color: #394d43; margin: 44px 0 24px; }
+  .titulo-division.minimalista { font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; color: inherit; margin: 26px 0 10px; }
+  .oscuro .titulo-division.editorial { color: #d6dfd6; }
+  .oscuro .titulo-division.minimalista { color: #e4e8e2; }
+  .banner-estudio { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 6px; min-height: 112px; margin: 30px 0 22px; padding: 19px 23px; border-radius: 12px; border-left: 4px solid #397b70; background: linear-gradient(115deg, #e5f0e9, #f5f5ed); color: #264b42; }
+  .banner-estudio::after { content: '✦'; position: absolute; right: 23px; top: 12px; font-size: 52px; color: #397b7020; pointer-events: none; }
+  .banner-estudio h3 { position: relative; z-index: 1; font: 700 clamp(18px, 3vw, 22px)/1.25 Georgia, 'Times New Roman', serif; margin: 0; max-width: 90%; }
+  .banner-etiqueta, .banner-referencia { position: relative; z-index: 1; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+  .banner-referencia { font-size: 11px; font-weight: 500; letter-spacing: 0; }
+  .banner-imagen { border-left-color: #a9c6a9; color: #fff; background: linear-gradient(90deg, #172e2de8 0%, #172e2dbb 55%, #172e2d50 100%), var(--banner-url) center/cover no-repeat; }
+  .banner-imagen::after { display: none; }
+  .oscuro .banner-estudio:not(.banner-imagen) { background: linear-gradient(115deg, #304b42, #2b3835); color: #e7f1e9; border-left-color: #8ac5ad; }
+  @media (max-width: 600px) { .banner-estudio { min-height: 100px; padding: 16px 18px; margin: 24px 0 18px; } }
+
   .versiculo { font-family: Georgia, 'Times New Roman', serif; font-size: var(--tamano-letra, 19px); line-height: 1.85; margin: 0 0 15px; color: #2e3834; }
   sup { font-family: Arial, sans-serif; color: #478376; font-size: 11px; font-weight: 700; margin-right: 9px; vertical-align: super; }
   .navegacion { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid #edf1ed; padding: 22px 36px; color: #75847e; font-size: 13px; }
@@ -360,12 +404,12 @@
   footer { text-align: center; padding: 28px 0; color: #9aa9a0; font-size: 12px; }
   @media (max-width: 600px) {
     .nombre { display: none; }
-    .contenedor { padding: 35px 14px 20px; }
+    .contenedor { padding: 16px 12px 20px; }
     .intro { margin-bottom: 25px; }
-    .barra { padding: 22px; }
-    .versiones { padding: 22px; }
-    .selector-libro { width: 100%; justify-content: space-between; }
-    .texto { padding: 26px 23px 30px; }
+    .barra { padding: 12px 16px; }
+    .versiones { padding: 12px 16px; }
+    .selector-libro { flex: 1; width: auto; justify-content: space-between; }
+    .texto { padding: 20px 22px 30px; }
     .versiculo { line-height: 1.75; }
     .header-interior { flex-wrap: wrap; justify-content: center; gap: 8px; }
     .encabezado { padding: 9px 12px; }
@@ -379,7 +423,7 @@
     .selector { flex-wrap: wrap; }
     .barra-api .selector { width: 100%; justify-content: space-between; }
     .barra-api select { max-width: 65%; }
-    .selector-libro select { max-width: 65%; }
+    .selector-libro select { max-width: 75%; }
     .versiones select { max-width: 100%; }
     .acciones-lectura { flex-wrap: wrap; }
     .navegacion { gap: 6px; }
