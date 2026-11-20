@@ -37,7 +37,7 @@
     error = '';
     try {
       const archivo = String(id).padStart(2, '0');
-      const respuesta = await fetch(resolve(`/bibles/rv1909/${archivo}.json`));
+      const respuesta = await fetch(`${resolve('/bibles/rv1909/01.json').replace(/01\.json$/, '')}${archivo}.json`);
       if (!respuesta.ok) throw new Error(`No se pudo cargar el libro (HTTP ${respuesta.status})`);
       const datos: Libro = await respuesta.json();
       if (!datos.chapters?.['1']) throw new Error('El archivo no contiene capítulos válidos');
