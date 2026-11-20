@@ -19,8 +19,7 @@
   let modoNoche = $state(false);
   let modoLectura = $state<'Lectura' | 'Estudio' | 'Devocional'>('Estudio');
   let temaLectura = $state('Clásico');
-  let formatoBanner = $state<'CSS' | 'Imagen'>('CSS');
-  let estiloSubtitulos = $state<'Editorial' | 'Minimalista'>('Editorial');
+  let estiloDivisiones = $state<'Editorial' | 'Minimalista' | 'Banner CSS' | 'Banner imagen'>('Editorial');
   let version = $state('local');
   let versiones = $state<VersionApi[]>([]);
   let librosApi = $state<LibroApi[]>([]);
@@ -193,10 +192,12 @@
           </label>
           <p class="panel-nota">El modo Estudio es el predeterminado. Los recursos propios de cada modo se desarrollarán próximamente.</p>
           <label class="opcion-perfil">
-            <span>Estilo de subtítulos</span>
-            <select bind:value={estiloSubtitulos} aria-label="Estilo de subtítulos">
+            <span>Estilo de divisiones</span>
+            <select bind:value={estiloDivisiones} aria-label="Estilo de divisiones">
               <option value="Editorial">Editorial</option>
               <option value="Minimalista">Minimalista</option>
+              <option value="Banner CSS">Banner CSS</option>
+              <option value="Banner imagen">Banner con imagen</option>
             </select>
           </label>
           <label class="opcion-perfil">
@@ -205,14 +206,6 @@
               <option value="Clásico">Clásico</option>
             </select>
           </label>
-          <label class="opcion-perfil">
-            <span>Banner de Estudio</span>
-            <select bind:value={formatoBanner} aria-label="Formato del banner de Estudio">
-              <option value="CSS">Diseño CSS</option>
-              <option value="Imagen">Con imagen</option>
-            </select>
-          </label>
-          <p class="panel-nota">Los banners aparecen solo en modo Estudio, por ahora en Marcos 2.</p>
           <p class="panel-nota">Más fuentes y estilos visuales estarán disponibles próximamente.</p>
           <p class="panel-nota">Por ahora no necesitás crear una cuenta.</p>
         </div>
@@ -290,14 +283,14 @@
           <h2 class="titulo-lectura">{libro.name} {capitulo}</h2>
           {#each versiculos as versiculo (versiculo.verse)}
             {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
-              {#if modoLectura === 'Estudio'}
-                <div class="banner-estudio" class:banner-imagen={formatoBanner === 'Imagen'} style:--banner-url={`url("${resolve('/')}banners/marcos-2.svg")`} aria-label={division.title}>
-                  <span class="banner-etiqueta">MARCOS 2 · ESTUDIO BVI</span>
+              {#if estiloDivisiones === 'Banner CSS' || estiloDivisiones === 'Banner imagen'}
+                <div class="banner-estudio" class:banner-imagen={estiloDivisiones === 'Banner imagen'} style:--banner-url={`url("${resolve('/')}banners/marcos-2.svg")`} aria-label={division.title}>
+                  <span class="banner-etiqueta">MARCOS 2 · BVI</span>
                   <h3>{division.title}</h3>
                   <span class="banner-referencia">Versículos {division.startVerse}–{division.endVerse}</span>
                 </div>
               {:else}
-                <h3 class="titulo-division" class:editorial={estiloSubtitulos === 'Editorial'} class:minimalista={estiloSubtitulos === 'Minimalista'}>{division.title}</h3>
+                <h3 class="titulo-division" class:editorial={estiloDivisiones === 'Editorial'} class:minimalista={estiloDivisiones === 'Minimalista'}>{division.title}</h3>
               {/if}
             {/each}
             <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
