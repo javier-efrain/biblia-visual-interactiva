@@ -369,11 +369,25 @@
     .versiculo { line-height: 1.75; }
     .header-interior { flex-wrap: wrap; justify-content: center; gap: 8px; }
     .encabezado { padding: 9px 12px; }
-    .menu { order: 3; width: 100%; justify-content: space-between; }\n    .perfil { margin-left: auto; }
-    .menu button { padding: 10px 8px; font-size: 12px; }
+    .menu { order: 3; width: 100%; justify-content: space-between; }
+    .perfil { margin-left: auto; }
+    .menu button { padding: 11px 8px; font-size: 12px; min-height: 42px; flex: 1; }
+    .menu { gap: 2px; }
+    .perfil summary { min-height: 42px; padding: 9px 12px; }
+    .marca { font-size: 21px; }
+    .intro h1 { font-size: 29px; }
+    .selector { flex-wrap: wrap; }
+    .barra-api .selector { width: 100%; justify-content: space-between; }
+    .barra-api select { max-width: 65%; }
+    .selector-libro select { max-width: 65%; }
+    .versiones select { max-width: 100%; }
+    .acciones-lectura { flex-wrap: wrap; }
+    .navegacion { gap: 6px; }
+    .navegacion button { min-height: 44px; }
+    .contenido-api { overflow-wrap: anywhere; }
     .herramientas { flex-wrap: wrap; }
     .proximamente { padding: 42px 22px; }
     .navegacion { padding: 18px; }
-    button { padding: 11px 12px; }
+    button { padding: 11px 12px; }\n    .panel-perfil { right: 0; }
   }
 </style>
