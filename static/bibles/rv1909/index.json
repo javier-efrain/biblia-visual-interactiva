@@ -1,0 +1,404 @@
+{
+  "translation": "rv1909",
+  "name": "Reina Valera 1909",
+  "source": "rv_1909.json",
+  "editorialStatus": "sin revisar",
+  "books": [
+    {
+      "book": 1,
+      "name": "Génesis",
+      "chapters": 50,
+      "file": "01.json"
+    },
+    {
+      "book": 2,
+      "name": "Éxodo",
+      "chapters": 40,
+      "file": "02.json"
+    },
+    {
+      "book": 3,
+      "name": "Levítico",
+      "chapters": 27,
+      "file": "03.json"
+    },
+    {
+      "book": 4,
+      "name": "Números",
+      "chapters": 36,
+      "file": "04.json"
+    },
+    {
+      "book": 5,
+      "name": "Deuteronomio",
+      "chapters": 34,
+      "file": "05.json"
+    },
+    {
+      "book": 6,
+      "name": "Josué",
+      "chapters": 24,
+      "file": "06.json"
+    },
+    {
+      "book": 7,
+      "name": "Jueces",
+      "chapters": 21,
+      "file": "07.json"
+    },
+    {
+      "book": 8,
+      "name": "Rut",
+      "chapters": 4,
+      "file": "08.json"
+    },
+    {
+      "book": 9,
+      "name": "1 Samuel",
+      "chapters": 31,
+      "file": "09.json"
+    },
+    {
+      "book": 10,
+      "name": "2 Samuel",
+      "chapters": 24,
+      "file": "10.json"
+    },
+    {
+      "book": 11,
+      "name": "1 Reyes",
+      "chapters": 22,
+      "file": "11.json"
+    },
+    {
+      "book": 12,
+      "name": "2 Reyes",
+      "chapters": 25,
+      "file": "12.json"
+    },
+    {
+      "book": 13,
+      "name": "1 Crónicas",
+      "chapters": 29,
+      "file": "13.json"
+    },
+    {
+      "book": 14,
+      "name": "2 Crónicas",
+      "chapters": 36,
+      "file": "14.json"
+    },
+    {
+      "book": 15,
+      "name": "Esdras",
+      "chapters": 10,
+      "file": "15.json"
+    },
+    {
+      "book": 16,
+      "name": "Nehemías",
+      "chapters": 13,
+      "file": "16.json"
+    },
+    {
+      "book": 17,
+      "name": "Esther",
+      "chapters": 10,
+      "file": "17.json"
+    },
+    {
+      "book": 18,
+      "name": "Job",
+      "chapters": 42,
+      "file": "18.json"
+    },
+    {
+      "book": 19,
+      "name": "Salmos",
+      "chapters": 150,
+      "file": "19.json"
+    },
+    {
+      "book": 20,
+      "name": "Proverbios",
+      "chapters": 31,
+      "file": "20.json"
+    },
+    {
+      "book": 21,
+      "name": "Ecclesiastés",
+      "chapters": 12,
+      "file": "21.json"
+    },
+    {
+      "book": 22,
+      "name": "Canción de canciones",
+      "chapters": 8,
+      "file": "22.json"
+    },
+    {
+      "book": 23,
+      "name": "Isaías",
+      "chapters": 66,
+      "file": "23.json"
+    },
+    {
+      "book": 24,
+      "name": "Jeremías",
+      "chapters": 52,
+      "file": "24.json"
+    },
+    {
+      "book": 25,
+      "name": "Lamentaciones",
+      "chapters": 5,
+      "file": "25.json"
+    },
+    {
+      "book": 26,
+      "name": "Ezequiel",
+      "chapters": 48,
+      "file": "26.json"
+    },
+    {
+      "book": 27,
+      "name": "Daniel",
+      "chapters": 12,
+      "file": "27.json"
+    },
+    {
+      "book": 28,
+      "name": "Oseas",
+      "chapters": 14,
+      "file": "28.json"
+    },
+    {
+      "book": 29,
+      "name": "Joel",
+      "chapters": 3,
+      "file": "29.json"
+    },
+    {
+      "book": 30,
+      "name": "Amós",
+      "chapters": 9,
+      "file": "30.json"
+    },
+    {
+      "book": 31,
+      "name": "Abdías",
+      "chapters": 1,
+      "file": "31.json"
+    },
+    {
+      "book": 32,
+      "name": "Jonás",
+      "chapters": 4,
+      "file": "32.json"
+    },
+    {
+      "book": 33,
+      "name": "Miqueas",
+      "chapters": 7,
+      "file": "33.json"
+    },
+    {
+      "book": 34,
+      "name": "Nahum",
+      "chapters": 3,
+      "file": "34.json"
+    },
+    {
+      "book": 35,
+      "name": "Habacuc",
+      "chapters": 3,
+      "file": "35.json"
+    },
+    {
+      "book": 36,
+      "name": "Sofonías",
+      "chapters": 3,
+      "file": "36.json"
+    },
+    {
+      "book": 37,
+      "name": "Haggeo",
+      "chapters": 2,
+      "file": "37.json"
+    },
+    {
+      "book": 38,
+      "name": "Zacarías",
+      "chapters": 14,
+      "file": "38.json"
+    },
+    {
+      "book": 39,
+      "name": "Malaquías",
+      "chapters": 4,
+      "file": "39.json"
+    },
+    {
+      "book": 40,
+      "name": "Mateo",
+      "chapters": 28,
+      "file": "40.json"
+    },
+    {
+      "book": 41,
+      "name": "Marcos",
+      "chapters": 16,
+      "file": "41.json"
+    },
+    {
+      "book": 42,
+      "name": "Lucas",
+      "chapters": 24,
+      "file": "42.json"
+    },
+    {
+      "book": 43,
+      "name": "Juan",
+      "chapters": 21,
+      "file": "43.json"
+    },
+    {
+      "book": 44,
+      "name": "Hechos",
+      "chapters": 28,
+      "file": "44.json"
+    },
+    {
+      "book": 45,
+      "name": "Romanos",
+      "chapters": 16,
+      "file": "45.json"
+    },
+    {
+      "book": 46,
+      "name": "1 Corintios",
+      "chapters": 16,
+      "file": "46.json"
+    },
+    {
+      "book": 47,
+      "name": "2 Corintios",
+      "chapters": 13,
+      "file": "47.json"
+    },
+    {
+      "book": 48,
+      "name": "Gálatas",
+      "chapters": 6,
+      "file": "48.json"
+    },
+    {
+      "book": 49,
+      "name": "Efesios",
+      "chapters": 6,
+      "file": "49.json"
+    },
+    {
+      "book": 50,
+      "name": "Filipenses",
+      "chapters": 4,
+      "file": "50.json"
+    },
+    {
+      "book": 51,
+      "name": "Colosenses",
+      "chapters": 4,
+      "file": "51.json"
+    },
+    {
+      "book": 52,
+      "name": "1 Tesalonicenses",
+      "chapters": 5,
+      "file": "52.json"
+    },
+    {
+      "book": 53,
+      "name": "2 Tesalonicenses",
+      "chapters": 3,
+      "file": "53.json"
+    },
+    {
+      "book": 54,
+      "name": "1 Timoteo",
+      "chapters": 6,
+      "file": "54.json"
+    },
+    {
+      "book": 55,
+      "name": "2 Timoteo",
+      "chapters": 4,
+      "file": "55.json"
+    },
+    {
+      "book": 56,
+      "name": "Tito",
+      "chapters": 3,
+      "file": "56.json"
+    },
+    {
+      "book": 57,
+      "name": "Filemón",
+      "chapters": 1,
+      "file": "57.json"
+    },
+    {
+      "book": 58,
+      "name": "Hebreos",
+      "chapters": 13,
+      "file": "58.json"
+    },
+    {
+      "book": 59,
+      "name": "Santiago",
+      "chapters": 5,
+      "file": "59.json"
+    },
+    {
+      "book": 60,
+      "name": "1 Pedro",
+      "chapters": 5,
+      "file": "60.json"
+    },
+    {
+      "book": 61,
+      "name": "2 Pedro",
+      "chapters": 3,
+      "file": "61.json"
+    },
+    {
+      "book": 62,
+      "name": "1 Juan",
+      "chapters": 5,
+      "file": "62.json"
+    },
+    {
+      "book": 63,
+      "name": "2 Juan",
+      "chapters": 1,
+      "file": "63.json"
+    },
+    {
+      "book": 64,
+      "name": "3 Juan",
+      "chapters": 1,
+      "file": "64.json"
+    },
+    {
+      "book": 65,
+      "name": "Judas",
+      "chapters": 1,
+      "file": "65.json"
+    },
+    {
+      "book": 66,
+      "name": "Revelación",
+      "chapters": 22,
+      "file": "66.json"
+    }
+  ]
+}
