@@ -1,7 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { onMount } from 'svelte';
-  import divisiones from '$lib/data/divisiones/marcos-2.json';
+  import divisiones from '../../lib/data/divisiones/marcos-2.json';
 
   type Versiculo = { verse: number; text: string };
   let versiculos = $state<Versiculo[]>([]);
