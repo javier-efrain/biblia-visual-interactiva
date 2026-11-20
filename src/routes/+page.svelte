@@ -291,7 +291,7 @@
           {#each versiculos as versiculo (versiculo.verse)}
             {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
               {#if modoLectura === 'Estudio'}
-                <div class="banner-estudio" class:banner-imagen={formatoBanner === 'Imagen'} aria-label={division.title}>
+                <div class="banner-estudio" class:banner-imagen={formatoBanner === 'Imagen'} style:--banner-url={`url("${resolve('/')}banners/marcos-2.svg")`} aria-label={division.title}>
                   <span class="banner-etiqueta">MARCOS 2 · ESTUDIO BVI</span>
                   <h3>{division.title}</h3>
                   <span class="banner-referencia">Versículos {division.startVerse}–{division.endVerse}</span>
@@ -395,7 +395,7 @@
   .banner-estudio h3 { position: relative; z-index: 1; font: 700 clamp(18px, 3vw, 22px)/1.25 Georgia, 'Times New Roman', serif; margin: 0; max-width: 90%; }
   .banner-etiqueta, .banner-referencia { position: relative; z-index: 1; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
   .banner-referencia { font-size: 11px; font-weight: 500; letter-spacing: 0; }
-  .banner-imagen { border-left-color: #a9c6a9; color: #fff; background: linear-gradient(90deg, #172e2de8 0%, #172e2dbb 55%, #172e2d50 100%), url('/biblia-visual-interactiva/banners/marcos-2.svg') center/cover no-repeat; }
+  .banner-imagen { border-left-color: #a9c6a9; color: #fff; background: linear-gradient(90deg, #172e2de8 0%, #172e2dbb 55%, #172e2d50 100%), var(--banner-url) center/cover no-repeat; }
   .banner-imagen::after { display: none; }
   .oscuro .banner-estudio:not(.banner-imagen) { background: linear-gradient(115deg, #304b42, #2b3835); color: #e7f1e9; border-left-color: #8ac5ad; }
   @media (max-width: 600px) { .banner-estudio { min-height: 100px; padding: 16px 18px; margin: 24px 0 18px; } }
