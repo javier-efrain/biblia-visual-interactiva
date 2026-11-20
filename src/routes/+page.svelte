@@ -158,6 +158,32 @@
           <button class:activo={seccion === opcion} onclick={() => seccion = opcion as Seccion}>{opcion}</button>
         {/each}
       </nav>
+      <details class="perfil">
+        <summary aria-label="Abrir perfil y preferencias" title="Perfil y preferencias">
+          <span aria-hidden="true">◉</span><span>Perfil</span>
+        </summary>
+        <div class="panel-perfil">
+          <p class="panel-titulo">Mi espacio BVI</p>
+          <p class="panel-ayuda">Preferencias de lectura</p>
+          <div class="opcion-perfil">
+            <span>Tamaño del texto</span>
+            <div class="controles-perfil">
+              <button onclick={() => tamanoLetra = Math.max(15, tamanoLetra - 1)} disabled={tamanoLetra === 15} aria-label="Reducir letra">A−</button>
+              <span>{tamanoLetra}px</span>
+              <button onclick={() => tamanoLetra = Math.min(26, tamanoLetra + 1)} disabled={tamanoLetra === 26} aria-label="Aumentar letra">A+</button>
+            </div>
+          </div>
+          <div class="opcion-perfil">
+            <span>Modo de lectura</span>
+            <button class="alternar-perfil" onclick={() => modoNoche = !modoNoche}>{modoNoche ? '☀ Claro' : '☾ Noche'}</button>
+          </div>
+          <div class="proximas-preferencias">
+            <strong>Próximamente</strong>
+            <p>Fuente, Biblia preferida, estilos de lectura y preferencias guardadas.</p>
+          </div>
+          <p class="panel-nota">Por ahora no necesitás crear una cuenta.</p>
+        </div>
+      </details>
     </div>
   </header>
 
@@ -265,6 +291,20 @@
   :global(body) { background: #f5f7f3; color: #253a36; }
   .app { min-height: 100vh; background: #f5f7f3; transition: background .2s; }
   .header-interior { max-width: 1150px; margin: auto; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .perfil { position: relative; flex-shrink: 0; }
+  .perfil summary { display: flex; align-items: center; gap: 8px; cursor: pointer; border-radius: 999px; background: #e7f1eb; color: #24695b; padding: 10px 15px; font-size: 13px; font-weight: 700; list-style: none; }
+  .perfil summary::-webkit-details-marker { display: none; }
+  .perfil summary:focus-visible { outline: 2px solid #397b70; outline-offset: 3px; }
+  .panel-perfil { position: absolute; top: calc(100% + 14px); right: 0; width: min(330px, calc(100vw - 24px)); z-index: 20; background: white; border: 1px solid #dfe9e1; border-radius: 15px; box-shadow: 0 18px 45px #1c38252b; padding: 22px; color: #253a36; }
+  .panel-titulo { font-size: 17px; font-weight: 800; margin: 0 0 4px; }
+  .panel-ayuda, .panel-nota { color: #71827a; font-size: 12px; margin: 0 0 16px; }
+  .panel-nota { margin: 15px 0 0; }
+  .opcion-perfil { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 0; border-top: 1px solid #edf1ed; font-size: 13px; }
+  .controles-perfil { display: flex; align-items: center; gap: 7px; }
+  .controles-perfil button, .alternar-perfil { padding: 7px 9px; background: #e7f1eb; color: #24695b; }
+  .proximas-preferencias { border-top: 1px solid #edf1ed; padding-top: 15px; font-size: 12px; color: #71827a; }
+  .proximas-preferencias strong { color: #346b5e; }
+  .proximas-preferencias p { margin: 7px 0 0; line-height: 1.5; }
   .menu { display: flex; align-items: center; gap: 5px; }
   .menu button { background: transparent; color: #667a71; padding: 12px 15px; border-radius: 9px; font-size: 14px; }
   .menu button:hover { background: #f0f5f1; }
@@ -329,7 +369,7 @@
     .versiculo { line-height: 1.75; }
     .header-interior { flex-wrap: wrap; justify-content: center; gap: 8px; }
     .encabezado { padding: 9px 12px; }
-    .menu { width: 100%; justify-content: space-between; }
+    .menu { order: 3; width: 100%; justify-content: space-between; }\n    .perfil { margin-left: auto; }
     .menu button { padding: 10px 8px; font-size: 12px; }
     .herramientas { flex-wrap: wrap; }
     .proximamente { padding: 42px 22px; }
