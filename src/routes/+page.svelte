@@ -62,7 +62,9 @@
 
   async function cargarVersiones() {
     try {
-      versiones = await pedirApi<VersionApi[]>('/bibles?language=spa');
+      const disponibles = await pedirApi<VersionApi[]>('/bibles?language=spa');
+      const permitidas = new Set(['LBLA', 'NBLA', 'NTV']);
+      versiones = disponibles.filter((item) => permitidas.has(item.abbreviation?.toUpperCase() ?? ''));
       if (!versiones.length) avisoVersiones = 'Tu cuenta no tiene traducciones en español disponibles.';
     } catch (e) {
       avisoVersiones = 'No se pudieron consultar otras versiones: ' + String(e);
@@ -85,7 +87,8 @@
     try {
       const datos = await pedirApi<LibroApi[]>('/bibles/' + encodeURIComponent(id) + '/books');
       if (solicitud !== solicitudApi) return;
-      librosApi = datos.filter((item) => !item.id.startsWith('intro'));
+      const idsCanonicos = new Set(['GEN','EXO','LEV','NUM','DEU','JOS','JDG','RUT','1SA','2SA','1KI','2KI','1CH','2CH','EZR','NEH','EST','JOB','PSA','PRO','ECC','SNG','ISA','JER','LAM','EZK','DAN','HOS','JOL','AMO','OBA','JON','MIC','NAM','HAB','ZEP','HAG','ZEC','MAL','MAT','MRK','LUK','JHN','ACT','ROM','1CO','2CO','GAL','EPH','PHP','COL','1TH','2TH','1TI','2TI','TIT','PHM','HEB','JAS','1PE','2PE','1JN','2JN','3JN','JUD','REV']);
+      librosApi = datos.filter((item) => idsCanonicos.has(item.id));
       if (!librosApi.length) throw new Error('Esta versión no tiene libros disponibles');
       await elegirLibroApi(librosApi[0].id, solicitud);
     } catch (e) {
@@ -101,7 +104,7 @@
       const datos = await pedirApi<CapituloApi[]>('/bibles/' + encodeURIComponent(version) + '/books/' + encodeURIComponent(id) + '/chapters');
       if (solicitud !== solicitudApi) return;
       libroApiId = id;
-      capitulosApi = datos.filter((item) => /^\\d+$/.test(item.number));
+      capitulosApi = datos.filter((item) => /^\d+$/.test(item.number));
       if (!capitulosApi.length) throw new Error('No hay capítulos disponibles');
       await elegirCapituloApi(capitulosApi[0].id, solicitud);
     } catch (e) {
