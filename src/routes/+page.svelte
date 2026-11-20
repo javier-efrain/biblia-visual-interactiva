@@ -36,7 +36,20 @@
 
   let totalCapitulos = $derived(libro ? Object.keys(libro.chapters).length : 0);
   let versiculos = $derived(libro?.chapters[String(capitulo)] ?? []);
-  let divisionesActuales = $derived(libroId === 41 && capitulo === 2 ? divisionesMarcos2.sections : []);
+  let numeroCapituloApi = $derived(Number(capitulosApi.find((item) => item.id === capituloApiId)?.number ?? 0));
+  let divisionesActuales = $derived((version === 'local' ? libroId === 41 && capitulo === 2 : libroApiId === 'MRK' && numeroCapituloApi === 2) ? divisionesMarcos2.sections : []);
+  let versiculosApi = $derived.by(() => {
+    const texto = contenidoApi.trim();
+    if (!texto) return [];
+    const coincidencias = [...texto.matchAll(/(?:^|\n)\s*(\d{1,3})[.\s]+/g)];
+    if (coincidencias.length < 2) return [];
+    return coincidencias.map((m, i) => ({
+      verse: Number(m[1]),
+      text: texto.slice((m.index ?? 0) + m[0].length, i + 1 < coincidencias.length ? coincidencias[i + 1].index : undefined).trim()
+    })).filter((v) => v.verse > 0 && v.verse <= 176);
+  });
+  let versiculosVisibles = $derived(version === 'local' ? versiculos : versiculosApi);
+
 
   let solicitudActual = 0;
 
@@ -254,7 +267,32 @@
             </select>
           </label>
         </div>
-        <article class="texto" style:--tamano-letra={`${tamanoLetra}px`}><p class="capitulo-titulo">{librosApi.find((item) => item.id === libroApiId)?.name ?? 'Biblia'} {capitulosApi.find((item) => item.id === capituloApiId)?.number ?? ''}</p><div class="contenido-api">{contenidoApi}</div></article>
+        <article class="texto" style:--tamano-letra={`${tamanoLetra}px`}>
+          <h2 class="titulo-lectura">{librosApi.find((item) => item.id === libroApiId)?.name ?? 'Biblia'} {numeroCapituloApi}</h2>
+          {#if versiculosApi.length}
+            {#each versiculosApi as versiculo (versiculo.verse)}
+              {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
+                {#if estiloDivisiones === 'Banner CSS' || estiloDivisiones === 'Banner imagen'}
+                  <div class="banner-estudio" class:banner-imagen={estiloDivisiones === 'Banner imagen'} style:--banner-url={`url("${resolve('/')}banners/marcos-2.svg")`} aria-label={division.title}>
+                    <span class="banner-etiqueta">MARCOS 2 · BVI</span>
+                    <h3>{division.title}</h3>
+                    <span class="banner-referencia">Versículos {division.startVerse}–{division.endVerse}</span>
+                  </div>
+                {:else}
+                  <h3 class="titulo-division" class:editorial={estiloDivisiones === 'Editorial'} class:minimalista={estiloDivisiones === 'Minimalista'}>{division.title}</h3>
+                {/if}
+              {/each}
+              <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
+            {/each}
+          {:else}
+            <div class="contenido-api">{contenidoApi}</div>
+          {/if}
+        </article>
+        <nav class="navegacion" aria-label="Navegación entre capítulos">
+          <button onclick={() => { const i = capitulosApi.findIndex((c) => c.id === capituloApiId); if (i > 0) void elegirCapituloApi(capitulosApi[i - 1].id); }} disabled={numeroCapituloApi <= 1}>← Anterior</button>
+          <span>{numeroCapituloApi} de {capitulosApi.length}</span>
+          <button onclick={() => { const i = capitulosApi.findIndex((c) => c.id === capituloApiId); if (i >= 0 && i < capitulosApi.length - 1) void elegirCapituloApi(capitulosApi[i + 1].id); }} disabled={numeroCapituloApi >= capitulosApi.length}>Siguiente →</button>
+        </nav>
       {:else if libro}
         <div class="barra">
           <label class="selector selector-libro">
