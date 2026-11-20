@@ -38,18 +38,30 @@
   let versiculos = $derived(libro?.chapters[String(capitulo)] ?? []);
   let numeroCapituloApi = $derived(Number(capitulosApi.find((item) => item.id === capituloApiId)?.number ?? 0));
   let divisionesActuales = $derived((version === 'local' ? libroId === 41 && capitulo === 2 : libroApiId === 'MRK' && numeroCapituloApi === 2) ? divisionesMarcos2.sections : []);
-  let versiculosApi = $derived.by(() => {
-    const texto = contenidoApi.trim();
-    if (!texto) return [];
-    const coincidencias = [...texto.matchAll(/(?:^|\n)\s*(\d{1,3})[.\s]+/g)];
-    if (coincidencias.length < 2) return [];
-    return coincidencias.map((m, i) => ({
-      verse: Number(m[1]),
-      text: texto.slice((m.index ?? 0) + m[0].length, i + 1 < coincidencias.length ? coincidencias[i + 1].index : undefined).trim()
-    })).filter((v) => v.verse > 0 && v.verse <= 176);
-  });
-  let versiculosVisibles = $derived(version === 'local' ? versiculos : versiculosApi);
+  let versiculosApi = $state<Versiculo[]>([]);
 
+  function extraerVersiculosHtml(html: string): Versiculo[] {
+    const documento = new DOMParser().parseFromString(html, 'text/html');
+    const resultado: Versiculo[] = [];
+    let actual: Versiculo | null = null;
+    const recorrido = documento.createTreeWalker(documento.body, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+    while (recorrido.nextNode()) {
+      const nodo = recorrido.currentNode;
+      if (nodo.nodeType === Node.ELEMENT_NODE) {
+        const elemento = nodo as Element;
+        if (elemento.classList.contains('v') && elemento.hasAttribute('data-number')) {
+          const numero = Number(elemento.getAttribute('data-number'));
+          if (numero > 0 && numero <= 176) {
+            actual = { verse: numero, text: '' };
+            resultado.push(actual);
+          }
+        }
+      } else if (actual && nodo.parentElement && !nodo.parentElement.closest('.v, .c, .s, .r, .f, .x')) {
+        actual.text += (nodo.textContent ?? '') + ' ';
+      }
+    }
+    return resultado.filter((v) => v.text.trim()).map((v) => ({ ...v, text: v.text.replace(/\s+/g, ' ').trim() }));
+  }
 
   let solicitudActual = 0;
 
@@ -106,6 +118,7 @@
     cargando = true;
     error = '';
     contenidoApi = '';
+    versiculosApi = [];
     try {
       const datos = await pedirApi<LibroApi[]>('/bibles/' + encodeURIComponent(id) + '/books');
       if (solicitud !== solicitudApi) return;
@@ -139,10 +152,12 @@
   async function elegirCapituloApi(id: string, solicitud = ++solicitudApi) {
     if (solicitud === solicitudApi) { cargando = true; error = ''; }
     try {
-      const datos = await pedirApi<{ content: string }>('/bibles/' + encodeURIComponent(version) + '/chapters/' + encodeURIComponent(id) + '?content-type=text&include-notes=false&include-titles=false');
+      const datos = await pedirApi<{ content: string }>('/bibles/' + encodeURIComponent(version) + '/chapters/' + encodeURIComponent(id) + '?content-type=html&include-notes=false&include-titles=false');
       if (solicitud !== solicitudApi) return;
+      const versiculos = extraerVersiculosHtml(datos.content);
       capituloApiId = id;
-      contenidoApi = datos.content;
+      versiculosApi = versiculos;
+      contenidoApi = versiculos.length ? '' : new DOMParser().parseFromString(datos.content, 'text/html').body.textContent ?? '';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (e) {
       if (solicitud === solicitudApi) error = String(e);
