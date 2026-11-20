@@ -1,6 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { onMount } from 'svelte';
+  import divisionesMarcos2 from '../lib/data/divisiones/marcos-2.json';
 
   type Versiculo = { verse: number; text: string };
   type Libro = { name: string; chapters: Record<string, Versiculo[]> };
@@ -34,6 +35,7 @@
 
   let totalCapitulos = $derived(libro ? Object.keys(libro.chapters).length : 0);
   let versiculos = $derived(libro?.chapters[String(capitulo)] ?? []);
+  let divisionesActuales = $derived(libroId === 41 && capitulo === 2 ? divisionesMarcos2.sections : []);
 
   let solicitudActual = 0;
 
@@ -270,6 +272,9 @@
         <article class="texto" style:--tamano-letra={`${tamanoLetra}px`}>
           <h2 class="titulo-lectura">{libro.name} {capitulo}</h2>
           {#each versiculos as versiculo (versiculo.verse)}
+            {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
+              <h3 class="titulo-division">{division.title}</h3>
+            {/each}
             <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
           {/each}
         </article>
@@ -354,6 +359,8 @@
   select { min-width: 76px; border: 1px solid #cbdcd2; background: #f8faf8; border-radius: 9px; padding: 10px; color: #253a36; font: inherit; }
   .texto { padding: 24px 40px 42px; }
   .capitulo-titulo { margin: 0 0 28px; }
+  .titulo-division { font-size: 18px; line-height: 1.4; font-weight: 700; color: #397b70; margin: 30px 0 14px; }
+  .oscuro .titulo-division { color: #8ac5ad; }
   .versiculo { font-family: Georgia, 'Times New Roman', serif; font-size: var(--tamano-letra, 19px); line-height: 1.85; margin: 0 0 15px; color: #2e3834; }
   sup { font-family: Arial, sans-serif; color: #478376; font-size: 11px; font-weight: 700; margin-right: 9px; vertical-align: super; }
   .navegacion { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid #edf1ed; padding: 22px 36px; color: #75847e; font-size: 13px; }
