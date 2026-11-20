@@ -12,6 +12,10 @@
   type CapituloApi = { id: string; number: string };
   const apiKey = 'Uou_17CaU7dE4j_hYXI0I';
   const apiUrl = 'https://rest.api.bible/v1';
+  type Seccion = 'Inicio' | 'Biblia' | 'Catálogo' | 'Explorar';
+  let seccion = $state<Seccion>('Biblia');
+  let tamanoLetra = $state(19);
+  let modoNoche = $state(false);
   let version = $state('local');
   let versiones = $state<VersionApi[]>([]);
   let librosApi = $state<LibroApi[]>([]);
@@ -143,18 +147,69 @@
   <meta name="description" content="Leé la Biblia Reina-Valera 1909 en Biblia Visual Interactiva." />
 </svelte:head>
 
-<div class="app">
+<div class:oscuro={modoNoche} class="app">
   <header class="encabezado">
-    <div class="marca"><span class="simbolo">✦</span> BVI <span class="nombre">Biblia Visual Interactiva</span></div>
-    <span class="etiqueta">Lector bíblico</span>
+    <div class="header-interior">
+      <button class="marca" onclick={() => seccion = 'Biblia'} aria-label="Ir al lector bíblico">
+        <span class="simbolo">✦</span><strong>BVI</strong><span class="nombre">Biblia Visual Interactiva</span>
+      </button>
+      <nav class="menu" aria-label="Navegación principal">
+        {#each ['Inicio', 'Biblia', 'Catálogo', 'Explorar'] as opcion}
+          <button class:activo={seccion === opcion} onclick={() => seccion = opcion as Seccion}>{opcion}</button>
+        {/each}
+      </nav>
+      <details class="perfil">
+        <summary aria-label="Abrir perfil y preferencias" title="Perfil y preferencias">
+          <span aria-hidden="true">◉</span><span>Perfil</span>
+        </summary>
+        <div class="panel-perfil">
+          <p class="panel-titulo">Mi espacio BVI</p>
+          <p class="panel-ayuda">Preferencias de lectura</p>
+          <div class="opcion-perfil">
+            <span>Tamaño del texto</span>
+            <div class="controles-perfil">
+              <button onclick={() => tamanoLetra = Math.max(15, tamanoLetra - 1)} disabled={tamanoLetra === 15} aria-label="Reducir letra">A−</button>
+              <span>{tamanoLetra}px</span>
+              <button onclick={() => tamanoLetra = Math.min(26, tamanoLetra + 1)} disabled={tamanoLetra === 26} aria-label="Aumentar letra">A+</button>
+            </div>
+          </div>
+          <div class="opcion-perfil">
+            <span>Modo de lectura</span>
+            <button class="alternar-perfil" onclick={() => modoNoche = !modoNoche}>{modoNoche ? '☀ Claro' : '☾ Noche'}</button>
+          </div>
+          <div class="proximas-preferencias">
+            <strong>Próximamente</strong>
+            <p>Fuente, Biblia preferida, estilos de lectura y preferencias guardadas.</p>
+          </div>
+          <p class="panel-nota">Por ahora no necesitás crear una cuenta.</p>
+        </div>
+      </details>
+    </div>
   </header>
 
   <main class="contenedor">
-    <div class="intro">
-      <p class="seccion">LA PALABRA, A TU ALCANCE</p>
-      <h1>Leé. Descubrí. Profundizá.</h1>
-      <p class="subtitulo">Una lectura tranquila, capítulo a capítulo.</p>
-    </div>
+    {#if seccion !== 'Biblia'}
+      <section class="proximamente">
+        <p class="seccion">BIBLIA VISUAL INTERACTIVA</p>
+        <h1>{seccion}</h1>
+        <p>Estamos preparando esta sección. Mientras tanto, podés leer la Biblia completa en el lector.</p>
+        <button class="volver" onclick={() => seccion = 'Biblia'}>Abrir la Biblia →</button>
+      </section>
+    {:else}
+      <div class="intro">
+        <p class="seccion">TU ESPACIO DE LECTURA</p>
+        <h1>La Biblia, a tu ritmo.</h1>
+        <p class="subtitulo">Elegí una traducción, buscá un pasaje y disfrutá de la lectura.</p>
+      </div>
+      <div class="herramientas" aria-label="Preferencias de lectura">
+        <span>Lectura</span>
+        <div class="acciones-lectura">
+          <button onclick={() => tamanoLetra = Math.max(15, tamanoLetra - 1)} disabled={tamanoLetra === 15} aria-label="Reducir tamaño de letra">A−</button>
+          <span aria-live="polite">{tamanoLetra}px</span>
+          <button onclick={() => tamanoLetra = Math.min(26, tamanoLetra + 1)} disabled={tamanoLetra === 26} aria-label="Aumentar tamaño de letra">A+</button>
+          <button class="modo" onclick={() => modoNoche = !modoNoche}>{modoNoche ? '☀ Modo claro' : '☾ Modo noche'}</button>
+        </div>
+      </div>
 
     <section class="lector" aria-label="Lector de la Biblia">
       <div class="versiones">
@@ -184,7 +239,7 @@
             </select>
           </label>
         </div>
-        <article class="texto"><p class="capitulo-titulo">{versiones.find((item) => item.id === version)?.name ?? 'Biblia'}</p><div class="contenido-api">{contenidoApi}</div></article>
+        <article class="texto" style:--tamano-letra={`${tamanoLetra}px`}><p class="capitulo-titulo">{versiones.find((item) => item.id === version)?.name ?? 'Biblia'}</p><div class="contenido-api">{contenidoApi}</div></article>
       {:else if libro}
         <div class="barra">
           <label class="selector selector-libro">
@@ -213,7 +268,7 @@
           </label>
         </div>
 
-        <article class="texto">
+        <article class="texto" style:--tamano-letra={`${tamanoLetra}px`}>
           <p class="capitulo-titulo">CAPÍTULO {capitulo}</p>
           {#each versiculos as versiculo (versiculo.verse)}
             <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
@@ -227,15 +282,50 @@
         </nav>
       {/if}
     </section>
-    <footer>Biblioteca BVI · Reina-Valera 1909, dominio público</footer>
+    {/if}
+    <footer>Biblioteca BVI · Lectura y recursos para profundizar en la Palabra</footer>
   </main>
 </div>
 
 <style>
   :global(body) { background: #f5f7f3; color: #253a36; }
-  .app { min-height: 100vh; }
-  .encabezado { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px max(24px, calc((100vw - 1050px)/2)); background: #fff; border-bottom: 1px solid #e4eae5; }
-  .marca { display: flex; align-items: center; gap: 9px; font-size: 23px; font-weight: 800; letter-spacing: -.5px; }
+  .app { min-height: 100vh; background: #f5f7f3; transition: background .2s; }
+  .header-interior { max-width: 1150px; margin: auto; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .perfil { position: relative; flex-shrink: 0; }
+  .perfil summary { display: flex; align-items: center; gap: 8px; cursor: pointer; border-radius: 999px; background: #e7f1eb; color: #24695b; padding: 10px 15px; font-size: 13px; font-weight: 700; list-style: none; }
+  .perfil summary::-webkit-details-marker { display: none; }
+  .perfil summary:focus-visible { outline: 2px solid #397b70; outline-offset: 3px; }
+  .panel-perfil { position: absolute; top: calc(100% + 14px); right: 0; width: min(330px, calc(100vw - 24px)); z-index: 20; background: white; border: 1px solid #dfe9e1; border-radius: 15px; box-shadow: 0 18px 45px #1c38252b; padding: 22px; color: #253a36; }
+  .panel-titulo { font-size: 17px; font-weight: 800; margin: 0 0 4px; }
+  .panel-ayuda, .panel-nota { color: #71827a; font-size: 12px; margin: 0 0 16px; }
+  .panel-nota { margin: 15px 0 0; }
+  .opcion-perfil { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 0; border-top: 1px solid #edf1ed; font-size: 13px; }
+  .controles-perfil { display: flex; align-items: center; gap: 7px; }
+  .controles-perfil button, .alternar-perfil { padding: 7px 9px; background: #e7f1eb; color: #24695b; }
+  .proximas-preferencias { border-top: 1px solid #edf1ed; padding-top: 15px; font-size: 12px; color: #71827a; }
+  .proximas-preferencias strong { color: #346b5e; }
+  .proximas-preferencias p { margin: 7px 0 0; line-height: 1.5; }
+  .menu { display: flex; align-items: center; gap: 5px; }
+  .menu button { background: transparent; color: #667a71; padding: 12px 15px; border-radius: 9px; font-size: 14px; }
+  .menu button:hover { background: #f0f5f1; }
+  .menu button.activo { background: #e6f1eb; color: #24695b; }
+  .herramientas { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 16px; color: #60756a; font-size: 13px; font-weight: 700; }
+  .acciones-lectura { display: flex; align-items: center; gap: 8px; }
+  .acciones-lectura button { background: white; border: 1px solid #d8e5db; color: #346b5e; padding: 8px 12px; }
+  .acciones-lectura button:disabled { background: #e7ede9; }
+  .acciones-lectura .modo { margin-left: 8px; }
+  .proximamente { background: white; border: 1px solid #e4eae5; border-radius: 18px; padding: 60px 40px; text-align: center; }
+  .proximamente p:not(.seccion) { color: #708278; line-height: 1.7; }
+  .volver { margin-top: 16px; }
+  .oscuro { background: #16211f; }
+  .oscuro .contenedor { color: #e5eae5; }
+  .oscuro .lector, .oscuro .proximamente { background: #22312d; border-color: #3a4a44; }
+  .oscuro .versiculo, .oscuro .contenido-api { color: #e4e8e2; }
+  .oscuro .subtitulo, .oscuro .navegacion, .oscuro .selector { color: #b0c0b5; }
+  .oscuro .barra, .oscuro .versiones, .oscuro .navegacion { border-color: #3a4a44; }
+  .oscuro .acciones-lectura button { background: #2b4139; color: #e5eae5; border-color: #52685b; }
+  .encabezado { position: sticky; top: 0; z-index: 10; padding: 12px 24px; background: #fff; border-bottom: 1px solid #e4eae5; }
+  .marca { display: flex; align-items: center; gap: 9px; font-size: 23px; font-weight: 800; letter-spacing: -.5px; border: 0; background: transparent; color: #253a36; padding: 0; cursor: pointer; white-space: nowrap; }
   .simbolo { color: #397b70; }
   .nombre { font-size: 13px; font-weight: 500; color: #71827a; letter-spacing: 0; padding-left: 8px; border-left: 1px solid #d8e2dc; }
   .etiqueta { background: #e8f1ec; color: #346b5e; border-radius: 99px; padding: 8px 13px; font-size: 12px; font-weight: 700; }
@@ -250,7 +340,7 @@
   .versiones select { width: 100%; max-width: 450px; }
   .aviso { color: #986f32; font-size: 12px; margin: 0; }
   .barra-api { justify-content: flex-start !important; }
-  .contenido-api { white-space: pre-wrap; font: 19px/1.85 Georgia, 'Times New Roman', serif; }
+  .contenido-api { white-space: pre-wrap; font: var(--tamano-letra, 19px)/1.85 Georgia, 'Times New Roman', serif; }
   .barra { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 28px 36px; border-bottom: 1px solid #edf1ed; }
   .version { margin: 0 0 6px; }
   h2 { margin: 0; font-size: 29px; letter-spacing: -.7px; }
@@ -259,7 +349,7 @@
   select { min-width: 76px; border: 1px solid #cbdcd2; background: #f8faf8; border-radius: 9px; padding: 10px; color: #253a36; font: inherit; }
   .texto { padding: 34px 48px 42px; }
   .capitulo-titulo { margin: 0 0 28px; }
-  .versiculo { font-family: Georgia, 'Times New Roman', serif; font-size: 19px; line-height: 1.85; margin: 0 0 15px; color: #2e3834; }
+  .versiculo { font-family: Georgia, 'Times New Roman', serif; font-size: var(--tamano-letra, 19px); line-height: 1.85; margin: 0 0 15px; color: #2e3834; }
   sup { font-family: Arial, sans-serif; color: #478376; font-size: 11px; font-weight: 700; margin-right: 9px; vertical-align: super; }
   .navegacion { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid #edf1ed; padding: 22px 36px; color: #75847e; font-size: 13px; }
   button { background: #397b70; color: white; border: 0; border-radius: 9px; padding: 12px 18px; cursor: pointer; font-weight: 700; }
@@ -276,8 +366,28 @@
     .versiones { padding: 22px; }
     .selector-libro { width: 100%; justify-content: space-between; }
     .texto { padding: 26px 23px 30px; }
-    .versiculo { font-size: 18px; }
+    .versiculo { line-height: 1.75; }
+    .header-interior { flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .encabezado { padding: 9px 12px; }
+    .menu { order: 3; width: 100%; justify-content: space-between; }
+    .perfil { margin-left: auto; }
+    .menu button { padding: 11px 8px; font-size: 12px; min-height: 42px; flex: 1; }
+    .menu { gap: 2px; }
+    .perfil summary { min-height: 42px; padding: 9px 12px; }
+    .marca { font-size: 21px; }
+    .intro h1 { font-size: 29px; }
+    .selector { flex-wrap: wrap; }
+    .barra-api .selector { width: 100%; justify-content: space-between; }
+    .barra-api select { max-width: 65%; }
+    .selector-libro select { max-width: 65%; }
+    .versiones select { max-width: 100%; }
+    .acciones-lectura { flex-wrap: wrap; }
+    .navegacion { gap: 6px; }
+    .navegacion button { min-height: 44px; }
+    .contenido-api { overflow-wrap: anywhere; }
+    .herramientas { flex-wrap: wrap; }
+    .proximamente { padding: 42px 22px; }
     .navegacion { padding: 18px; }
-    button { padding: 11px 12px; }
+    button { padding: 11px 12px; }\n    .panel-perfil { right: 0; }
   }
 </style>
