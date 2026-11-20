@@ -5,6 +5,9 @@
   type Versiculo = { verse: number; text: string };
   type Libro = { name: string; chapters: Record<string, Versiculo[]> };
 
+  const libros = [{"id":1,"name":"Génesis"},{"id":2,"name":"Éxodo"},{"id":3,"name":"Levítico"},{"id":4,"name":"Números"},{"id":5,"name":"Deuteronomio"},{"id":6,"name":"Josué"},{"id":7,"name":"Jueces"},{"id":8,"name":"Rut"},{"id":9,"name":"1 Samuel"},{"id":10,"name":"2 Samuel"},{"id":11,"name":"1 Reyes"},{"id":12,"name":"2 Reyes"},{"id":13,"name":"1 Crónicas"},{"id":14,"name":"2 Crónicas"},{"id":15,"name":"Esdras"},{"id":16,"name":"Nehemías"},{"id":17,"name":"Ester"},{"id":18,"name":"Job"},{"id":19,"name":"Salmos"},{"id":20,"name":"Proverbios"},{"id":21,"name":"Eclesiastés"},{"id":22,"name":"Cantares"},{"id":23,"name":"Isaías"},{"id":24,"name":"Jeremías"},{"id":25,"name":"Lamentaciones"},{"id":26,"name":"Ezequiel"},{"id":27,"name":"Daniel"},{"id":28,"name":"Oseas"},{"id":29,"name":"Joel"},{"id":30,"name":"Amós"},{"id":31,"name":"Abdías"},{"id":32,"name":"Jonás"},{"id":33,"name":"Miqueas"},{"id":34,"name":"Nahúm"},{"id":35,"name":"Habacuc"},{"id":36,"name":"Sofonías"},{"id":37,"name":"Hageo"},{"id":38,"name":"Zacarías"},{"id":39,"name":"Malaquías"},{"id":40,"name":"Mateo"},{"id":41,"name":"Marcos"},{"id":42,"name":"Lucas"},{"id":43,"name":"Juan"},{"id":44,"name":"Hechos"},{"id":45,"name":"Romanos"},{"id":46,"name":"1 Corintios"},{"id":47,"name":"2 Corintios"},{"id":48,"name":"Gálatas"},{"id":49,"name":"Efesios"},{"id":50,"name":"Filipenses"},{"id":51,"name":"Colosenses"},{"id":52,"name":"1 Tesalonicenses"},{"id":53,"name":"2 Tesalonicenses"},{"id":54,"name":"1 Timoteo"},{"id":55,"name":"2 Timoteo"},{"id":56,"name":"Tito"},{"id":57,"name":"Filemón"},{"id":58,"name":"Hebreos"},{"id":59,"name":"Santiago"},{"id":60,"name":"1 Pedro"},{"id":61,"name":"2 Pedro"},{"id":62,"name":"1 Juan"},{"id":63,"name":"2 Juan"},{"id":64,"name":"3 Juan"},{"id":65,"name":"Judas"},{"id":66,"name":"Apocalipsis"}];
+
+  let libroId = $state(1);
   let libro = $state<Libro | null>(null);
   let capitulo = $state(1);
   let error = $state('');
@@ -13,23 +16,31 @@
   let totalCapitulos = $derived(libro ? Object.keys(libro.chapters).length : 0);
   let versiculos = $derived(libro?.chapters[String(capitulo)] ?? []);
 
-  onMount(() => {
-    async function cargarBiblia() {
-      try {
-        const respuesta = await fetch(resolve('/bibles/rv1909/01.json'));
-        if (!respuesta.ok) throw new Error(`No se pudo cargar Génesis (HTTP ${respuesta.status})`);
-        const datos: Libro = await respuesta.json();
-        if (!datos.chapters?.['1']) throw new Error('El archivo de Génesis no contiene capítulos válidos');
-        libro = datos;
-      } catch (e) {
-        error = e instanceof Error ? e.message : String(e);
-      } finally {
-        cargando = false;
-      }
-    }
+  let solicitudActual = 0;
 
-    void cargarBiblia();
-  });
+  async function cargarLibro(id: number) {
+    const solicitud = ++solicitudActual;
+    cargando = true;
+    error = '';
+    try {
+      const archivo = String(id).padStart(2, '0');
+      const respuesta = await fetch(resolve(`/bibles/rv1909/${archivo}.json`));
+      if (!respuesta.ok) throw new Error(`No se pudo cargar el libro (HTTP ${respuesta.status})`);
+      const datos: Libro = await respuesta.json();
+      if (!datos.chapters?.['1']) throw new Error('El archivo no contiene capítulos válidos');
+      if (solicitud !== solicitudActual) return;
+      libro = datos;
+      capitulo = 1;
+      libroId = id;
+    } catch (e) {
+      if (solicitud !== solicitudActual) return;
+      error = e instanceof Error ? e.message : String(e);
+    } finally {
+      if (solicitud === solicitudActual) cargando = false;
+    }
+  }
+
+  onMount(() => { void cargarLibro(1); });
 
   function cambiarCapitulo(nuevo: number) {
     if (nuevo < 1 || nuevo > totalCapitulos) return;
@@ -58,11 +69,19 @@
 
     <section class="lector" aria-label="Lector de la Biblia">
       {#if cargando}
-        <p class="estado" role="status">Cargando Génesis…</p>
+        <p class="estado" role="status">Cargando libro…</p>
       {:else if error}
         <p class="estado error" role="alert">No pudimos cargar la Biblia: {error}</p>
       {:else if libro}
         <div class="barra">
+          <label class="selector selector-libro">
+            <span>Libro</span>
+            <select value={libroId} onchange={(evento) => void cargarLibro(Number(evento.currentTarget.value))} aria-label="Seleccionar libro de la Biblia">
+              {#each libros as opcion}
+                <option value={opcion.id}>{opcion.name}</option>
+              {/each}
+            </select>
+          </label>
           <div>
             <p class="version">REINA-VALERA 1909</p>
             <h2>{libro.name}</h2>
@@ -72,7 +91,7 @@
             <select
               value={capitulo}
               onchange={(evento) => cambiarCapitulo(Number(evento.currentTarget.value))}
-              aria-label="Seleccionar capítulo de Génesis"
+              aria-label="Seleccionar capítulo"
             >
               {#each Array.from({ length: totalCapitulos }, (_, i) => i + 1) as numero}
                 <option value={numero}>{numero}</option>
@@ -113,11 +132,11 @@
   h1 { font-size: clamp(28px, 5vw, 42px); letter-spacing: -1.5px; margin: 12px 0; }
   .subtitulo { color: #75847e; margin: 0; }
   .lector { background: #fff; border: 1px solid #e3eae4; border-radius: 18px; box-shadow: 0 14px 45px #253a3610; overflow: hidden; }
-  .barra { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 28px 36px; border-bottom: 1px solid #edf1ed; }
+  .barra { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 28px 36px; border-bottom: 1px solid #edf1ed; }
   .version { margin: 0 0 6px; }
   h2 { margin: 0; font-size: 29px; letter-spacing: -.7px; }
   .selector { display: flex; align-items: center; gap: 10px; color: #64786e; font-size: 13px; }
-  select { min-width: 76px; border: 1px solid #cbdcd2; background: #f8faf8; border-radius: 9px; padding: 10px; color: #253a36; font: inherit; }
+  .selector-libro select { max-width: 180px; width: 100%; }\n  select { min-width: 76px; border: 1px solid #cbdcd2; background: #f8faf8; border-radius: 9px; padding: 10px; color: #253a36; font: inherit; }
   .texto { padding: 34px 48px 42px; }
   .capitulo-titulo { margin: 0 0 28px; }
   .versiculo { font-family: Georgia, 'Times New Roman', serif; font-size: 19px; line-height: 1.85; margin: 0 0 15px; color: #2e3834; }
@@ -133,7 +152,7 @@
     .nombre { display: none; }
     .contenedor { padding: 35px 14px 20px; }
     .intro { margin-bottom: 25px; }
-    .barra { padding: 22px; }
+    .barra { padding: 22px; }\n    .selector-libro { width: 100%; justify-content: space-between; }
     .texto { padding: 26px 23px 30px; }
     .versiculo { font-size: 18px; }
     .navegacion { padding: 18px; }
