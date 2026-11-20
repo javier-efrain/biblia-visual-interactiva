@@ -16,8 +16,7 @@
   let seccion = $state<Seccion>('Biblia');
   let tamanoLetra = $state(19);
   let modoNoche = $state(false);
-  let modoLectura = $state<'Libro' | 'Estudio' | 'Devocional'>('Libro');
-  let libroPreferido = $state(1);
+  let modoLectura = $state<'Lectura' | 'Estudio' | 'Devocional'>('Estudio');
   let temaLectura = $state('Clásico');
   let version = $state('local');
   let versiones = $state<VersionApi[]>([]);
@@ -183,21 +182,12 @@
           <label class="opcion-perfil">
             <span>Modo de lectura</span>
             <select bind:value={modoLectura} aria-label="Modo de lectura">
-              <option value="Libro">Libro</option>
+              <option value="Lectura">Lectura</option>
               <option value="Estudio">Estudio</option>
               <option value="Devocional">Devocional</option>
             </select>
           </label>
-          <p class="panel-nota">Los modos Estudio y Devocional tendrán herramientas propias próximamente.</p>
-          <label class="opcion-perfil">
-            <span>Libro preferido</span>
-            <select bind:value={libroPreferido} aria-label="Libro preferido">
-              {#each libros as opcion}
-                <option value={opcion.id}>{opcion.name}</option>
-              {/each}
-            </select>
-          </label>
-          <button class="ir-preferido" onclick={() => { seccion = 'Biblia'; void cargarLibro(Number(libroPreferido)); }}>Abrir libro preferido</button>
+          <p class="panel-nota">El modo Estudio es el predeterminado. Los recursos propios de cada modo se desarrollarán próximamente.</p>
           <label class="opcion-perfil">
             <span>Temas</span>
             <select bind:value={temaLectura} aria-label="Tema de lectura">
