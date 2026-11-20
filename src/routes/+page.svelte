@@ -255,7 +255,8 @@
   .version { margin: 0 0 6px; }
   h2 { margin: 0; font-size: 29px; letter-spacing: -.7px; }
   .selector { display: flex; align-items: center; gap: 10px; color: #64786e; font-size: 13px; }
-  .selector-libro select { max-width: 180px; width: 100%; }\n  select { min-width: 76px; border: 1px solid #cbdcd2; background: #f8faf8; border-radius: 9px; padding: 10px; color: #253a36; font: inherit; }
+  .selector-libro select { max-width: 180px; width: 100%; }
+  select { min-width: 76px; border: 1px solid #cbdcd2; background: #f8faf8; border-radius: 9px; padding: 10px; color: #253a36; font: inherit; }
   .texto { padding: 34px 48px 42px; }
   .capitulo-titulo { margin: 0 0 28px; }
   .versiculo { font-family: Georgia, 'Times New Roman', serif; font-size: 19px; line-height: 1.85; margin: 0 0 15px; color: #2e3834; }
@@ -271,7 +272,9 @@
     .nombre { display: none; }
     .contenedor { padding: 35px 14px 20px; }
     .intro { margin-bottom: 25px; }
-    .barra { padding: 22px; }\n    .versiones { padding: 22px; }\n    .selector-libro { width: 100%; justify-content: space-between; }
+    .barra { padding: 22px; }
+    .versiones { padding: 22px; }
+    .selector-libro { width: 100%; justify-content: space-between; }
     .texto { padding: 26px 23px 30px; }
     .versiculo { font-size: 18px; }
     .navegacion { padding: 18px; }
