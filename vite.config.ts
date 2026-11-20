@@ -9,7 +9,7 @@ export default defineConfig({
   paths: {
     base:
       process.env.NODE_ENV === 'production'
-        ? '/biblia-visual-interactiva'
+        ? (process.env.BVI_BASE_PATH ?? '/biblia-visual-interactiva')
         : ''
   },
 
