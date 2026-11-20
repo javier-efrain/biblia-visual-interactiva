@@ -19,6 +19,7 @@
   let modoNoche = $state(false);
   let modoLectura = $state<'Lectura' | 'Estudio' | 'Devocional'>('Estudio');
   let temaLectura = $state('Clásico');
+  let formatoBanner = $state<'CSS' | 'Imagen'>('CSS');
   let estiloSubtitulos = $state<'Editorial' | 'Minimalista'>('Editorial');
   let version = $state('local');
   let versiones = $state<VersionApi[]>([]);
@@ -204,6 +205,14 @@
               <option value="Clásico">Clásico</option>
             </select>
           </label>
+          <label class="opcion-perfil">
+            <span>Banner de Estudio</span>
+            <select bind:value={formatoBanner} aria-label="Formato del banner de Estudio">
+              <option value="CSS">Diseño CSS</option>
+              <option value="Imagen">Con imagen</option>
+            </select>
+          </label>
+          <p class="panel-nota">Los banners aparecen solo en modo Estudio, por ahora en Marcos 2.</p>
           <p class="panel-nota">Más fuentes y estilos visuales estarán disponibles próximamente.</p>
           <p class="panel-nota">Por ahora no necesitás crear una cuenta.</p>
         </div>
@@ -281,7 +290,15 @@
           <h2 class="titulo-lectura">{libro.name} {capitulo}</h2>
           {#each versiculos as versiculo (versiculo.verse)}
             {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
-              <h3 class="titulo-division" class:editorial={estiloSubtitulos === 'Editorial'} class:minimalista={estiloSubtitulos === 'Minimalista'}>{division.title}</h3>
+              {#if modoLectura === 'Estudio'}
+                <div class="banner-estudio" class:banner-imagen={formatoBanner === 'Imagen'} aria-label={division.title}>
+                  <span class="banner-etiqueta">MARCOS 2 · ESTUDIO BVI</span>
+                  <h3>{division.title}</h3>
+                  <span class="banner-referencia">Versículos {division.startVerse}–{division.endVerse}</span>
+                </div>
+              {:else}
+                <h3 class="titulo-division" class:editorial={estiloSubtitulos === 'Editorial'} class:minimalista={estiloSubtitulos === 'Minimalista'}>{division.title}</h3>
+              {/if}
             {/each}
             <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
           {/each}
@@ -373,6 +390,16 @@
   .titulo-division.minimalista { font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; color: inherit; margin: 26px 0 10px; }
   .oscuro .titulo-division.editorial { color: #d6dfd6; }
   .oscuro .titulo-division.minimalista { color: #e4e8e2; }
+  .banner-estudio { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 6px; min-height: 112px; margin: 30px 0 22px; padding: 19px 23px; border-radius: 12px; border-left: 4px solid #397b70; background: linear-gradient(115deg, #e5f0e9, #f5f5ed); color: #264b42; }
+  .banner-estudio::after { content: '✦'; position: absolute; right: 23px; top: 12px; font-size: 52px; color: #397b7020; pointer-events: none; }
+  .banner-estudio h3 { position: relative; z-index: 1; font: 700 clamp(18px, 3vw, 22px)/1.25 Georgia, 'Times New Roman', serif; margin: 0; max-width: 90%; }
+  .banner-etiqueta, .banner-referencia { position: relative; z-index: 1; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+  .banner-referencia { font-size: 11px; font-weight: 500; letter-spacing: 0; }
+  .banner-imagen { border-left-color: #a9c6a9; color: #fff; background: linear-gradient(90deg, #172e2de8 0%, #172e2dbb 55%, #172e2d50 100%), url('/biblia-visual-interactiva/banners/marcos-2.svg') center/cover no-repeat; }
+  .banner-imagen::after { display: none; }
+  .oscuro .banner-estudio:not(.banner-imagen) { background: linear-gradient(115deg, #304b42, #2b3835); color: #e7f1e9; border-left-color: #8ac5ad; }
+  @media (max-width: 600px) { .banner-estudio { min-height: 100px; padding: 16px 18px; margin: 24px 0 18px; } }
+
   .versiculo { font-family: Georgia, 'Times New Roman', serif; font-size: var(--tamano-letra, 19px); line-height: 1.85; margin: 0 0 15px; color: #2e3834; }
   sup { font-family: Arial, sans-serif; color: #478376; font-size: 11px; font-weight: 700; margin-right: 9px; vertical-align: super; }
   .navegacion { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid #edf1ed; padding: 22px 36px; color: #75847e; font-size: 13px; }
