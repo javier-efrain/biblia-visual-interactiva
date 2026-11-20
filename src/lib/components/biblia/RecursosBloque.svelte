@@ -1,5 +1,5 @@
 <script lang="ts">
-  type Tarjeta = { id: string; title: string; type: 'contexto' | 'exegesis' | 'rve' | 'ensenanza' };
+  type Tarjeta = { id: string; title: string; type: string };
   let { tarjetas = [], posicion }: { tarjetas?: Tarjeta[]; posicion: 'inicio' | 'centro' | 'final' } = $props();
 </script>
 
