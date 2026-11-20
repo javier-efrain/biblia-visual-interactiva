@@ -3,6 +3,7 @@
   import { onMount } from 'svelte';
   import divisionesMarcos2 from '../lib/data/divisiones/marcos-2.json';
   import recursosMarcos2 from '../lib/data/recursos/marcos-2.json';
+  import devocionalesMarcos2 from '../lib/data/recursos/devocionales-marcos-2.json';
   import RecursosBloque from '../lib/components/biblia/RecursosBloque.svelte';
 
   type Versiculo = { verse: number; text: string };
@@ -300,14 +301,14 @@
                 {/if}
               {/each}
               {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
-                <RecursosBloque posicion="inicio" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />
+                {#if modoLectura === 'Estudio'}<RecursosBloque posicion="inicio" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />{/if}
               {/each}
               <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
               {#each recursosMarcos2.blocks.filter((bloque) => divisionesActuales.some((division) => division.id === bloque.divisionId) && bloque.afterVerse === versiculo.verse) as bloque (bloque.divisionId)}
-                <RecursosBloque posicion="centro" tarjetas={bloque.central} />
+                {#if modoLectura === 'Estudio'}<RecursosBloque posicion="centro" tarjetas={bloque.central} />{/if}
               {/each}
               {#each divisionesActuales.filter((division) => division.endVerse === versiculo.verse) as division (division.id)}
-                <RecursosBloque posicion="final" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.ensenanza ?? []} />
+                {#if modoLectura === 'Estudio'}<RecursosBloque posicion="final" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.ensenanza ?? []} />{:else if modoLectura === 'Devocional'}<RecursosBloque posicion="final" tarjetas={devocionalesMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.devocional ?? []} />{/if}
               {/each}
             {/each}
           {:else}
@@ -358,14 +359,14 @@
               {/if}
             {/each}
             {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
-              <RecursosBloque posicion="inicio" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />
+              {#if modoLectura === 'Estudio'}<RecursosBloque posicion="inicio" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />{/if}
             {/each}
             <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
             {#each recursosMarcos2.blocks.filter((bloque) => divisionesActuales.some((division) => division.id === bloque.divisionId) && bloque.afterVerse === versiculo.verse) as bloque (bloque.divisionId)}
-              <RecursosBloque posicion="centro" tarjetas={bloque.central} />
+              {#if modoLectura === 'Estudio'}<RecursosBloque posicion="centro" tarjetas={bloque.central} />{/if}
             {/each}
             {#each divisionesActuales.filter((division) => division.endVerse === versiculo.verse) as division (division.id)}
-              <RecursosBloque posicion="final" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.ensenanza ?? []} />
+              {#if modoLectura === 'Estudio'}<RecursosBloque posicion="final" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.ensenanza ?? []} />{:else if modoLectura === 'Devocional'}<RecursosBloque posicion="final" tarjetas={devocionalesMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.devocional ?? []} />{/if}
             {/each}
           {/each}
         </article>
