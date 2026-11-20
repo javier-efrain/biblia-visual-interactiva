@@ -302,16 +302,7 @@
               {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
                 <RecursosBloque posicion="inicio" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />
               {/each}
-              {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
-              <RecursosBloque posicion="inicio" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />
-            {/each}
-            <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
-            {#each recursosMarcos2.blocks.filter((bloque) => divisionesActuales.some((division) => division.id === bloque.divisionId) && bloque.afterVerse === versiculo.verse) as bloque (bloque.divisionId)}
-              <RecursosBloque posicion="centro" tarjetas={bloque.central} />
-            {/each}
-            {#each divisionesActuales.filter((division) => division.endVerse === versiculo.verse) as division (division.id)}
-              <RecursosBloque posicion="final" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.ensenanza ?? []} />
-            {/each}
+              <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
               {#each recursosMarcos2.blocks.filter((bloque) => divisionesActuales.some((division) => division.id === bloque.divisionId) && bloque.afterVerse === versiculo.verse) as bloque (bloque.divisionId)}
                 <RecursosBloque posicion="centro" tarjetas={bloque.central} />
               {/each}
@@ -366,7 +357,16 @@
                 <h3 class="titulo-division" class:editorial={estiloDivisiones === 'Editorial'} class:minimalista={estiloDivisiones === 'Minimalista'}>{division.title}</h3>
               {/if}
             {/each}
+            {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
+              <RecursosBloque posicion="inicio" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />
+            {/each}
             <p class="versiculo"><sup>{versiculo.verse}</sup>{versiculo.text}</p>
+            {#each recursosMarcos2.blocks.filter((bloque) => divisionesActuales.some((division) => division.id === bloque.divisionId) && bloque.afterVerse === versiculo.verse) as bloque (bloque.divisionId)}
+              <RecursosBloque posicion="centro" tarjetas={bloque.central} />
+            {/each}
+            {#each divisionesActuales.filter((division) => division.endVerse === versiculo.verse) as division (division.id)}
+              <RecursosBloque posicion="final" tarjetas={recursosMarcos2.blocks.find((bloque) => bloque.divisionId === division.id)?.ensenanza ?? []} />
+            {/each}
           {/each}
         </article>
 
