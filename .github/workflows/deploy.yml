@@ -1,9 +1,8 @@
-
-name: Publicar BVI en GitHub Pages
+name: Publicar BVI oficial y laboratorio
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   workflow_dispatch:
 
 permissions:
@@ -16,50 +15,65 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Descargar repositorio
+      - name: Descargar BVI oficial
         uses: actions/checkout@v4
+        with:
+          ref: main
+          path: oficial
+
+      - name: Descargar BVI laboratorio
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          path: laboratorio
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-          cache: npm
 
-      - name: Instalar dependencias
-        run: npm ci
+      - name: Instalar y verificar oficial
+        working-directory: oficial
+        run: |
+          npm ci
+          npm run check
+          npm test
+          npm run build
 
-      - name: Comprobar TypeScript y Svelte
-        run: npm run check
+      - name: Instalar y verificar laboratorio
+        working-directory: laboratorio
+        env:
+          BVI_BASE_PATH: /biblia-visual-interactiva/pruebas
+        run: |
+          npm ci
+          npm run check
+          npm test
+          npm run build
 
-      - name: Ejecutar pruebas
-        run: npm test
-
-      - name: Compilar BVI
-        run: npm run build
+      - name: Incorporar laboratorio al sitio oficial
+        run: |
+          mkdir -p oficial/build/pruebas
+          cp -a laboratorio/build/. oficial/build/pruebas/
 
       - name: Preparar GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Subir archivos compilados
+      - name: Subir ambas versiones
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/
+          path: oficial/build/
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
     needs: build
-
     permissions:
       pages: write
       id-token: write
-
     steps:
-      - name: Publicar en GitHub Pages
+      - name: Publicar BVI
         id: deployment
         uses: actions/deploy-pages@v4
