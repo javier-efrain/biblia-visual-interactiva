@@ -19,7 +19,7 @@
   let modoNoche = $state(false);
   let modoLectura = $state<'Lectura' | 'Estudio' | 'Devocional'>('Estudio');
   let temaLectura = $state('Clásico');
-  let estiloSubtitulos = $state<'Clásico' | 'Editorial' | 'Minimalista'>('Clásico');
+  let estiloSubtitulos = $state<'Editorial' | 'Minimalista'>('Editorial');
   let version = $state('local');
   let versiones = $state<VersionApi[]>([]);
   let librosApi = $state<LibroApi[]>([]);
@@ -194,7 +194,6 @@
           <label class="opcion-perfil">
             <span>Estilo de subtítulos</span>
             <select bind:value={estiloSubtitulos} aria-label="Estilo de subtítulos">
-              <option value="Clásico">Clásico</option>
               <option value="Editorial">Editorial</option>
               <option value="Minimalista">Minimalista</option>
             </select>
