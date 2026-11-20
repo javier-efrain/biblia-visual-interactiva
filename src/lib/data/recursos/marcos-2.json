@@ -1,0 +1,66 @@
+{
+  "book": "MRK",
+  "chapter": 2,
+  "blocks": [
+    {
+      "divisionId": "mrk-2-1",
+      "afterVerse": 6,
+      "contexto": [
+        {
+          "id": "ctx-paralitico",
+          "title": "Contexto del relato",
+          "type": "contexto"
+        }
+      ],
+      "central": [
+        {
+          "id": "exe-paralitico",
+          "title": "Exégesis del pasaje",
+          "type": "exegesis"
+        },
+        {
+          "id": "rve-paralitico",
+          "title": "Recurso visual educativo",
+          "type": "rve"
+        }
+      ],
+      "ensenanza": [
+        {
+          "id": "ens-paralitico",
+          "title": "Enseñanza del relato",
+          "type": "ensenanza"
+        }
+      ]
+    },
+    {
+      "divisionId": "mrk-2-2",
+      "afterVerse": 15,
+      "contexto": [
+        {
+          "id": "ctx-levi",
+          "title": "Contexto del llamado de Leví",
+          "type": "contexto"
+        }
+      ],
+      "central": [
+        {
+          "id": "exe-levi",
+          "title": "Exégesis del llamado",
+          "type": "exegesis"
+        },
+        {
+          "id": "rve-levi",
+          "title": "RVE del relato",
+          "type": "rve"
+        }
+      ],
+      "ensenanza": [
+        {
+          "id": "ens-levi",
+          "title": "Enseñanza del relato",
+          "type": "ensenanza"
+        }
+      ]
+    }
+  ]
+}
