@@ -1,0 +1,16 @@
+{
+  "book": "MRK",
+  "chapter": 2,
+  "blocks": [
+    {
+      "divisionId": "mrk-2-2",
+      "devocional": [
+        {
+          "id": "dev-levi",
+          "title": "Devocional del llamado de Leví",
+          "type": "devocional"
+        }
+      ]
+    }
+  ]
+}
