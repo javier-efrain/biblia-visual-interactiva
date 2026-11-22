@@ -5,11 +5,11 @@ Reutilizar **un único lector**, **un componente de tarjetas** y **una estructur
 
 ## Componentes y fuentes actuales
 - Lector: `src/routes/+page.svelte` (RV1909 local y traducciones API.Bible).
-- Divisiones editoriales: `src/lib/data/divisiones/marcos-2.json`.
+- Divisiones editoriales por capítulo: `src/lib/data/divisiones/marcos-1.json`, `marcos-2.json`, etc.
 - Recursos de Estudio: `src/lib/data/recursos/marcos-2.json`.
 - Recursos de Devocional: `src/lib/data/recursos/devocionales-marcos-2.json`.
 - Tarjetas reutilizables: `src/lib/components/biblia/RecursosBloque.svelte`.
-- Los banners actuales siguen en el lector; **pendiente** extraerlos a `BannerNarrativo.svelte` antes de ampliarlos a otros libros.
+- Banners y títulos: `src/lib/components/biblia/BannerNarrativo.svelte` (componente único en ambos lectores).\n- Registro central: `src/lib/data/biblia/registro-capitulos.ts` (resuelve libro y capítulo, sin condiciones por relato en el lector).
 
 ## Reglas de modos
 | Modo | Inicio del bloque | Mitad aproximada | Final |
@@ -36,15 +36,15 @@ Cada tarjeta tiene `id`, `title`, `type` y opcionalmente `image`. Los tipos admi
 Arrays ausentes o vacíos no deben mostrar tarjetas. `afterVerse` se elige cerca de la mitad narrativa, en una pausa natural.
 Los recursos pertenecen al relato, **no a una traducción específica**.
 
-## Regla de implementación
-1. Agregar división y recursos en JSON.
+## Prueba de escalabilidad: Marcos 1\n- Marcos 1 tiene nueve divisiones narrativas (versículos 1–45).\n- Los JSON de Estudio y Devocional están vacíos deliberadamente: **no inventar tarjetas ni estudios**.\n- El banner de Marcos 1 usa CSS en ausencia de ilustración; no reutilizar la imagen de Marcos 2 para otro capítulo.\n- Para un nuevo capítulo, agregar sus JSON y registrarlos en `registro-capitulos.ts`; no modificar los dos bucles de versículos.\n- La carga es un registro de importaciones estáticas, no descubrimiento automático de archivos; ampliar el registro sigue siendo una tarea pequeña y explícita.\n\n## Regla de implementación
+1. Agregar división y recursos en JSON, y dar de alta el capítulo en `registro-capitulos.ts`.
 2. Reutilizar `RecursosBloque.svelte` para cualquier tarjeta, sin duplicar su HTML/CSS.
 3. Para contenido abierto de recursos, diseñar **un único visor reutilizable** cuando se defina el formato definitivo; por ahora `details` es solo una demostración.
 4. Probar modos Estudio, Devocional, Lectura y traducciones local/API en celular.
 5. Verificar GitHub Actions antes de fusionar `develop` a `main`. No fusionar sin aprobación.
 
 ## Pendientes
-- Extraer banners del lector a componente reutilizable y centralizar la carga de divisiones por libro/capítulo.
+- Generalizar progresivamente el registro a más libros y capítulos; revisar el resultado en todas las traducciones.
 - Definir contenido real y visor de recursos.
 - Revisar accesibilidad, imágenes definitivas y contraste en tema oscuro.
 - Sustituir datos demostrativos de Marcos 2 por contenido editorial validado.
