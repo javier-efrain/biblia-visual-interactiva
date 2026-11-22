@@ -12,7 +12,7 @@
     contexto: 'Contexto', exegesis: 'Exégesis', ensenanza: 'Enseñanza', devocional: 'Devocional'
   };
   const etiqueta = (tipo: string) => nombres[tipo] ?? 'Recurso';
-  const secciones = $derived(['contexto', 'exegesis', 'ensenanza'].includes(recurso?.type ?? '') ? (recurso.sections ?? []) : []);
+  const secciones = $derived(['contexto', 'exegesis', 'ensenanza'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
   const indice = $derived(Math.max(0, secciones.findIndex((s) => s.id === pestana)));
   const activa = $derived(secciones[indice]);
   const parrafos = $derived(activa?.paragraphs ?? recurso?.paragraphs ?? []);
