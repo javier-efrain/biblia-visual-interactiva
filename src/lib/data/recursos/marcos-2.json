@@ -126,8 +126,15 @@
         },
         {
           "id": "rve-paralitico",
-          "title": "Recurso visual educativo",
-          "type": "rve"
+          "title": "El paralítico ante Jesús — diagrama",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-2-paralitico.svg",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-2-paralitico.svg",
+            "alt": "Diagrama con la secuencia narrativa de Marcos 2:1–12: llegada del paralítico, perdón, objeción de los escribas, sanidad y reacción de la multitud.",
+            "reference": "Marcos 2:1–12",
+            "description": "Diagrama esquemático de prueba, no una reconstrucción histórica. Resume la secuencia del relato para comprobar el visor de imágenes."
+          }
         }
       ],
       "ensenanza": [
