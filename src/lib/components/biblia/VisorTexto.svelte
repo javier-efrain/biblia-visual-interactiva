@@ -12,7 +12,7 @@
     contexto: 'Contexto', exegesis: 'Exégesis', ensenanza: 'Enseñanza', devocional: 'Devocional'
   };
   const etiqueta = (tipo: string) => nombres[tipo] ?? 'Recurso';
-  const secciones = $derived(['contexto', 'exegesis', 'ensenanza'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
+  const secciones = $derived(['contexto', 'exegesis', 'ensenanza', 'devocional'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
   const indice = $derived(Math.max(0, secciones.findIndex((s) => s.id === pestana)));
   const activa = $derived(secciones[indice]);
   const parrafos = $derived(activa?.paragraphs ?? recurso?.paragraphs ?? []);
@@ -89,7 +89,7 @@
           </nav>
         </div>
       {:else}
-        <nav class="pestanas" aria-label={recurso?.type === 'ensenanza' ? 'Apartados de la enseñanza' : 'Perspectivas del contexto'}>
+        <nav class="pestanas" aria-label={recurso?.type === 'ensenanza' ? 'Apartados de la enseñanza' : recurso?.type === 'devocional' ? 'Apartados del devocional' : 'Perspectivas del contexto'}>
           {#each secciones as seccion (seccion.id)}
             <button type="button" class:activa={activa?.id === seccion.id} aria-current={activa?.id === seccion.id ? 'true' : undefined} onclick={() => seleccionar(seccion.id)}>
               {seccion.label}
