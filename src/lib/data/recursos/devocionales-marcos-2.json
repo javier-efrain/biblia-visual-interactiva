@@ -8,7 +8,11 @@
         {
           "id": "dev-levi",
           "title": "Devocional del llamado de Leví",
-          "type": "devocional"
+          "type": "devocional",
+          "paragraphs": [
+            "Contenido piloto para probar el visor. Jesús llama a Leví en su lugar de trabajo, y Leví se levanta y lo sigue (Marcos 2:14).",
+            "El encuentro de Jesús con publicanos y pecadores nos invita a reflexionar sobre la gracia y sobre nuestra disposición a responder a su llamado."
+          ]
         }
       ]
     }
