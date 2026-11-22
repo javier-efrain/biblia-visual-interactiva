@@ -1,6 +1,7 @@
 /** Registro de capítulos: importar JSON nuevos sin editar el lector ni este archivo. */
 export type Division = { id: string; startVerse: number; endVerse: number; title: string };
-export type TarjetaRecurso = { id: string; title: string; type: string; image?: string; paragraphs?: string[] };
+export type SeccionContexto = { id: string; label: string; paragraphs: string[] };
+export type TarjetaRecurso = { id: string; title: string; type: string; image?: string; paragraphs?: string[]; sections?: SeccionContexto[] };
 export type BloqueEstudio = { divisionId: string; afterVerse?: number; contexto?: TarjetaRecurso[]; central?: TarjetaRecurso[]; ensenanza?: TarjetaRecurso[] };
 export type BloqueDevocional = { divisionId: string; devocional?: TarjetaRecurso[] };
 export type CapituloBVI = { book: string; chapter: number; sections: Division[]; blocks: BloqueEstudio[]; devotionals: BloqueDevocional[]; bannerImage?: string };
