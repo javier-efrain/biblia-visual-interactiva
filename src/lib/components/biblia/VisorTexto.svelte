@@ -54,6 +54,10 @@
     if (siguiente) void seleccionar(siguiente.id);
   }
 
+  function solicitarCierre() {
+    if (dialogo?.open) dialogo.close();
+  }
+
   async function finalizar() {
     cerrar();
     await tick();
@@ -68,8 +72,9 @@
         <span class="categoria">{etiqueta(recurso.type)}</span>
         <h2 id="visor-titulo">{recurso.title}</h2>
       </div>
-      <button class="cerrar" type="button" onclick={finalizar} aria-label="Cerrar recurso">✕</button>
+      <button class="cerrar" type="button" onclick={solicitarCierre} aria-label="Cerrar recurso">✕</button>
     </div>
+    <div class="cuerpo-desplazable" bind:this={lectura}>
     {#if secciones.length}
       {#if esExegesis}
         <div class="navegacion-exegesis">
@@ -93,7 +98,7 @@
         </nav>
       {/if}
     {/if}
-    <div class="contenido" id="visor-contenido" bind:this={lectura} aria-live="polite">
+    <div class="contenido" id="visor-contenido" aria-live="polite">
       {#if activa}
         {#if activa.reference}<span class="referencia">{activa.reference}</span>{/if}
         <h3>{activa.label}</h3>
@@ -106,15 +111,15 @@
         <p class="pendiente">Este recurso todavía no tiene contenido editorial publicado.</p>
       {/if}
     </div>
+    </div>
+    {#if esExegesis}
     <footer>
-      {#if esExegesis}
         <div class="controles">
           <button type="button" class="secundario" disabled={indice === 0} onclick={() => mover(-1)}>‹ Anterior</button>
           <button type="button" class="secundario" disabled={indice === secciones.length - 1} onclick={() => mover(1)}>Siguiente ›</button>
         </div>
-      {/if}
-      <button type="button" onclick={finalizar}>Volver a la lectura</button>
     </footer>
+    {/if}
   {/if}
 </dialog>
 
@@ -129,21 +134,22 @@
   .pestanas { flex: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 16px 28px 12px; }
   .pestanas button { border: 1px solid #d7e5dc; border-radius: 999px; padding: 9px 13px; background: #f5f8f5; color: #355a4e; font: 600 12px/1.3 Arial, sans-serif; cursor: pointer; }
   .pestanas button.activa { background: #397b70; color: white; border-color: #397b70; }
-  .navegacion-exegesis { flex: none; padding: 12px 0 10px; border-bottom: 1px solid #e2eae3; background: #fff; }
+  .cuerpo-desplazable { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+  .navegacion-exegesis { padding: 12px 0 10px; border-bottom: 1px solid #e2eae3; background: #fff; }
   .progreso { padding: 0 28px 9px; font: 600 11px Arial, sans-serif; color: #62776e; }
   .pestanas-exegesis { display: flex; gap: 8px; overflow-x: auto; padding: 2px 28px 8px; scroll-snap-type: x proximity; scrollbar-width: thin; }
   .pestanas-exegesis button { flex: 0 0 165px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 5px; min-height: 64px; padding: 10px 12px; border: 1px solid #d7e5dc; border-radius: 12px; background: #f5f8f5; color: #355a4e; text-align: left; font: 600 12px/1.35 Arial, sans-serif; cursor: pointer; scroll-snap-align: center; }
   .pestanas-exegesis button small { font: 400 11px/1.3 Arial, sans-serif; opacity: .85; }
   .pestanas-exegesis button.activa { background: #397b70; color: white; border-color: #397b70; }
-  .contenido { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 18px 28px 26px; font: 17px/1.8 Georgia, serif; }
+  .contenido { padding: 18px 28px 26px; font: 17px/1.8 Georgia, serif; }
   .contenido h3 { margin: 4px 0 12px; font: 600 20px/1.4 Georgia, serif; }
   .contenido p { margin: 0 0 1.1em; white-space: pre-line; }
   .referencia { font: 600 12px Arial, sans-serif; color: #397b70; }
   .pendiente { color: #63756b; font-style: italic; }
-  footer { flex: none; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 28px 18px; border-top: 1px solid #e2eae3; background: white; }
+  footer { flex: none; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 28px 18px; border-top: 1px solid #e2eae3; background: white; }
   footer button { padding: 10px 14px; border: 0; border-radius: 9px; background: #397b70; color: white; font: 600 12px Arial, sans-serif; cursor: pointer; }
-  footer .controles { display: flex; gap: 8px; margin-right: auto; }
-  footer button.secundario { background: #eef4ef; color: #355a4e; border: 1px solid #d7e5dc; }
+  footer .controles { display: flex; justify-content: space-between; gap: 12px; width: 100%; }
+  footer button.secundario { flex: 1; background: #eef4ef; color: #355a4e; border: 1px solid #d7e5dc; }
   footer button:disabled { opacity: .4; cursor: not-allowed; }
   button:focus-visible { outline: 3px solid #bb914e; outline-offset: 3px; }
   @media(max-width: 480px) { dialog { height: 92dvh; } .encabezado { padding: 20px 18px 16px; } .pestanas { padding: 14px 18px 12px; gap: 7px; } .pestanas button { padding: 9px 11px; } .progreso { padding-left: 18px; } .pestanas-exegesis { padding-left: 18px; padding-right: 18px; } .contenido { padding: 16px 18px 20px; font-size: 16px; } footer { padding: 10px 18px 14px; } }
