@@ -7,6 +7,7 @@
   let area: HTMLDivElement;
   let anterior: HTMLElement | null = null;
   let escala = $state(1);
+  let maximizada = $state(false);
   let x = $state(0);
   let y = $state(0);
   let puntos = new Map<number, { x: number; y: number }>();
@@ -23,7 +24,7 @@
       dialogo.showModal();
     } else if (!recurso && dialogo?.open) dialogo.close();
   });
-  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; } });
+  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; maximizada = false; } });
 
   function limitar() {
     if (!area) return;
@@ -74,6 +75,13 @@
     e.preventDefault();
     zoom(escala * (e.deltaY > 0 ? .85 : 1.15));
   }
+  function alternarMaximizada() {
+    maximizada = !maximizada;
+    zoom(1);
+  }
+  function alCancelar(e: Event) {
+    if (maximizada) { e.preventDefault(); alternarMaximizada(); }
+  }
   function cerrarVisor() { if (dialogo?.open) dialogo.close(); }
   async function alCerrar() {
     puntos.clear();
@@ -83,8 +91,12 @@
   }
 </script>
 
-<dialog bind:this={dialogo} onclose={alCerrar} aria-labelledby="visual-titulo">
+<dialog bind:this={dialogo} onclose={alCerrar} oncancel={alCancelar} aria-labelledby="visual-titulo">
   {#if recurso}
+    {#if maximizada}
+      <button class="restaurar-flotante" type="button" onclick={alternarMaximizada} aria-label="Salir de vista de solo imagen" title="Salir de pantalla completa">⤢</button>
+    {/if}
+    {#if !maximizada}
     <header>
       <div class="titulos">
         <span class="tipo">RECURSO VISUAL</span>
@@ -93,6 +105,7 @@
       </div>
       <button class="cerrar" onclick={cerrarVisor} aria-label="Cerrar recurso visual">✕</button>
     </header>
+    {/if}
     <div class="area" bind:this={area} onpointerdown={alPunteroAbajo} onpointermove={alPunteroMover} onpointerup={alPunteroArriba} onpointercancel={alPunteroArriba} onwheel={alRueda} role="group" aria-label="Imagen ampliable con gestos de dos dedos">
       {#if imagen}
         <img src={imagen} alt={recurso.visual?.alt ?? recurso.title} draggable="false" style:transform="translate({x}px, {y}px) scale({escala})" />
@@ -100,15 +113,18 @@
         <p>La imagen todavía no está disponible.</p>
       {/if}
     </div>
+    {#if !maximizada}
     <div class="pie">
       <div class="controles">
         <button onclick={() => zoom(escala / 1.5)} disabled={escala <= 1} aria-label="Alejar imagen">−</button>
         <span aria-live="polite">{Math.round(escala * 100)}%</span>
         <button onclick={() => zoom(escala * 1.5)} disabled={escala >= maxEscala} aria-label="Ampliar imagen">+</button>
         <button onclick={() => zoom(1)} disabled={escala === 1}>Restablecer</button>
+        <button onclick={alternarMaximizada} aria-label="Ver solo la imagen">⛶ Maximizar</button>
       </div>
       {#if descripcion}<p>{descripcion}</p>{/if}
     </div>
+    {/if}
   {/if}
 </dialog>
 
@@ -124,8 +140,9 @@
   .cerrar { flex: none; width: 40px; height: 40px; border: 1px solid #dce6df; border-radius: 50%; background: #f4f7f4; color: #294b40; font-size: 22px; }
   .area { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #eaf0e9; touch-action: none; user-select: none; }
   .area img { width: 100%; height: 100%; object-fit: contain; transform-origin: center center; pointer-events: none; }
+  .restaurar-flotante { position: absolute; z-index: 2; top: max(14px, env(safe-area-inset-top)); right: 14px; width: 42px; height: 42px; border: 1px solid #b8cfc1; border-radius: 12px; background: #fffdf0e8; color: #29453b; font-size: 26px; cursor: pointer; box-shadow: 0 2px 12px #0002; }
   .pie { flex: none; padding: 12px 20px max(16px, env(safe-area-inset-bottom)); background: white; border-top: 1px solid #dbe6dd; }
-  .controles { display: flex; justify-content: center; align-items: center; gap: 12px; }
+  .controles { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; }
   .controles button { min-width: 40px; min-height: 38px; padding: 8px 12px; border: 1px solid #d7e5dc; border-radius: 9px; background: #eef4ef; color: #355a4e; font: 600 15px Arial, sans-serif; }
   .controles button:disabled { opacity: .4; }
   .controles span { min-width: 48px; text-align: center; font: 12px Arial, sans-serif; }
