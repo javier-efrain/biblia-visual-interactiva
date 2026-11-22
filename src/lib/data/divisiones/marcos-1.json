@@ -1,0 +1,60 @@
+{
+  "book": "MRK",
+  "chapter": 1,
+  "sections": [
+    {
+      "id": "mrk-1-1",
+      "startVerse": 1,
+      "endVerse": 8,
+      "title": "Juan el Bautista prepara el camino"
+    },
+    {
+      "id": "mrk-1-2",
+      "startVerse": 9,
+      "endVerse": 11,
+      "title": "El bautismo de Jesús"
+    },
+    {
+      "id": "mrk-1-3",
+      "startVerse": 12,
+      "endVerse": 13,
+      "title": "La tentación en el desierto"
+    },
+    {
+      "id": "mrk-1-4",
+      "startVerse": 14,
+      "endVerse": 15,
+      "title": "Jesús anuncia el reino de Dios"
+    },
+    {
+      "id": "mrk-1-5",
+      "startVerse": 16,
+      "endVerse": 20,
+      "title": "Jesús llama a los primeros discípulos"
+    },
+    {
+      "id": "mrk-1-6",
+      "startVerse": 21,
+      "endVerse": 28,
+      "title": "Jesús enseña con autoridad"
+    },
+    {
+      "id": "mrk-1-7",
+      "startVerse": 29,
+      "endVerse": 34,
+      "title": "Jesús sana a muchos enfermos"
+    },
+    {
+      "id": "mrk-1-8",
+      "startVerse": 35,
+      "endVerse": 39,
+      "title": "Jesús ora y predica en Galilea"
+    },
+    {
+      "id": "mrk-1-9",
+      "startVerse": 40,
+      "endVerse": 45,
+      "title": "Jesús limpia a un leproso"
+    }
+  ]
+}
