@@ -66,6 +66,62 @@
           "paragraphs": [
             "Contenido piloto para probar el visor. En Marcos 2:5, Jesús declara perdonados los pecados del paralítico antes de ordenar su sanidad.",
             "La reacción de los escribas (2:6–7) muestra que el centro del debate es la autoridad para perdonar pecados, no solamente el milagro físico."
+          ],
+          "sections": [
+            {
+              "id": "fe",
+              "label": "La fe de los amigos",
+              "reference": "Marcos 2:1–5",
+              "paragraphs": [
+                "Prueba de navegación. Los acompañantes del paralítico superan el obstáculo de la multitud y lo acercan a Jesús. Marcos destaca que Jesús vio la fe de ellos (2:5).",
+                "El texto relaciona la fe con acciones concretas, pero no explica todos los pensamientos o motivaciones de cada acompañante."
+              ]
+            },
+            {
+              "id": "perdon",
+              "label": "El perdón de los pecados",
+              "reference": "Marcos 2:5",
+              "paragraphs": [
+                "Prueba de navegación. Antes de sanar al paralítico, Jesús declara perdonados sus pecados. El orden de sus palabras introduce el tema central del conflicto.",
+                "El pasaje no afirma que la parálisis sea consecuencia de un pecado específico del hombre."
+              ]
+            },
+            {
+              "id": "escribas",
+              "label": "La reacción de los escribas",
+              "reference": "Marcos 2:6–7",
+              "paragraphs": [
+                "Prueba de navegación. Los escribas consideran que la declaración de Jesús constituye una blasfemia porque solo Dios puede perdonar pecados.",
+                "Su reacción permite comprender por qué el relato gira en torno a la autoridad de Jesús y no solamente a una curación."
+              ]
+            },
+            {
+              "id": "pregunta",
+              "label": "¿Qué es más fácil?",
+              "reference": "Marcos 2:8–9",
+              "paragraphs": [
+                "Prueba de navegación. Jesús responde a los razonamientos de los escribas con una pregunta que contrasta una declaración de perdón con una orden de sanidad.",
+                "La pregunta prepara una señal visible que permitirá evaluar la autoridad que Jesús acaba de afirmar."
+              ]
+            },
+            {
+              "id": "hijo",
+              "label": "El Hijo del Hombre",
+              "reference": "Marcos 2:10",
+              "paragraphs": [
+                "Prueba de navegación. Jesús emplea el título «Hijo del Hombre» al afirmar su autoridad para perdonar pecados en la tierra.",
+                "El título merece un análisis más amplio en el conjunto del Evangelio de Marcos; aquí se utiliza como parte de la afirmación de autoridad de Jesús."
+              ]
+            },
+            {
+              "id": "levantate",
+              "label": "Levántate y anda",
+              "reference": "Marcos 2:11–12",
+              "paragraphs": [
+                "Prueba de navegación. Jesús ordena al paralítico levantarse, tomar su camilla e irse a su casa. El hombre lo hace ante todos.",
+                "La curación visible funciona en la argumentación del relato como confirmación de la autoridad para perdonar pecados."
+              ]
+            }
           ]
         },
         {
