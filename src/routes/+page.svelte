@@ -1,7 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { onMount } from 'svelte';
-  import { obtenerCapituloBVI, librosCanonicos } from '../lib/data/biblia/registro-capitulos';
+  import { obtenerCapituloBVI, idCanonico, numeroCanonico } from '../lib/data/biblia/registro-capitulos';
   import BannerNarrativo from '../lib/components/biblia/BannerNarrativo.svelte';
   import RecursosBloque from '../lib/components/biblia/RecursosBloque.svelte';
 
@@ -31,6 +31,8 @@
   let contenidoApi = $state('');
   let avisoVersiones = $state('');
   let libroId = $state(1);
+  // Referencia única, independiente de la traducción elegida.
+  let referencia = $state({ book: 'GEN', chapter: 1 });
   let libro = $state<Libro | null>(null);
   let capitulo = $state(1);
   let error = $state('');
@@ -39,7 +41,7 @@
   let totalCapitulos = $derived(libro ? Object.keys(libro.chapters).length : 0);
   let versiculos = $derived(libro?.chapters[String(capitulo)] ?? []);
   let numeroCapituloApi = $derived(Number(capitulosApi.find((item) => item.id === capituloApiId)?.number ?? 0));
-  let capituloBVI = $derived(obtenerCapituloBVI(version === 'local' ? (librosCanonicos[libroId] ?? '') : libroApiId, version === 'local' ? capitulo : numeroCapituloApi));
+  let capituloBVI = $derived(obtenerCapituloBVI(referencia.book, referencia.chapter));
   let divisionesActuales = $derived(capituloBVI?.sections ?? []);
   let bloquesEstudio = $derived(capituloBVI?.blocks ?? []);
   let bloquesDevocional = $derived(capituloBVI?.devotionals ?? []);
@@ -70,7 +72,7 @@
 
   let solicitudActual = 0;
 
-  async function cargarLibro(id: number) {
+  async function cargarLibro(id: number, capituloDeseado = 1) {
     const solicitud = ++solicitudActual;
     cargando = true;
     error = '';
@@ -82,8 +84,9 @@
       if (!datos.chapters?.['1']) throw new Error('El archivo no contiene capítulos válidos');
       if (solicitud !== solicitudActual) return;
       libro = datos;
-      capitulo = 1;
+      capitulo = datos.chapters[String(capituloDeseado)] ? capituloDeseado : 1;
       libroId = id;
+      referencia = { book: idCanonico(id), chapter: capitulo };
     } catch (e) {
       if (solicitud !== solicitudActual) return;
       error = e instanceof Error ? e.message : String(e);
@@ -112,11 +115,13 @@
 
   let solicitudApi = 0;
   async function elegirVersion(id: string) {
+    const destino = { ...referencia };
     version = id;
     if (id === 'local') {
       ++solicitudApi;
       error = '';
       cargando = false;
+      await cargarLibro(numeroCanonico(destino.book) || 1, destino.chapter);
       return;
     }
     const solicitud = ++solicitudApi;
@@ -127,10 +132,11 @@
     try {
       const datos = await pedirApi<LibroApi[]>('/bibles/' + encodeURIComponent(id) + '/books');
       if (solicitud !== solicitudApi) return;
-      const idsCanonicos = new Set(['GEN','EXO','LEV','NUM','DEU','JOS','JDG','RUT','1SA','2SA','1KI','2KI','1CH','2CH','EZR','NEH','EST','JOB','PSA','PRO','ECC','SNG','ISA','JER','LAM','EZK','DAN','HOS','JOL','AMO','OBA','JON','MIC','NAM','HAB','ZEP','HAG','ZEC','MAL','MAT','MRK','LUK','JHN','ACT','ROM','1CO','2CO','GAL','EPH','PHP','COL','1TH','2TH','1TI','2TI','TIT','PHM','HEB','JAS','1PE','2PE','1JN','2JN','3JN','JUD','REV']);
+      const idsCanonicos = new Set(Array.from({ length: 66 }, (_, i) => idCanonico(i + 1)));
       librosApi = datos.filter((item) => idsCanonicos.has(item.id));
       if (!librosApi.length) throw new Error('Esta versión no tiene libros disponibles');
-      await elegirLibroApi(librosApi[0].id, solicitud);
+      const libroDestino = librosApi.find((item) => item.id === destino.book) ?? librosApi[0];
+      await elegirLibroApi(libroDestino.id, solicitud, destino.chapter);
     } catch (e) {
       if (solicitud === solicitudApi) error = String(e);
     } finally {
@@ -138,7 +144,7 @@
     }
   }
 
-  async function elegirLibroApi(id: string, solicitud = ++solicitudApi) {
+  async function elegirLibroApi(id: string, solicitud = ++solicitudApi, capituloDeseado = 1) {
     if (solicitud === solicitudApi) { cargando = true; error = ''; }
     try {
       const datos = await pedirApi<CapituloApi[]>('/bibles/' + encodeURIComponent(version) + '/books/' + encodeURIComponent(id) + '/chapters');
@@ -146,7 +152,8 @@
       libroApiId = id;
       capitulosApi = datos.filter((item) => /^\d+$/.test(item.number));
       if (!capitulosApi.length) throw new Error('No hay capítulos disponibles');
-      await elegirCapituloApi(capitulosApi[0].id, solicitud);
+      const capituloDestino = capitulosApi.find((item) => Number(item.number) === capituloDeseado) ?? capitulosApi[0];
+      await elegirCapituloApi(capituloDestino.id, solicitud);
     } catch (e) {
       if (solicitud === solicitudApi) error = String(e);
     } finally {
@@ -161,6 +168,7 @@
       if (solicitud !== solicitudApi) return;
       const versiculos = extraerVersiculosHtml(datos.content);
       capituloApiId = id;
+      referencia = { book: libroApiId, chapter: Number(capitulosApi.find((item) => item.id === id)?.number ?? 1) };
       versiculosApi = versiculos;
       contenidoApi = versiculos.length ? '' : new DOMParser().parseFromString(datos.content, 'text/html').body.textContent ?? '';
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -176,6 +184,7 @@
   function cambiarCapitulo(nuevo: number) {
     if (nuevo < 1 || nuevo > totalCapitulos) return;
     capitulo = nuevo;
+    referencia = { book: idCanonico(libroId), chapter: nuevo };
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
