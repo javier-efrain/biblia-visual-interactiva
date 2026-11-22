@@ -1,8 +1,8 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { onMount } from 'svelte';
-  import { obtenerCapituloBVI, librosCanonicos } from '$lib/data/biblia/registro-capitulos';
-  import BannerNarrativo from '$lib/components/biblia/BannerNarrativo.svelte';
+  import { obtenerCapituloBVI, librosCanonicos } from '../lib/data/biblia/registro-capitulos';
+  import BannerNarrativo from '../lib/components/biblia/BannerNarrativo.svelte';
   import RecursosBloque from '../lib/components/biblia/RecursosBloque.svelte';
 
   type Versiculo = { verse: number; text: string };
