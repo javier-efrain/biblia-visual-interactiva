@@ -89,7 +89,7 @@
           </nav>
         </div>
       {:else}
-        <nav class="pestanas" aria-label={recurso.type === 'ensenanza' ? 'Apartados de la enseñanza' : 'Perspectivas del contexto'}>
+        <nav class="pestanas" aria-label={recurso?.type === 'ensenanza' ? 'Apartados de la enseñanza' : 'Perspectivas del contexto'}>
           {#each secciones as seccion (seccion.id)}
             <button type="button" class:activa={activa?.id === seccion.id} aria-current={activa?.id === seccion.id ? 'true' : undefined} onclick={() => seleccionar(seccion.id)}>
               {seccion.label}
