@@ -112,7 +112,7 @@
       {/if}
     </div>
     </div>
-    {#if esExegesis}
+    {#if secciones.length > 0}
     <footer>
         <div class="controles">
           <button type="button" class="secundario" disabled={indice === 0} onclick={() => mover(-1)}>‹ Anterior</button>
