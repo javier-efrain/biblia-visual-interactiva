@@ -13,6 +13,48 @@
           "paragraphs": [
             "Contenido piloto para probar el visor. Marcos sitúa este episodio en Capernaúm, donde la multitud se reúne para escuchar a Jesús (Marcos 2:1–2).",
             "La llegada del paralítico y de quienes lo llevan prepara el conflicto central del relato: la autoridad de Jesús para perdonar pecados."
+          ],
+          "sections": [
+            {
+              "id": "cultural",
+              "label": "Cultural",
+              "paragraphs": [
+                "En la escena de Marcos 2:1–12, una multitud llena la casa y dificulta el acceso de quienes llevan al paralítico. El relato muestra la importancia de las casas como espacios de reunión y enseñanza.",
+                "La apertura realizada en el techo llama la atención sobre la determinación de los acompañantes. La construcción exacta del techo no se describe en detalle; este ejemplo evita presentar como seguro un método arquitectónico específico."
+              ]
+            },
+            {
+              "id": "religioso",
+              "label": "Religioso",
+              "paragraphs": [
+                "Los escribas se preguntan por qué Jesús declara perdonados los pecados del paralítico (Marcos 2:6–7). Su objeción parte de una convicción religiosa central: el perdón de los pecados corresponde a Dios.",
+                "El episodio no se limita a la curación física. Marcos presenta un debate sobre la autoridad de Jesús y sobre el significado de sus palabras."
+              ]
+            },
+            {
+              "id": "historico",
+              "label": "Histórico",
+              "paragraphs": [
+                "Marcos sitúa el relato en Capernaúm, una localidad de Galilea vinculada con varias escenas del ministerio de Jesús (Marcos 1:21; 2:1).",
+                "El texto pertenece al contexto de la Galilea del siglo I, bajo dominio romano. Ese marco histórico ayuda a ubicar el relato, aunque Marcos 2:1–12 no desarrolla directamente la situación política."
+              ]
+            },
+            {
+              "id": "teologico",
+              "label": "Teológico",
+              "paragraphs": [
+                "El punto decisivo es la afirmación de Jesús: «Tus pecados te son perdonados» (Marcos 2:5). Los escribas consideran que esa declaración invade una prerrogativa divina.",
+                "Jesús presenta la sanidad visible como demostración de que el Hijo del Hombre tiene autoridad en la tierra para perdonar pecados (Marcos 2:10–12). La pregunta por su identidad queda en el centro del episodio."
+              ]
+            },
+            {
+              "id": "conexiones",
+              "label": "Conexiones AT/NT",
+              "paragraphs": [
+                "Antiguo Testamento: Isaías 43:25 presenta a Dios como quien borra las transgresiones; Salmo 103:3 reúne el perdón y la sanidad en una alabanza a Dios. Son conexiones temáticas, no citas explícitas de Marcos.",
+                "Nuevo Testamento: Mateo 9:1–8 y Lucas 5:17–26 narran episodios paralelos. Compararlos permite observar cómo cada evangelista presenta el perdón, la curación y la reacción de los presentes."
+              ]
+            }
           ]
         }
       ],
