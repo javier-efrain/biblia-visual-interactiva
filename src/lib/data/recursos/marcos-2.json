@@ -126,8 +126,16 @@
         },
         {
           "id": "rve-paralitico",
-          "title": "Recurso visual educativo",
-          "type": "rve"
+          "title": "El paralítico ante Jesús — diagrama",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-2-paralitico.svg",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-2-paralitico.svg",
+            "alt": "Diagrama con la secuencia narrativa de Marcos 2:1–12: llegada del paralítico, perdón, objeción de los escribas, sanidad y reacción de la multitud.",
+            "reference": "Marcos 2:1–12",
+            "description": "Diagrama esquemático de prueba, no una reconstrucción histórica. Resume la secuencia del relato para comprobar el visor de imágenes.",
+            "infoHtml": "<h3>¿Qué representa?</h3><p>Este diagrama resume los momentos principales de <strong>Marcos 2:1–12</strong>, desde la llegada del paralítico hasta su sanidad.</p><h3>Clave de lectura</h3><p>La sanidad visible confirma la autoridad que Jesús afirma tener para <strong>perdonar pecados</strong> (Marcos 2:10–12).</p><p><em>Nota:</em> es un esquema narrativo, no una reconstrucción histórica.</p>"
+          }
         }
       ],
       "ensenanza": [
