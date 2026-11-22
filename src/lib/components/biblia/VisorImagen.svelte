@@ -8,7 +8,7 @@
   let area: HTMLDivElement;
   let anterior: HTMLElement | null = null;
   let escala = $state(1);
-  let maximizada = $state(false);
+  let informacionAbierta = $state(false);
   let x = $state(0);
   let y = $state(0);
   let puntos = new Map<number, { x: number; y: number }>();
@@ -28,7 +28,7 @@
       dialogo.showModal();
     } else if (!recurso && dialogo?.open) dialogo.close();
   });
-  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; maximizada = false; } });
+  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; informacionAbierta = false; } });
 
   function limitar() {
     if (!area) return;
@@ -79,13 +79,16 @@
     e.preventDefault();
     zoom(escala * (e.deltaY > 0 ? .85 : 1.15));
   }
-  function alternarMaximizada() {
-    maximizada = !maximizada;
-    zoom(1);
-  }
   function alCancelar(e: Event) {
-    if (maximizada) { e.preventDefault(); alternarMaximizada(); }
+    if (informacionAbierta) { e.preventDefault(); informacionAbierta = false; }
   }
+  /** Contenido editorial: solo etiquetas de formato, sin scripts, estilos ni atributos. */
+  function limpiarHtml(html: string): string {
+    const escapar = (texto: string) => texto.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const partes = html.split(/(<\/?(?:p|strong|em|b|i|ul|ol|li|h3|h4|blockquote)\s*>)/gi);
+    return partes.map((parte) => /^<\/?(?:p|strong|em|b|i|ul|ol|li|h3|h4|blockquote)\s*>$/i.test(parte) ? parte : escapar(parte)).join('');
+  }
+  const infoHtml = $derived(recurso?.visual?.infoHtml ? limpiarHtml(recurso.visual.infoHtml) : '');
   function cerrarVisor() { if (dialogo?.open) dialogo.close(); }
   async function alCerrar() {
     puntos.clear();
@@ -95,21 +98,17 @@
   }
 </script>
 
-<dialog bind:this={dialogo} onclose={alCerrar} oncancel={alCancelar} aria-labelledby="visual-titulo">
+<dialog bind:this={dialogo} onclose={alCerrar} oncancel={alCancelar} aria-label={recurso?.title ?? 'Recurso visual'}>
   {#if recurso}
-    {#if maximizada}
-      <button class="restaurar-flotante" type="button" onclick={alternarMaximizada} aria-label="Salir de vista de solo imagen" title="Salir de pantalla completa">⤢</button>
-    {/if}
-    {#if !maximizada}
-    <header>
-      <div class="titulos">
-        <span class="tipo">RECURSO VISUAL</span>
-        <h2 id="visual-titulo">{recurso.title}</h2>
-        {#if referencia}<small>{referencia}</small>{/if}
+    <div class="barra" aria-label="Controles de imagen">
+      <button type="button" onclick={cerrarVisor} aria-label="Cerrar imagen" title="Cerrar">✕</button>
+      <div class="derecha">
+        <button type="button" onclick={() => zoom(escala / 1.5)} disabled={escala <= 1} aria-label="Alejar imagen">−</button>
+        <button type="button" onclick={() => zoom(escala * 1.5)} disabled={escala >= maxEscala} aria-label="Ampliar imagen">+</button>
+        <button type="button" onclick={() => zoom(1)} disabled={escala === 1} aria-label="Restablecer zoom">↺</button>
+        <button type="button" class:activo={informacionAbierta} onclick={() => (informacionAbierta = !informacionAbierta)} aria-label="Información del recurso" aria-expanded={informacionAbierta} aria-controls="visual-informacion">ⓘ</button>
       </div>
-      <button class="cerrar" onclick={cerrarVisor} aria-label="Cerrar recurso visual">✕</button>
-    </header>
-    {/if}
+    </div>
     <div class="area" bind:this={area} onpointerdown={alPunteroAbajo} onpointermove={alPunteroMover} onpointerup={alPunteroArriba} onpointercancel={alPunteroArriba} onwheel={alRueda} role="group" aria-label="Imagen ampliable con gestos de dos dedos">
       {#if imagen}
         <img src={imagen} alt={recurso.visual?.alt ?? recurso.title} draggable="false" style:transform="translate({x}px, {y}px) scale({escala})" />
@@ -117,40 +116,44 @@
         <p>La imagen todavía no está disponible.</p>
       {/if}
     </div>
-    {#if !maximizada}
-    <div class="pie">
-      <div class="controles">
-        <button onclick={() => zoom(escala / 1.5)} disabled={escala <= 1} aria-label="Alejar imagen">−</button>
-        <span aria-live="polite">{Math.round(escala * 100)}%</span>
-        <button onclick={() => zoom(escala * 1.5)} disabled={escala >= maxEscala} aria-label="Ampliar imagen">+</button>
-        <button onclick={() => zoom(1)} disabled={escala === 1}>Restablecer</button>
-        <button onclick={alternarMaximizada} aria-label="Ver solo la imagen">⛶ Maximizar</button>
-      </div>
-      {#if descripcion}<p>{descripcion}</p>{/if}
-    </div>
+    {#if informacionAbierta}
+      <section class="informacion" id="visual-informacion" aria-label="Información del recurso">
+        <div class="info-cabecera">
+          <div><h2>{recurso.title}</h2>{#if referencia}<small>{referencia}</small>{/if}</div>
+          <button type="button" onclick={() => (informacionAbierta = false)} aria-label="Cerrar información">✕</button>
+        </div>
+        {#if infoHtml}
+          <div class="info-texto">{@html infoHtml}</div>
+        {:else if descripcion}
+          <p>{descripcion}</p>
+        {:else}
+          <p>Este recurso no tiene una explicación adicional.</p>
+        {/if}
+      </section>
     {/if}
   {/if}
 </dialog>
 
 <style>
-  dialog { box-sizing: border-box; width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: #f8faf8; color: #29453b; }
+  dialog { box-sizing: border-box; width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: #eaf0e9; color: #29453b; overflow: hidden; }
   dialog[open] { display: flex; flex-direction: column; }
   dialog::backdrop { background: #122820b8; }
-  header { display: flex; justify-content: space-between; align-items: start; gap: 14px; padding: max(15px, env(safe-area-inset-top)) 20px 14px; background: #fff; border-bottom: 1px solid #dbe6dd; }
-  .titulos { min-width: 0; }
-  .tipo { font: 700 11px Arial, sans-serif; letter-spacing: 1.2px; color: #397b70; }
-  h2 { margin: 6px 0 3px; font: 600 clamp(19px, 4vw, 26px)/1.2 Georgia, serif; }
-  small { color: #587367; font: 12px Arial, sans-serif; }
-  .cerrar { flex: none; width: 40px; height: 40px; border: 1px solid #dce6df; border-radius: 50%; background: #f4f7f4; color: #294b40; font-size: 22px; }
+  .barra { position: absolute; z-index: 3; top: max(12px, env(safe-area-inset-top)); left: 12px; right: 12px; display: flex; align-items: start; justify-content: space-between; gap: 10px; pointer-events: none; }
+  .derecha { display: flex; gap: 6px; flex-wrap: wrap; justify-content: end; }
+  .barra button, .info-cabecera button { pointer-events: auto; min-width: 40px; height: 40px; padding: 0 10px; border: 1px solid #c4d5c9; border-radius: 11px; background: #ffffffed; color: #29453b; font: 600 23px Arial, sans-serif; box-shadow: 0 2px 9px #0002; cursor: pointer; }
+  .barra button.activo { background: #397b70; color: white; }
+  .barra button:disabled { opacity: .4; cursor: not-allowed; }
   .area { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #eaf0e9; touch-action: none; user-select: none; }
   .area img { width: 100%; height: 100%; object-fit: contain; transform-origin: center center; pointer-events: none; }
-  .restaurar-flotante { position: absolute; z-index: 2; top: max(14px, env(safe-area-inset-top)); right: 14px; width: 42px; height: 42px; border: 1px solid #b8cfc1; border-radius: 12px; background: #fffdf0e8; color: #29453b; font-size: 26px; cursor: pointer; box-shadow: 0 2px 12px #0002; }
-  .pie { flex: none; padding: 12px 20px max(16px, env(safe-area-inset-bottom)); background: white; border-top: 1px solid #dbe6dd; }
-  .controles { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .controles button { min-width: 40px; min-height: 38px; padding: 8px 12px; border: 1px solid #d7e5dc; border-radius: 9px; background: #eef4ef; color: #355a4e; font: 600 15px Arial, sans-serif; }
-  .controles button:disabled { opacity: .4; }
-  .controles span { min-width: 48px; text-align: center; font: 12px Arial, sans-serif; }
-  .pie p { max-width: 720px; margin: 12px auto 0; color: #48665a; font: 13px/1.5 Arial, sans-serif; }
+  .informacion { position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; box-sizing: border-box; max-height: min(65dvh, 600px); overflow-y: auto; padding: 20px 22px max(22px, env(safe-area-inset-bottom)); background: #fff; border-radius: 18px 18px 0 0; box-shadow: 0 -8px 35px #142b2840; font: 15px/1.6 Arial, sans-serif; }
+  .info-cabecera { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+  h2 { margin: 0 0 5px; font: 600 23px/1.3 Georgia, serif; }
+  small { color: #587367; }
+  .informacion p { margin: 12px 0 0; }
+  .info-texto :global(p) { margin: 12px 0; }
+  .info-texto :global(h3) { margin: 16px 0 5px; font-size: 17px; }
+  .info-texto :global(ul), .info-texto :global(ol) { padding-left: 23px; }
+  .info-texto :global(blockquote) { border-left: 3px solid #397b70; margin: 12px 0; padding-left: 12px; }
   button:focus-visible { outline: 3px solid #bb914e; outline-offset: 3px; }
-  @media (max-width: 480px) { header { padding-left: 14px; padding-right: 14px; } .pie { padding-left: 12px; padding-right: 12px; } }
+  @media (max-width: 480px) { .barra { left: 8px; right: 8px; } .derecha { gap: 4px; } .barra button { min-width: 38px; height: 38px; padding: 0 8px; } }
 </style>
