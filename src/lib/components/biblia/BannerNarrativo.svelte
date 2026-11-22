@@ -1,6 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import type { Division } from '$lib/data/biblia/registro-capitulos';
+  import type { Division } from '../../data/biblia/registro-capitulos';
   let { division, estilo, libro, capitulo, imagen }: { division: Division; estilo: 'Editorial' | 'Minimalista' | 'Banner CSS' | 'Banner imagen'; libro: string; capitulo: number; imagen?: string } = $props();
   let fondo = $derived(imagen ? `url("${resolve('/')}${imagen}")` : 'none');
 </script>
