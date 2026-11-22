@@ -9,7 +9,8 @@ Reutilizar **un único lector**, **un componente de tarjetas** y **una estructur
 - Recursos de Estudio: `src/lib/data/recursos/marcos-2.json`.
 - Recursos de Devocional: `src/lib/data/recursos/devocionales-marcos-2.json`.
 - Tarjetas reutilizables: `src/lib/components/biblia/RecursosBloque.svelte`.
-- Banners y títulos: `src/lib/components/biblia/BannerNarrativo.svelte` (componente único en ambos lectores).\n- Registro central: `src/lib/data/biblia/registro-capitulos.ts` (resuelve libro y capítulo, sin condiciones por relato en el lector).
+- Banners y títulos: `src/lib/components/biblia/BannerNarrativo.svelte` (componente único en ambos lectores).
+- Registro central: `src/lib/data/biblia/registro-capitulos.ts` (resuelve libro y capítulo, sin condiciones por relato en el lector).
 
 ## Reglas de modos
 | Modo | Inicio del bloque | Mitad aproximada | Final |
