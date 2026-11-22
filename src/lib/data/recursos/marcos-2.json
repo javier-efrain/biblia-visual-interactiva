@@ -9,14 +9,22 @@
         {
           "id": "ctx-paralitico",
           "title": "Contexto del relato",
-          "type": "contexto"
+          "type": "contexto",
+          "paragraphs": [
+            "Contenido piloto para probar el visor. Marcos sitúa este episodio en Capernaúm, donde la multitud se reúne para escuchar a Jesús (Marcos 2:1–2).",
+            "La llegada del paralítico y de quienes lo llevan prepara el conflicto central del relato: la autoridad de Jesús para perdonar pecados."
+          ]
         }
       ],
       "central": [
         {
           "id": "exe-paralitico",
           "title": "Exégesis del pasaje",
-          "type": "exegesis"
+          "type": "exegesis",
+          "paragraphs": [
+            "Contenido piloto para probar el visor. En Marcos 2:5, Jesús declara perdonados los pecados del paralítico antes de ordenar su sanidad.",
+            "La reacción de los escribas (2:6–7) muestra que el centro del debate es la autoridad para perdonar pecados, no solamente el milagro físico."
+          ]
         },
         {
           "id": "rve-paralitico",
@@ -28,7 +36,11 @@
         {
           "id": "ens-paralitico",
           "title": "Enseñanza del relato",
-          "type": "ensenanza"
+          "type": "ensenanza",
+          "paragraphs": [
+            "Contenido piloto para probar el visor. El relato invita a considerar la identidad y autoridad de Jesús, que ocupa el centro de la narración.",
+            "La curación visible confirma ante los presentes la autoridad que Jesús había afirmado para perdonar pecados (Marcos 2:10–12)."
+          ]
         }
       ]
     },
