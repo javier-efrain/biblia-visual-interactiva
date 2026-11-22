@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { tick } from 'svelte';
   import type { TarjetaRecurso } from '../../data/biblia/registro-capitulos';
 
@@ -14,7 +15,10 @@
   let gesto: { distancia: number; escala: number; x: number; y: number; centroX: number; centroY: number } | null = null;
   const maxEscala = 5;
   const distancia = (a: {x: number; y: number}, b: {x: number; y: number}) => Math.hypot(a.x - b.x, a.y - b.y);
-  const imagen = $derived(recurso?.visual?.src ?? recurso?.image ?? '');
+  const imagen = $derived(resolverRuta(recurso?.visual?.src ?? recurso?.image ?? ''));
+  function resolverRuta(ruta: string): string {
+    return ruta.startsWith('/biblia-visual-interactiva/') ? base + ruta.slice('/biblia-visual-interactiva'.length) : ruta;
+  }
   const descripcion = $derived(recurso?.visual?.description ?? '');
   const referencia = $derived(recurso?.visual?.reference ?? '');
 
