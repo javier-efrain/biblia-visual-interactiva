@@ -37,15 +37,22 @@ Cada tarjeta tiene `id`, `title`, `type` y opcionalmente `image`. Los tipos admi
 Arrays ausentes o vacíos no deben mostrar tarjetas. `afterVerse` se elige cerca de la mitad narrativa, en una pausa natural.
 Los recursos pertenecen al relato, **no a una traducción específica**.
 
-## Prueba de escalabilidad: Marcos 1\n- Marcos 1 tiene nueve divisiones narrativas (versículos 1–45).\n- Los JSON de Estudio y Devocional están vacíos deliberadamente: **no inventar tarjetas ni estudios**.\n- El banner de Marcos 1 usa CSS en ausencia de ilustración; no reutilizar la imagen de Marcos 2 para otro capítulo.\n- Para un nuevo capítulo, agregar sus JSON y registrarlos en `registro-capitulos.ts`; no modificar los dos bucles de versículos.\n- La carga es un registro de importaciones estáticas, no descubrimiento automático de archivos; ampliar el registro sigue siendo una tarea pequeña y explícita.\n\n## Regla de implementación
-1. Agregar división y recursos en JSON, y dar de alta el capítulo en `registro-capitulos.ts`.
+## Prueba de escalabilidad: Marcos 1\n- Marcos 1 tiene nueve divisiones narrativas (versículos 1–45).\n- Los JSON de Estudio y Devocional están vacíos deliberadamente: **no inventar tarjetas ni estudios**.\n- El banner de Marcos 1 usa CSS en ausencia de ilustración; no reutilizar la imagen de Marcos 2 para otro capítulo.\n- Para un nuevo capítulo, agregar `divisiones/<libro>-<capítulo>.json` con `book`, `chapter`, `sections` y opcional `bannerImage`. El registro lo descubre automáticamente mediante `import.meta.glob`. Los JSON de recursos son opcionales; no modificar los bucles de versículos ni el registro.\n- La carga ahora es descubrimiento automático en compilación (Vite `import.meta.glob`), no una petición de archivos en tiempo de ejecución. Nuevos JSON se incorporan al próximo despliegue.\n\n## Regla de implementación
+1. Agregar divisiones en JSON; opcionalmente recursos y devocionales en JSON con el mismo `book` y `chapter`. No registrar manualmente.
 2. Reutilizar `RecursosBloque.svelte` para cualquier tarjeta, sin duplicar su HTML/CSS.
 3. Para contenido abierto de recursos, diseñar **un único visor reutilizable** cuando se defina el formato definitivo; por ahora `details` es solo una demostración.
 4. Probar modos Estudio, Devocional, Lectura y traducciones local/API en celular.
 5. Verificar GitHub Actions antes de fusionar `develop` a `main`. No fusionar sin aprobación.
 
 ## Pendientes
-- Generalizar progresivamente el registro a más libros y capítulos; revisar el resultado en todas las traducciones.
+- El registro acepta cualquier libro con ID canónico API.Bible. La referencia de lectura `{book, chapter}` es independiente de la traducción y se conserva al alternar RV1909/API.Bible (si el destino incluye ese pasaje). Verificar visualmente con distintas versiones y capítulos; la conservación de posición exacta del versículo todavía no está implementada.
 - Definir contenido real y visor de recursos.
 - Revisar accesibilidad, imágenes definitivas y contraste en tema oscuro.
 - Sustituir datos demostrativos de Marcos 2 por contenido editorial validado.
+
+## Navegación entre traducciones
+- `referencia` en `src/routes/+page.svelte` conserva el identificador canónico de libro y capítulo.
+- RV1909 usa índices 1–66; API.Bible usa identificadores como `MRK`. La tabla completa de correspondencias está en `registro-capitulos.ts`.
+- Cambiar traducción busca el mismo libro y capítulo en el destino. Solo recurre al primer capítulo disponible cuando la traducción no ofrece el solicitado.
+- Cambiar libro o capítulo actualiza la referencia compartida. El número de versículo y la posición de desplazamiento aún no se sincronizan.
+- Verificar los tres modos, Marcos 1 y 2, RV1909 → NBLA/LBLA/NTV → RV1909, y el cambio manual de capítulos.
