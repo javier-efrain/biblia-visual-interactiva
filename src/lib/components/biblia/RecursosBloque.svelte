@@ -1,7 +1,10 @@
 <script lang="ts">
+  import VisorTexto from './VisorTexto.svelte';
+  import type { TarjetaRecurso } from '../../data/biblia/registro-capitulos';
+  let seleccionado = $state<TarjetaRecurso | null>(null);
   /** Contrato visual reutilizable. Las imágenes son opcionales y no se inventan. */
   type Tipo = 'contexto' | 'exegesis' | 'rve' | 'ensenanza' | 'devocional';
-  type Tarjeta = { id: string; title: string; type: string; image?: string };
+  type Tarjeta = TarjetaRecurso;
   let { tarjetas = [], posicion }: { tarjetas?: Tarjeta[]; posicion: 'inicio' | 'centro' | 'final' } = $props();
   const tipos: Tipo[] = ['contexto', 'exegesis', 'rve', 'ensenanza', 'devocional'];
   function etiqueta(tipo: string) {
@@ -14,8 +17,8 @@
     <div class:carrusel={posicion === 'centro'} class:lista={posicion !== 'centro'}>
       {#each tarjetas as tarjeta (tarjeta.id)}
         {@const tipo = tipos.includes(tarjeta.type as Tipo) ? tarjeta.type : 'rve'}
-        <details class="tarjeta" class:horizontal={posicion !== 'centro'} class:miniatura={posicion === 'centro'} data-tipo={tipo}>
-          <summary>
+        <div class="tarjeta" class:horizontal={posicion !== 'centro'} class:miniatura={posicion === 'centro'} data-tipo={tipo}>
+          <button type="button" class="apertura" onclick={() => { if (tipo !== 'rve') seleccionado = tarjeta; }} disabled={tipo === 'rve'} aria-label={tipo === 'rve' ? `Recurso visual pendiente: ${tarjeta.title}` : `Abrir ${etiqueta(tipo)}: ${tarjeta.title}`}>
             <span class="imagen" aria-hidden="true">
               {#if tarjeta.image}
                 <img src={tarjeta.image} alt="" loading="lazy" />
@@ -26,15 +29,15 @@
             <span class="informacion">
               <span class="tipo">{etiqueta(tipo)}</span>
               <strong>{tarjeta.title}</strong>
-              <span class="accion">Abrir recurso ↗</span>
+              <span class="accion">{tipo === 'rve' ? 'Próximamente' : 'Leer recurso ↗'}</span>
             </span>
-          </summary>
-          <p class="demostracion">Demostración de diseño. El contenido definitivo de este recurso todavía no fue definido.</p>
-        </details>
+          </button>
+        </div>
       {/each}
     </div>
   </section>
 {/if}
+<VisorTexto recurso={seleccionado} cerrar={() => (seleccionado = null)} />
 
 <style>
   .recursos { margin: 14px 0 22px; --cuadrado: 82px; --miniatura: 178px; }
@@ -45,9 +48,10 @@
   .tarjeta[data-tipo='devocional'] { --acento: #795b9c; --fondo: #e9e0f3; }
   .tarjeta[data-tipo='exegesis'] { --acento: #4b708d; --fondo: #dce8f0; }
   .tarjeta[data-tipo='rve'] { --acento: #507a53; --fondo: #e4ead7; }
-  summary { display: flex; cursor: pointer; list-style: none; }
-  summary::-webkit-details-marker { display: none; }
-  .horizontal summary { align-items: stretch; min-height: var(--cuadrado); }
+  .apertura { display: flex; width: 100%; padding: 0; border: 0; text-align: left; cursor: pointer; background: transparent; color: inherit; font: inherit; }
+  .apertura:disabled { cursor: not-allowed; opacity: .65; }
+  .apertura:focus-visible { outline: 3px solid #bb914e; outline-offset: -3px; }
+  .horizontal .apertura { align-items: stretch; min-height: var(--cuadrado); }
   .imagen { flex: none; display: flex; justify-content: center; align-items: center; overflow: hidden; background: var(--fondo); color: var(--acento); }
   .horizontal .imagen { width: var(--cuadrado); aspect-ratio: 1; }
   .imagen img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -57,10 +61,9 @@
   strong { font: 600 15px/1.3 Georgia, serif; }
   .accion { color: var(--acento); font: 600 11px/1.4 Arial, sans-serif; }
   .miniatura { flex: 0 0 min(var(--miniatura), 72%); scroll-snap-align: start; }
-  .miniatura summary { display: block; }
+  .miniatura .apertura { display: block; }
   .miniatura .imagen { width: 100%; aspect-ratio: 4 / 3; }
   .miniatura .informacion { min-height: 90px; padding: 10px 12px 13px; }
   .miniatura strong { font-size: 14px; }
-  .demostracion { padding: 0 14px 14px; margin: 0; font: 13px/1.6 Arial, sans-serif; }
   @media (max-width: 360px) { .recursos { --cuadrado: 72px; --miniatura: 160px; } .informacion { padding: 9px 11px; } }
 </style>

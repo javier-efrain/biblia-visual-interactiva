@@ -8,7 +8,30 @@
         {
           "id": "dev-levi",
           "title": "Devocional del llamado de Leví",
-          "type": "devocional"
+          "type": "devocional",
+          "paragraphs": [
+            "Contenido piloto para probar el visor. Jesús llama a Leví en su lugar de trabajo, y Leví se levanta y lo sigue (Marcos 2:14).",
+            "El encuentro de Jesús con publicanos y pecadores nos invita a reflexionar sobre la gracia y sobre nuestra disposición a responder a su llamado."
+          ],
+          "sections": [
+            {
+              "id": "devocional",
+              "label": "Devocional",
+              "paragraphs": [
+                "Jesús pasa junto al lugar donde Leví trabaja y le dice: «Sígueme». Marcos relata la respuesta con una sencillez sorprendente: Leví se levantó y lo siguió (Marcos 2:14). No conocemos todos los pensamientos que atravesaron su corazón, pero sí vemos que el llamado de Jesús transformó el rumbo de su vida.",
+                "Después, Jesús comparte la mesa con publicanos y pecadores. Ante la crítica de los escribas de los fariseos, responde que no vino a llamar a justos, sino a pecadores (Marcos 2:15–17). El relato nos invita a contemplar a un Salvador que se acerca a quienes otros miran con desprecio.",
+                "¿Hay personas a las que consideramos demasiado lejanas para recibir la gracia de Dios? La escena nos recuerda que Jesús no se limita a quienes parecen tenerlo todo resuelto: su llamado alcanza a personas necesitadas de misericordia."
+              ]
+            },
+            {
+              "id": "aplicacion",
+              "label": "Aplicación",
+              "paragraphs": [
+                "Pensá en una persona a la que te cuesta acercarte por prejuicios, diferencias o experiencias pasadas. ¿Podrías dar un paso concreto para tratarla con respeto y compasión, sin justificar conductas dañinas?",
+                "Volvé a leer Marcos 2:13–17 y preguntate qué significa responder hoy al llamado de Jesús en tus decisiones cotidianas. Elegí una acción sencilla y realizable para esta semana."
+              ]
+            }
+          ]
         }
       ]
     }

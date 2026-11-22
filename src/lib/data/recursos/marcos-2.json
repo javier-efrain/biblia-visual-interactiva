@@ -9,14 +9,120 @@
         {
           "id": "ctx-paralitico",
           "title": "Contexto del relato",
-          "type": "contexto"
+          "type": "contexto",
+          "paragraphs": [
+            "Contenido piloto para probar el visor. Marcos sitúa este episodio en Capernaúm, donde la multitud se reúne para escuchar a Jesús (Marcos 2:1–2).",
+            "La llegada del paralítico y de quienes lo llevan prepara el conflicto central del relato: la autoridad de Jesús para perdonar pecados."
+          ],
+          "sections": [
+            {
+              "id": "cultural",
+              "label": "Cultural",
+              "paragraphs": [
+                "En la escena de Marcos 2:1–12, una multitud llena la casa y dificulta el acceso de quienes llevan al paralítico. El relato muestra la importancia de las casas como espacios de reunión y enseñanza.",
+                "La apertura realizada en el techo llama la atención sobre la determinación de los acompañantes. La construcción exacta del techo no se describe en detalle; este ejemplo evita presentar como seguro un método arquitectónico específico."
+              ]
+            },
+            {
+              "id": "religioso",
+              "label": "Religioso",
+              "paragraphs": [
+                "Los escribas se preguntan por qué Jesús declara perdonados los pecados del paralítico (Marcos 2:6–7). Su objeción parte de una convicción religiosa central: el perdón de los pecados corresponde a Dios.",
+                "El episodio no se limita a la curación física. Marcos presenta un debate sobre la autoridad de Jesús y sobre el significado de sus palabras."
+              ]
+            },
+            {
+              "id": "historico",
+              "label": "Histórico",
+              "paragraphs": [
+                "Marcos sitúa el relato en Capernaúm, una localidad de Galilea vinculada con varias escenas del ministerio de Jesús (Marcos 1:21; 2:1).",
+                "El texto pertenece al contexto de la Galilea del siglo I, bajo dominio romano. Ese marco histórico ayuda a ubicar el relato, aunque Marcos 2:1–12 no desarrolla directamente la situación política."
+              ]
+            },
+            {
+              "id": "teologico",
+              "label": "Teológico",
+              "paragraphs": [
+                "El punto decisivo es la afirmación de Jesús: «Tus pecados te son perdonados» (Marcos 2:5). Los escribas consideran que esa declaración invade una prerrogativa divina.",
+                "Jesús presenta la sanidad visible como demostración de que el Hijo del Hombre tiene autoridad en la tierra para perdonar pecados (Marcos 2:10–12). La pregunta por su identidad queda en el centro del episodio."
+              ]
+            },
+            {
+              "id": "conexiones",
+              "label": "Conexiones AT/NT",
+              "paragraphs": [
+                "Antiguo Testamento: Isaías 43:25 presenta a Dios como quien borra las transgresiones; Salmo 103:3 reúne el perdón y la sanidad en una alabanza a Dios. Son conexiones temáticas, no citas explícitas de Marcos.",
+                "Nuevo Testamento: Mateo 9:1–8 y Lucas 5:17–26 narran episodios paralelos. Compararlos permite observar cómo cada evangelista presenta el perdón, la curación y la reacción de los presentes."
+              ]
+            }
+          ]
         }
       ],
       "central": [
         {
           "id": "exe-paralitico",
           "title": "Exégesis del pasaje",
-          "type": "exegesis"
+          "type": "exegesis",
+          "paragraphs": [
+            "Contenido piloto para probar el visor. En Marcos 2:5, Jesús declara perdonados los pecados del paralítico antes de ordenar su sanidad.",
+            "La reacción de los escribas (2:6–7) muestra que el centro del debate es la autoridad para perdonar pecados, no solamente el milagro físico."
+          ],
+          "sections": [
+            {
+              "id": "fe",
+              "label": "La fe de los amigos",
+              "reference": "Marcos 2:1–5",
+              "paragraphs": [
+                "Prueba de navegación. Los acompañantes del paralítico superan el obstáculo de la multitud y lo acercan a Jesús. Marcos destaca que Jesús vio la fe de ellos (2:5).",
+                "El texto relaciona la fe con acciones concretas, pero no explica todos los pensamientos o motivaciones de cada acompañante."
+              ]
+            },
+            {
+              "id": "perdon",
+              "label": "El perdón de los pecados",
+              "reference": "Marcos 2:5",
+              "paragraphs": [
+                "Prueba de navegación. Antes de sanar al paralítico, Jesús declara perdonados sus pecados. El orden de sus palabras introduce el tema central del conflicto.",
+                "El pasaje no afirma que la parálisis sea consecuencia de un pecado específico del hombre."
+              ]
+            },
+            {
+              "id": "escribas",
+              "label": "La reacción de los escribas",
+              "reference": "Marcos 2:6–7",
+              "paragraphs": [
+                "Prueba de navegación. Los escribas consideran que la declaración de Jesús constituye una blasfemia porque solo Dios puede perdonar pecados.",
+                "Su reacción permite comprender por qué el relato gira en torno a la autoridad de Jesús y no solamente a una curación."
+              ]
+            },
+            {
+              "id": "pregunta",
+              "label": "¿Qué es más fácil?",
+              "reference": "Marcos 2:8–9",
+              "paragraphs": [
+                "Prueba de navegación. Jesús responde a los razonamientos de los escribas con una pregunta que contrasta una declaración de perdón con una orden de sanidad.",
+                "La pregunta prepara una señal visible que permitirá evaluar la autoridad que Jesús acaba de afirmar."
+              ]
+            },
+            {
+              "id": "hijo",
+              "label": "El Hijo del Hombre",
+              "reference": "Marcos 2:10",
+              "paragraphs": [
+                "Prueba de navegación. Jesús emplea el título «Hijo del Hombre» al afirmar su autoridad para perdonar pecados en la tierra.",
+                "El título merece un análisis más amplio en el conjunto del Evangelio de Marcos; aquí se utiliza como parte de la afirmación de autoridad de Jesús."
+              ]
+            },
+            {
+              "id": "levantate",
+              "label": "Levántate y anda",
+              "reference": "Marcos 2:11–12",
+              "paragraphs": [
+                "Prueba de navegación. Jesús ordena al paralítico levantarse, tomar su camilla e irse a su casa. El hombre lo hace ante todos.",
+                "La curación visible funciona en la argumentación del relato como confirmación de la autoridad para perdonar pecados."
+              ]
+            }
+          ]
         },
         {
           "id": "rve-paralitico",
@@ -28,7 +134,69 @@
         {
           "id": "ens-paralitico",
           "title": "Enseñanza del relato",
-          "type": "ensenanza"
+          "type": "ensenanza",
+          "paragraphs": [
+            "Contenido piloto para probar el visor. El relato invita a considerar la identidad y autoridad de Jesús, que ocupa el centro de la narración.",
+            "La curación visible confirma ante los presentes la autoridad que Jesús había afirmado para perdonar pecados (Marcos 2:10–12)."
+          ],
+          "sections": [
+            {
+              "id": "tension",
+              "label": "Punto de tensión",
+              "paragraphs": [
+                "Un hombre paralítico llega ante Jesús buscando ayuda, pero la primera respuesta que recibe no es una orden de sanidad: Jesús declara perdonados sus pecados (Marcos 2:5). ¿Por qué comienza por el perdón?",
+                "Esa declaración despierta la objeción de los escribas: ¿quién puede perdonar pecados sino solo Dios? El relato conduce al lector a preguntarse quién es Jesús y qué autoridad tiene."
+              ]
+            },
+            {
+              "id": "verdad",
+              "label": "Verdad exegética central",
+              "paragraphs": [
+                "Marcos 2:1–12 presenta la sanidad del paralítico como una demostración visible de la autoridad del Hijo del Hombre para perdonar pecados en la tierra (2:10–12).",
+                "La enseñanza central del episodio no es que toda enfermedad provenga de un pecado personal, sino que Jesús posee una autoridad que los escribas cuestionan y que el milagro confirma ante los presentes."
+              ]
+            },
+            {
+              "id": "devocional",
+              "label": "Devocional",
+              "paragraphs": [
+                "Los amigos del paralítico encontraron obstáculos, pero no dejaron de acercarlo a Jesús. Su perseverancia invita a reflexionar sobre la fe que se expresa en acciones concretas.",
+                "Al mismo tiempo, Jesús sorprende a todos al hablar primero del perdón. A veces llegamos con una necesidad muy visible, mientras el relato nos recuerda que nuestra relación con Dios también merece atención."
+              ]
+            },
+            {
+              "id": "preguntas",
+              "label": "Preguntas de reflexión",
+              "paragraphs": [
+                "¿Qué aspecto del relato te sorprende más: la perseverancia de los amigos, las palabras de perdón de Jesús o la reacción de los escribas? ¿Por qué?",
+                "¿De qué maneras concretas podés ayudar a alguien a acercarse a Jesús? ¿Cómo cambia tu lectura del milagro saber que Marcos destaca la autoridad de Jesús para perdonar?"
+              ]
+            },
+            {
+              "id": "aplicacion",
+              "label": "Aplicación",
+              "paragraphs": [
+                "Identificá a una persona que esté atravesando una dificultad y pensá en una manera concreta, respetuosa y posible de acompañarla esta semana.",
+                "Al leer el pasaje, distinguí entre lo que Marcos afirma expresamente y las conclusiones personales que extraés para tu vida. Esa distinción ayuda a aplicar el texto sin atribuirle ideas que no dice."
+              ]
+            },
+            {
+              "id": "desafio",
+              "label": "Desafío",
+              "paragraphs": [
+                "Durante esta semana, realizá una acción específica de apoyo hacia alguien que lo necesite: escucharlo, acompañarlo o ayudarlo con una tarea concreta.",
+                "Después, releé Marcos 2:1–12 y escribí en una oración qué aprendiste sobre la identidad y la autoridad de Jesús."
+              ]
+            },
+            {
+              "id": "oracion",
+              "label": "Oración",
+              "paragraphs": [
+                "Señor Jesús, ayudame a reconocer tu autoridad y a acercarme a vos con confianza. Enseñame a acompañar con amor a quienes atraviesan dificultades, sin perder de vista lo que tu Palabra realmente enseña.",
+                "Dame humildad para escuchar, fe para actuar y un corazón dispuesto a recibir tu enseñanza. Amén."
+              ]
+            }
+          ]
         }
       ]
     },
