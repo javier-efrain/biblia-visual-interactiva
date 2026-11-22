@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import VisorTexto from './VisorTexto.svelte';
   import VisorImagen from './VisorImagen.svelte';
   import type { TarjetaRecurso } from '../../data/biblia/registro-capitulos';
@@ -9,6 +10,9 @@
   type Tarjeta = TarjetaRecurso;
   let { tarjetas = [], posicion }: { tarjetas?: Tarjeta[]; posicion: 'inicio' | 'centro' | 'final' } = $props();
   const tipos: Tipo[] = ['contexto', 'exegesis', 'rve', 'ensenanza', 'devocional'];
+  function resolverRuta(ruta: string): string {
+    return ruta.startsWith('/biblia-visual-interactiva/') ? base + ruta.slice('/biblia-visual-interactiva'.length) : ruta;
+  }
   function etiqueta(tipo: string) {
     return ({ contexto: 'Contexto', exegesis: 'Exégesis', rve: 'RVE', ensenanza: 'Enseñanza', devocional: 'Devocional' } as Record<string, string>)[tipo] ?? 'Recurso';
   }
@@ -23,7 +27,7 @@
           <button type="button" class="apertura" onclick={() => { if (tipo === 'rve') { if (tarjeta.visual?.src) visualSeleccionado = tarjeta; } else seleccionado = tarjeta; }} disabled={tipo === 'rve' && !tarjeta.visual?.src} aria-label={tipo === 'rve' && !tarjeta.visual?.src ? `Recurso visual pendiente: ${tarjeta.title}` : `Abrir ${etiqueta(tipo)}: ${tarjeta.title}`}>
             <span class="imagen" aria-hidden="true">
               {#if tarjeta.image}
-                <img src={tarjeta.image} alt="" loading="lazy" />
+                <img src={resolverRuta(tarjeta.image)} alt="" loading="lazy" />
               {:else}
                 <span class="simbolo">{tipo === 'contexto' ? '◈' : tipo === 'ensenanza' ? '✦' : tipo === 'devocional' ? '♡' : tipo === 'exegesis' ? '§' : '▧'}</span>
               {/if}
