@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { page } from '$app/state';
   import VisorTexto from './VisorTexto.svelte';
   import VisorImagen from './VisorImagen.svelte';
   import type { TarjetaRecurso } from '../../data/biblia/registro-capitulos';
@@ -11,7 +11,7 @@
   let { tarjetas = [], posicion }: { tarjetas?: Tarjeta[]; posicion: 'inicio' | 'centro' | 'final' } = $props();
   const tipos: Tipo[] = ['contexto', 'exegesis', 'rve', 'ensenanza', 'devocional'];
   function resolverRuta(ruta: string): string {
-    return ruta.startsWith('/biblia-visual-interactiva/') ? base + ruta.slice('/biblia-visual-interactiva'.length) : ruta;
+    return ruta.startsWith('/biblia-visual-interactiva/') ? (page.url.pathname.startsWith('/biblia-visual-interactiva/pruebas') ? '/biblia-visual-interactiva/pruebas' : '/biblia-visual-interactiva') + ruta.slice('/biblia-visual-interactiva'.length) : ruta;
   }
   function etiqueta(tipo: string) {
     return ({ contexto: 'Contexto', exegesis: 'Exégesis', rve: 'RVE', ensenanza: 'Enseñanza', devocional: 'Devocional' } as Record<string, string>)[tipo] ?? 'Recurso';
