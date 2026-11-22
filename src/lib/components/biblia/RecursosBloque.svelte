@@ -1,7 +1,9 @@
 <script lang="ts">
   import VisorTexto from './VisorTexto.svelte';
+  import VisorImagen from './VisorImagen.svelte';
   import type { TarjetaRecurso } from '../../data/biblia/registro-capitulos';
   let seleccionado = $state<TarjetaRecurso | null>(null);
+  let visualSeleccionado = $state<TarjetaRecurso | null>(null);
   /** Contrato visual reutilizable. Las imágenes son opcionales y no se inventan. */
   type Tipo = 'contexto' | 'exegesis' | 'rve' | 'ensenanza' | 'devocional';
   type Tarjeta = TarjetaRecurso;
@@ -18,7 +20,7 @@
       {#each tarjetas as tarjeta (tarjeta.id)}
         {@const tipo = tipos.includes(tarjeta.type as Tipo) ? tarjeta.type : 'rve'}
         <div class="tarjeta" class:horizontal={posicion !== 'centro'} class:miniatura={posicion === 'centro'} data-tipo={tipo}>
-          <button type="button" class="apertura" onclick={() => { if (tipo !== 'rve') seleccionado = tarjeta; }} disabled={tipo === 'rve'} aria-label={tipo === 'rve' ? `Recurso visual pendiente: ${tarjeta.title}` : `Abrir ${etiqueta(tipo)}: ${tarjeta.title}`}>
+          <button type="button" class="apertura" onclick={() => { if (tipo === 'rve') { if (tarjeta.visual?.src) visualSeleccionado = tarjeta; } else seleccionado = tarjeta; }} disabled={tipo === 'rve' && !tarjeta.visual?.src} aria-label={tipo === 'rve' && !tarjeta.visual?.src ? `Recurso visual pendiente: ${tarjeta.title}` : `Abrir ${etiqueta(tipo)}: ${tarjeta.title}`}>
             <span class="imagen" aria-hidden="true">
               {#if tarjeta.image}
                 <img src={tarjeta.image} alt="" loading="lazy" />
@@ -29,7 +31,7 @@
             <span class="informacion">
               <span class="tipo">{etiqueta(tipo)}</span>
               <strong>{tarjeta.title}</strong>
-              <span class="accion">{tipo === 'rve' ? 'Próximamente' : 'Leer recurso ↗'}</span>
+              <span class="accion">{tipo === 'rve' ? (tarjeta.visual?.src ? 'Ver recurso ↗' : 'Próximamente') : 'Leer recurso ↗'}</span>
             </span>
           </button>
         </div>
@@ -38,6 +40,7 @@
   </section>
 {/if}
 <VisorTexto recurso={seleccionado} cerrar={() => (seleccionado = null)} />
+<VisorImagen recurso={visualSeleccionado} cerrar={() => (visualSeleccionado = null)} />
 
 <style>
   .recursos { margin: 14px 0 22px; --cuadrado: 82px; --miniatura: 178px; }
