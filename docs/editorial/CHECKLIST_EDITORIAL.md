@@ -43,3 +43,9 @@ Aplicar por recurso y capítulo. Marcar no aplicable con justificación; registr
 - [ ] Aprobación explícita antes de publicar en main.
 
 Consultar [Manual editorial](MANUAL_EDITORIAL.md) y [Manual visual](MANUAL_RECURSOS_VISUALES.md).
+
+## Persistencia y revisión por bloques
+- [ ] Guardar recursos aprobados progresivamente en develop.
+- [ ] Registrar reconstrucciones y precisión proporcional de mapas.
+- [ ] Verificar que las imágenes definitivas coincidan con las versiones aprobadas.
+- [ ] Registrar resultados reales de pruebas y pendientes antes de solicitar publicación.
