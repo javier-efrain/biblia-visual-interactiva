@@ -123,7 +123,7 @@
     <div class="area" bind:this={area} bind:clientWidth={anchoArea} bind:clientHeight={altoArea} onpointerdown={alPunteroAbajo} onpointermove={alPunteroMover} onpointerup={alPunteroArriba} onpointercancel={alPunteroArriba} onwheel={alRueda} role="group" aria-label="Imagen ampliable con gestos de dos dedos">
       {#if imagen}
         <div class="lienzo" style:width="{anchoImagen * ajuste}px" style:height="{altoImagen * ajuste}px" style:transform="translate({x}px, {y}px) scale({escala})">
-          <img src={imagen} alt={recurso.visual?.alt ?? recurso.title} draggable="false" onload={(e) => { anchoImagen = e.currentTarget.naturalWidth; altoImagen = e.currentTarget.naturalHeight; }} />
+          <img src={imagen} alt={recurso.visual?.alt ?? recurso.title} draggable="false" onload={(e) => { const img = e.currentTarget as HTMLImageElement; anchoImagen = img.naturalWidth; altoImagen = img.naturalHeight; }} />
           {#if mostrar}{#each marcas as m,i}<button class="marca" class:elegida={seleccionado === i} style:left="{m.x}%" style:top="{m.y}%" style:transform="translate(-50%, -50%) scale({1/escala})" onclick={() => { seleccionado = i; informacionAbierta = false; }} aria-label={m.title}>{i+1}</button>{/each}{/if}
         </div>
       {:else}
@@ -181,7 +181,7 @@
   button:focus-visible { outline: 3px solid #bb914e; outline-offset: 3px; }
   @media (max-width: 480px) { .barra { left: 8px; right: 8px; } .derecha { gap: 4px; } .barra button { min-width: 38px; height: 38px; padding: 0 8px; } }
 .lienzo { position: relative; flex: none; }
-  .lienzo img { display:block; }
+  .lienzo img { display:block; width:100%; height:100%; object-fit:contain; }
   .marca { position:absolute; border:2px solid #eac575; border-radius:50%; width:36px; height:36px; background:#171717e8; color:white; font-weight:bold; cursor:pointer; }
   .marca.elegida { background:#b58a36; }
   .explorar { position:absolute; top:65px; right:12px; z-index:3; display:flex; gap:6px; flex-wrap:wrap; justify-content:end; }
