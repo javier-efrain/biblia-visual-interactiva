@@ -1,5 +1,14 @@
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-const inline=s=>esc(s).replace(/\[([^\]\n]+)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" rel="noopener noreferrer">$1</a>').replace(/\*\*([^*\n]+)\*\*/g,'<strong>$1</strong>').replace(/\*([^*\n]+)\*/g,'<em>$1</em>');
+const emphasis=s=>esc(s).replace(/\*\*([^*\n]+)\*\*/g,'<strong>$1</strong>').replace(/\*([^*\n]+)\*/g,'<em>$1</em>');
+function inline(s){
+ let out='',last=0;
+ for(const m of s.matchAll(/\[([^\]\n]+)\]\((https?:\/\/[^\s)]+)\)/g)){
+  out+=emphasis(s.slice(last,m.index));
+  out+='<a href="'+esc(m[2])+'" rel="noopener noreferrer">'+emphasis(m[1])+'</a>';
+  last=m.index+m[0].length;
+ }
+ return out+emphasis(s.slice(last));
+}
 export function renderMarkdown(source){
  const lines=source.replace(/\r\n/g,'\n').split('\n');let i=0,out=[];
  const cells=s=>s.trim().replace(/^\||\|$/g,'').split('|').map(x=>x.trim());
