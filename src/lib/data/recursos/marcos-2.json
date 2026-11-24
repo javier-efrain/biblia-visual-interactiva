@@ -136,6 +136,84 @@
             "description": "Diagrama esquemático de prueba, no una reconstrucción histórica. Resume la secuencia del relato para comprobar el visor de imágenes.",
             "infoHtml": "<h3>¿Qué representa?</h3><p>Este diagrama resume los momentos principales de <strong>Marcos 2:1–12</strong>, desde la llegada del paralítico hasta su sanidad.</p><h3>Clave de lectura</h3><p>La sanidad visible confirma la autoridad que Jesús afirma tener para <strong>perdonar pecados</strong> (Marcos 2:10–12).</p><p><em>Nota:</em> es un esquema narrativo, no una reconstrucción histórica.</p>"
           }
+        },
+        {
+          "id": "rve-templo-prueba",
+          "title": "Templo de Jerusalén — prueba interactiva",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/Vista aérea del Segundo Templo de Jerusalén.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/Vista aérea del Segundo Templo de Jerusalén.png",
+            "alt": "Reconstrucción artística del templo herodiano",
+            "description": "Prototipo técnico. Imagen generada por IA, distribución arquitectónica y posiciones ilustrativas sin validación histórica. No corresponde al escenario de Marcos 2.",
+            "hotspots": [
+              {
+                "x": 53,
+                "y": 23,
+                "title": "Santuario",
+                "description": "Edificio central del culto, que contenía el Lugar Santo y el Lugar Santísimo. La representación exterior es aproximada.",
+                "reference": "Mateo 27:51"
+              },
+              {
+                "x": 41,
+                "y": 40,
+                "title": "Altar",
+                "description": "Los sacrificios formaban parte del culto del templo. Aquí se representa un altar con humo.",
+                "reference": "Lucas 1:9–11 (altar del incienso, distinto del altar de sacrificios)"
+              },
+              {
+                "x": 60,
+                "y": 44,
+                "title": "Recinto interior",
+                "description": "El acceso a los recintos interiores estaba regulado. La posición exacta de los patios no se ha validado en esta imagen."
+              },
+              {
+                "x": 32,
+                "y": 57,
+                "title": "Entrada monumental",
+                "description": "Las puertas y escaleras comunicaban diferentes espacios del complejo. No se identifica esta puerta con una puerta histórica específica."
+              },
+              {
+                "x": 17,
+                "y": 72,
+                "title": "Explanada",
+                "description": "Los espacios abiertos permitían la circulación de visitantes y peregrinos."
+              },
+              {
+                "x": 13,
+                "y": 29,
+                "title": "Pórticos",
+                "description": "Las galerías columnadas ofrecían espacios de circulación y reunión.",
+                "reference": "Juan 10:23"
+              },
+              {
+                "x": 83,
+                "y": 45,
+                "title": "Pasaje exterior",
+                "description": "Representación ilustrativa de una zona de circulación junto a los muros."
+              },
+              {
+                "x": 87,
+                "y": 16,
+                "title": "Ciudad",
+                "description": "Jerusalén era el centro del culto judío y recibía peregrinos durante las fiestas.",
+                "reference": "Lucas 2:41–42"
+              },
+              {
+                "x": 70,
+                "y": 68,
+                "title": "Muros",
+                "description": "La arquitectura monumental del complejo impresionaba a los visitantes.",
+                "reference": "Marcos 13:1–2"
+              },
+              {
+                "x": 30,
+                "y": 85,
+                "title": "Terraza",
+                "description": "Detalle ilustrativo de la plataforma y sus desniveles. No debe utilizarse como plano arqueológico."
+              }
+            ]
+          }
         }
       ],
       "ensenanza": [
