@@ -30,3 +30,6 @@ Separar manuales, referencias internas y recursos publicados. Aplicar [Checklist
 
 ## Criterio de precisión proporcional
 En mapas esquemáticos, priorizar las relaciones geográficas necesarias para el objetivo educativo; indicar ubicaciones y límites aproximados. No exigir precisión cartográfica innecesaria ni presentar con certeza datos desconocidos. Revisar autónomamente y regenerar por errores sustantivos, no por diferencias estéticas menores.
+
+## Experiencia de viaje
+Formato opcional aprobado: paisaje cinematográfico desde la perspectiva del viajero, recorrido geográfico, etapas, distancias, perfil de elevación cuando aporte, condiciones ambientales, fauna regional y contexto histórico. Distinguir itinerarios hipotéticos, ubicaciones tradicionales, estimaciones de marcha y datos verificados; no confundir diferencia neta de altitud con descenso acumulado. Identificar fuentes y referencia bíblica. No imponer todos los elementos a cada recurso. Ejemplo: Marcos 1:4–5, RVE 06.
