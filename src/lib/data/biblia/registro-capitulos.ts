@@ -1,5 +1,5 @@
 /** Registro de capítulos: importar JSON nuevos sin editar el lector ni este archivo. */
-export type Division = { id: string; startVerse: number; endVerse: number; title: string };
+export type Division = { id: string; startVerse: number; endVerse: number; title: string; bannerImage?: string };
 export type SeccionRecurso = { id: string; label: string; reference?: string; paragraphs: string[] };
 export type RecursoVisual = { src: string; alt: string; description?: string; reference?: string; infoHtml?: string; labelMode?: boolean; hotspots?: { x: number; y: number; title: string; description: string; reference?: string }[] };
 export type TarjetaRecurso = { id: string; title: string; type: string; image?: string; visual?: RecursoVisual; paragraphs?: string[]; sections?: SeccionRecurso[] };
