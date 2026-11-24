@@ -1,5 +1,8 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
+  import TextoEditorial from '../lib/components/biblia/TextoEditorial.svelte';
+  import originales from '../lib/data/editorial-generado/originales.json';
+  let laboratorioAbierto = $state(false);
   import { onMount } from 'svelte';
   import { obtenerCapituloBVI, idCanonico, numeroCanonico } from '../lib/data/biblia/registro-capitulos';
   import BannerNarrativo from '../lib/components/biblia/BannerNarrativo.svelte';
@@ -256,6 +259,10 @@
   </header>
 
   <main class="contenedor">
+    <div class="acceso-editorial"><button type="button" onclick={() => laboratorioAbierto = !laboratorioAbierto} aria-expanded={laboratorioAbierto}>{laboratorioAbierto ? "Cerrar laboratorio editorial" : "Abrir laboratorio editorial"}</button></div>
+    {#if laboratorioAbierto}
+      <section class="demo-editorial"><h2>Laboratorio editorial BVI</h2><p>Demostración independiente. No es un estudio aprobado.</p><TextoEditorial markdown={originales.demo.markdown}/></section>
+    {/if}
     {#if seccion !== 'Biblia'}
       <section class="proximamente">
         <p class="seccion">BIBLIA VISUAL INTERACTIVA</p>
@@ -379,6 +386,8 @@
 </div>
 
 <style>
+  .acceso-editorial { margin: 12px 0; } .acceso-editorial button { padding: 9px 14px; border: 1px solid #568e7d; border-radius: 8px; background: transparent; color: inherit; cursor: pointer; } .demo-editorial { max-width: 680px; margin: 12px auto; padding: 18px; border: 1px solid #568e7d; border-radius: 12px; }
+
   :global(body) { background: #f5f7f3; color: #253a36; }
   .app { min-height: 100vh; background: #f5f7f3; transition: background .2s; }
   .header-interior { max-width: 1150px; margin: auto; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
