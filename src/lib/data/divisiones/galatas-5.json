@@ -1,0 +1,18 @@
+{
+  "book": "GAL",
+  "chapter": 5,
+  "sections": [
+    {
+      "id": "gal-5-1",
+      "startVerse": 1,
+      "endVerse": 12,
+      "title": "La libertad en Cristo"
+    },
+    {
+      "id": "gal-5-2",
+      "startVerse": 13,
+      "endVerse": 26,
+      "title": "La vida guiada por el Espíritu"
+    }
+  ]
+}
