@@ -1,0 +1,90 @@
+{
+  "book": "GAL",
+  "chapter": 5,
+  "blocks": [
+    {
+      "divisionId": "gal-5-2",
+      "afterVerse": 23,
+      "central": [
+        {
+          "id": "rve-fruto-prueba",
+          "title": "El fruto del Espíritu",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/galatas-5-fruto-del-espiritu.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/galatas-5-fruto-del-espiritu.png",
+            "alt": "Vid con nueve racimos de uvas",
+            "reference": "Gálatas 5:22–23",
+            "description": "Prototipo visual. La vid es una metáfora ilustrativa del fruto del Espíritu, no una descripción literal del pasaje.",
+            "labelMode": true,
+            "hotspots": [
+              {
+                "title": "Amor",
+                "x": 45,
+                "y": 19,
+                "description": "Buscar el bien del prójimo.",
+                "reference": "Gálatas 5:22"
+              },
+              {
+                "title": "Gozo",
+                "x": 28,
+                "y": 23,
+                "description": "Alegría vinculada a la vida en Dios.",
+                "reference": "Gálatas 5:22"
+              },
+              {
+                "title": "Paz",
+                "x": 65,
+                "y": 23,
+                "description": "Paz que caracteriza la vida guiada por el Espíritu.",
+                "reference": "Gálatas 5:22"
+              },
+              {
+                "title": "Paciencia",
+                "x": 17,
+                "y": 40,
+                "description": "Perseverar y soportar con paciencia.",
+                "reference": "Gálatas 5:22"
+              },
+              {
+                "title": "Benignidad",
+                "x": 44,
+                "y": 40,
+                "description": "Tratar a otros con amabilidad.",
+                "reference": "Gálatas 5:22"
+              },
+              {
+                "title": "Bondad",
+                "x": 70,
+                "y": 40,
+                "description": "Actuar conforme al bien.",
+                "reference": "Gálatas 5:22"
+              },
+              {
+                "title": "Fe",
+                "x": 22,
+                "y": 59,
+                "description": "Fe o fidelidad, según la traducción.",
+                "reference": "Gálatas 5:22"
+              },
+              {
+                "title": "Mansedumbre",
+                "x": 45,
+                "y": 59,
+                "description": "Gentileza y humildad en el trato.",
+                "reference": "Gálatas 5:23"
+              },
+              {
+                "title": "Templanza",
+                "x": 65,
+                "y": 59,
+                "description": "Dominio propio.",
+                "reference": "Gálatas 5:23"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
