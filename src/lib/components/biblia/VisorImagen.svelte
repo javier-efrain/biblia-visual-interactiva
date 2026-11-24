@@ -8,6 +8,16 @@
   let area: HTMLDivElement;
   let anterior: HTMLElement | null = null;
   let escala = $state(1);
+  let seleccionado = $state(-1);
+  let mostrar = $state(true);
+  let letra = $state(16);
+  let anchoImagen = $state(0);
+  let altoImagen = $state(0);
+  let anchoArea = $state(0);
+  let altoArea = $state(0);
+  const marcas = $derived(recurso?.visual?.hotspots ?? []);
+  const ajuste = $derived(Math.min(anchoArea / (anchoImagen || 1), altoArea / (altoImagen || 1)));
+  const marca = $derived(marcas[seleccionado]);
   let informacionAbierta = $state(false);
   let x = $state(0);
   let y = $state(0);
@@ -28,7 +38,7 @@
       dialogo.showModal();
     } else if (!recurso && dialogo?.open) dialogo.close();
   });
-  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; informacionAbierta = false; } });
+  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; informacionAbierta = false; seleccionado = -1; mostrar = true; } });
 
   function limitar() {
     if (!area) return;
@@ -43,6 +53,7 @@
     limitar();
   }
   function alPunteroAbajo(e: PointerEvent) {
+    if ((e.target as HTMLElement).closest('button')) return;
     if (e.pointerType === 'mouse' && e.button !== 0) return;
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
     puntos.set(e.pointerId, { x: e.clientX, y: e.clientY });
@@ -109,13 +120,26 @@
         <button type="button" class:activo={informacionAbierta} onclick={() => (informacionAbierta = !informacionAbierta)} aria-label="Información del recurso" aria-expanded={informacionAbierta} aria-controls="visual-informacion">ⓘ</button>
       </div>
     </div>
-    <div class="area" bind:this={area} onpointerdown={alPunteroAbajo} onpointermove={alPunteroMover} onpointerup={alPunteroArriba} onpointercancel={alPunteroArriba} onwheel={alRueda} role="group" aria-label="Imagen ampliable con gestos de dos dedos">
+    <div class="area" bind:this={area} bind:clientWidth={anchoArea} bind:clientHeight={altoArea} onpointerdown={alPunteroAbajo} onpointermove={alPunteroMover} onpointerup={alPunteroArriba} onpointercancel={alPunteroArriba} onwheel={alRueda} role="group" aria-label="Imagen ampliable con gestos de dos dedos">
       {#if imagen}
-        <img src={imagen} alt={recurso.visual?.alt ?? recurso.title} draggable="false" style:transform="translate({x}px, {y}px) scale({escala})" />
+        <div class="lienzo" style:width="{anchoImagen * ajuste}px" style:height="{altoImagen * ajuste}px" style:transform="translate({x}px, {y}px) scale({escala})">
+          <img src={imagen} alt={recurso.visual?.alt ?? recurso.title} draggable="false" onload={(e) => { anchoImagen = e.currentTarget.naturalWidth; altoImagen = e.currentTarget.naturalHeight; }} />
+          {#if mostrar}{#each marcas as m,i}<button class="marca" class:elegida={seleccionado === i} style:left="{m.x}%" style:top="{m.y}%" style:transform="translate(-50%, -50%) scale({1/escala})" onclick={() => { seleccionado = i; informacionAbierta = false; }} aria-label={m.title}>{i+1}</button>{/each}{/if}
+        </div>
       {:else}
         <p>La imagen todavía no está disponible.</p>
       {/if}
     </div>
+    {#if marcas.length}
+      <div class="explorar"><button onclick={() => mostrar = !mostrar}>{mostrar ? 'Ocultar puntos' : 'Mostrar puntos'}</button><select aria-label="Explorar elementos" value={seleccionado} onchange={(e) => { seleccionado = Number(e.currentTarget.value); informacionAbierta = false; }}><option value={-1}>Explorar elementos</option>{#each marcas as m,i}<option value={i}>{i+1}. {m.title}</option>{/each}</select></div>
+    {/if}
+    {#if marca && !informacionAbierta}
+      <section class="informacion detalle" aria-label={marca.title} style:font-size="{letra}px">
+        <div class="info-cabecera"><h2>{seleccionado+1}. {marca.title}</h2><button onclick={() => seleccionado = -1} aria-label="Cerrar explicación">✕</button></div>
+        <p>{marca.description}</p>{#if marca.reference}<p>{marca.reference}</p>{/if}
+        <div class="acciones"><button onclick={() => letra = Math.max(14, letra-2)}>A−</button><button onclick={() => letra = Math.min(28, letra+2)}>A+</button><button onclick={() => seleccionado = (seleccionado+marcas.length-1)%marcas.length}>‹</button><span>{seleccionado+1} / {marcas.length}</span><button onclick={() => seleccionado = (seleccionado+1)%marcas.length}>›</button></div>
+      </section>
+    {/if}
     {#if informacionAbierta}
       <section class="informacion" id="visual-informacion" aria-label="Información del recurso">
         <div class="info-cabecera">
@@ -156,4 +180,12 @@
   .info-texto :global(blockquote) { border-left: 3px solid #397b70; margin: 12px 0; padding-left: 12px; }
   button:focus-visible { outline: 3px solid #bb914e; outline-offset: 3px; }
   @media (max-width: 480px) { .barra { left: 8px; right: 8px; } .derecha { gap: 4px; } .barra button { min-width: 38px; height: 38px; padding: 0 8px; } }
+.lienzo { position: relative; flex: none; }
+  .lienzo img { display:block; }
+  .marca { position:absolute; border:2px solid #eac575; border-radius:50%; width:36px; height:36px; background:#171717e8; color:white; font-weight:bold; cursor:pointer; }
+  .marca.elegida { background:#b58a36; }
+  .explorar { position:absolute; top:65px; right:12px; z-index:3; display:flex; gap:6px; flex-wrap:wrap; justify-content:end; }
+  .explorar button,.explorar select,.acciones button { background:#242424; color:white; border:1px solid #b58a36; border-radius:8px; padding:9px; }
+  .detalle { background:#242424f5; color:white; max-height:42dvh; }
+  .acciones { display:flex; align-items:center; gap:12px; margin-top:12px; }
 </style>
