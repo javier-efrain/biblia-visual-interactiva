@@ -121,3 +121,6 @@ Planificar el capítulo completo y producir por unidades naturales de sentido. R
 ## Conservación íntegra del contenido aprobado
 
 La adaptación técnica de un estudio aprobado no autoriza resumir, simplificar ni reducir su contenido. Guardar el texto completo de cada sección inmediatamente después de su aprobación en develop; la previsualización interactiva no sustituye el archivo persistente. Conservar párrafos, subtítulos, comparaciones, referencias y fuentes; adaptar únicamente su presentación. Comparar el contenido de origen con el JSON antes de integrar y registrar cualquier cambio editorial sustantivo para revisión. No publicar en main sin aprobación explícita.
+
+## 11. Originales enriquecidos
+Guardar cada original aprobado en contenido-editorial/<libro>/<capítulo>/<rango>/ con estado.json (recursos: id, archivo, estado, sha256). Sellar SHA-256 del archivo aprobado, ejecutar npm run editorial:generar y npm run editorial:check, vincular editorialId a tarjeta o sección y verificar commit en develop. No editar el JSON generado. Markdown admite títulos, énfasis, listas, tablas simples, citas, enlaces HTTP(S), Unicode y recuadros :::palabra, :::verdad-central, :::nota, :::reflexion cerrados con :::. No usar HTML crudo. Demostraciones no son estudios aprobados. Marcos 1:1–8 conserva su formato anterior.

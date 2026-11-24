@@ -1,0 +1,9 @@
+{
+  "recursos": [
+    {
+      "id": "demo",
+      "archivo": "demo.md",
+      "estado": "demostracion"
+    }
+  ]
+}

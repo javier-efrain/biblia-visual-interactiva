@@ -1,0 +1,6 @@
+{
+  "demo": {
+    "markdown": "## Demostración editorial\n\n**Texto de prueba**, no estudio aprobado.\n\n:::palabra\nεὐαγγέλιον — euangélion\n\nשָׁלוֹם — shalom\n:::\n\n| Contexto | Exégesis |\n| --- | --- |\n| Situar | Interpretar |\n\n> Cita de prueba.\n\n:::verdad-central\nConservar el original.\n:::\n\n:::nota\nUna *nota* con [enlace](https://example.org).\n:::\n\n:::reflexion\n¿Qué aprendimos?\n:::\n\n- Uno\n- Dos\n\n1. Primero\n2. Segundo\n",
+    "estado": "demostracion"
+  }
+}

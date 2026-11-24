@@ -49,3 +49,10 @@ Consultar [Manual editorial](MANUAL_EDITORIAL.md) y [Manual visual](MANUAL_RECUR
 - [ ] Registrar reconstrucciones y precisión proporcional de mapas.
 - [ ] Verificar que las imágenes definitivas coincidan con las versiones aprobadas.
 - [ ] Registrar resultados reales de pruebas y pendientes antes de solicitar publicación.
+
+## Originales enriquecidos
+- [ ] Original completo guardado y SHA-256 sellado al aprobar.
+- [ ] Estado e ID registrados y enlace del visor correcto.
+- [ ] Generación y pruebas de integridad exitosas.
+- [ ] Revisar tablas, citas, idiomas originales y recuadros en móvil y escritorio.
+- [ ] Confirmar commit en develop.

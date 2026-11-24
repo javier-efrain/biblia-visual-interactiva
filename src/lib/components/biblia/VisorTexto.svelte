@@ -1,5 +1,8 @@
 <script lang="ts">
   import { tick } from 'svelte';
+  import TextoEditorial from './TextoEditorial.svelte';
+  import originales from '../../data/editorial-generado/originales.json';
+  const archivoEditorial = originales as Record<string, {markdown:string; estado:string}>;
   import type { TarjetaRecurso } from '../../data/biblia/registro-capitulos';
 
   let { recurso, cerrar }: { recurso: TarjetaRecurso | null; cerrar: () => void } = $props();
@@ -16,6 +19,7 @@
   const indice = $derived(Math.max(0, secciones.findIndex((s) => s.id === pestana)));
   const activa = $derived(secciones[indice]);
   const parrafos = $derived(activa?.paragraphs ?? recurso?.paragraphs ?? []);
+  const editorial = $derived(archivoEditorial[activa?.editorialId ?? recurso?.editorialId ?? '']);
   const esExegesis = $derived(recurso?.type === 'exegesis' && secciones.length > 0);
 
   $effect(() => {
@@ -103,7 +107,9 @@
         {#if activa.reference}<span class="referencia">{activa.reference}</span>{/if}
         <h3>{activa.label}</h3>
       {/if}
-      {#if parrafos.length}
+      {#if editorial?.estado === 'aprobado'}
+        <TextoEditorial markdown={editorial.markdown} />
+      {:else if parrafos.length}
         {#each parrafos as parrafo, i (i)}
           <p>{parrafo}</p>
         {/each}
