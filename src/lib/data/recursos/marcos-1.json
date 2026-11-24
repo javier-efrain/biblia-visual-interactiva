@@ -1,5 +1,202 @@
 {
   "book": "MRK",
   "chapter": 1,
-  "blocks": []
+  "blocks": [
+    {
+      "divisionId": "mrk-1-1",
+      "afterVerse": 4,
+      "contexto": [
+        {
+          "id": "ctx-mrk-1-1",
+          "title": "El mundo de Juan el Bautista",
+          "type": "contexto",
+          "sections": [
+            {
+              "id": "historico",
+              "label": "Histórico",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [
+                "El relato se sitúa en la primera mitad del siglo I, cuando Judea estaba bajo administración romana y Galilea bajo Herodes Antipas. Lucas 3:1–2 ofrece un marco cronológico adicional; Marcos no fecha explícitamente el comienzo de Juan.",
+                "Flavio Josefo, Antigüedades judías 18.116–119, testimonia independientemente la actividad de Juan, su llamado a la virtud y su bautismo, así como su muerte por orden de Antipas. Su explicación del bautismo no coincide en todos sus énfasis con la de Marcos."
+              ]
+            },
+            {
+              "id": "geografico",
+              "label": "Geográfico",
+              "reference": "Marcos 1:4–5",
+              "paragraphs": [
+                "El desierto de Judea y el valle del Jordán ofrecen el marco del relato. Jerusalén se encuentra en la región montañosa al oeste del Jordán. El evangelista no identifica el punto exacto del bautismo; cualquier mapa debe ser esquemático.",
+                "El desierto evoca también la historia de Israel, la dependencia de Dios y la esperanza de restauración. Esa dimensión literaria no elimina el carácter geográfico del escenario."
+              ]
+            },
+            {
+              "id": "religioso",
+              "label": "Religioso",
+              "reference": "Marcos 1:4–5",
+              "paragraphs": [
+                "La Ley de Israel contemplaba lavamientos relacionados con la pureza ritual (Levítico 15). El bautismo de Juan comparte el uso del agua, pero Marcos lo caracteriza específicamente como bautismo de arrepentimiento para perdón de pecados.",
+                "No debemos identificar sin más el bautismo de Juan con otros lavamientos judíos ni afirmar que pertenecía a la comunidad de Qumrán. El texto no establece esa relación."
+              ]
+            },
+            {
+              "id": "cultural",
+              "label": "Cultural",
+              "reference": "Marcos 1:6",
+              "paragraphs": [
+                "La ropa de pelo de camello, el cinturón de cuero y la alimentación de langostas y miel silvestre caracterizan a Juan. El cinturón recuerda la descripción de Elías en 2 Reyes 1:8. Las langostas de determinadas especies estaban permitidas como alimento (Levítico 11:22).",
+                "El texto no describe el rostro, la edad exacta ni los rasgos físicos de Juan. Las imágenes son reconstrucciones artísticas."
+              ]
+            },
+            {
+              "id": "literario",
+              "label": "Literario y conexiones",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [
+                "Marcos abre su relato con el anuncio del evangelio y una cita profética compuesta. Juan aparece como precursor, antes del bautismo de Jesús y del anuncio del reino en Galilea.",
+                "Los paralelos Mateo 3:1–12, Lucas 3:1–18 y Juan 1:19–34 amplían la presentación de Juan, aunque cada evangelista selecciona detalles propios."
+              ]
+            },
+            {
+              "id": "fuentes",
+              "label": "Referencias y fuentes",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [
+                "Referencias bíblicas: Levítico 11:22; 15; 2 Reyes 1:8; Isaías 40:3; Mateo 3; Lucas 3; Juan 1.",
+                "Bibliografía de la investigación previa: Flavio Josefo, Antigüedades judías 18.116–119; NET Bible, notas a Marcos 1:1–8. Verificación bibliográfica final pendiente."
+              ]
+            }
+          ]
+        }
+      ],
+      "central": [
+        {
+          "id": "exe-mrk-1-1",
+          "title": "El comienzo del evangelio",
+          "type": "exegesis",
+          "sections": [
+            {
+              "id": "inicio",
+              "label": "El comienzo del evangelio",
+              "reference": "Marcos 1:1",
+              "paragraphs": [
+                "La expresión griega archē, comienzo, introduce el relato; euangelion designa la buena noticia. Christos significa ungido y corresponde al título Mesías. El centro del anuncio no es Juan sino Jesús.",
+                "La expresión Hijo de Dios presenta una variante manuscrita: algunos testigos antiguos la omiten. Las ediciones y traducciones difieren en su tratamiento. La filiación divina de Jesús no depende de esta variante, pues aparece inequívocamente en 1:11 y a lo largo del evangelio."
+              ]
+            },
+            {
+              "id": "profecias",
+              "label": "El camino del Señor",
+              "reference": "Marcos 1:2–3",
+              "paragraphs": [
+                "La cita combina motivos de Éxodo 23:20 y Malaquías 3:1 con Isaías 40:3. Algunos manuscritos dicen en los profetas en lugar de en Isaías el profeta; la lectura que nombra a Isaías explica mejor el marco dominante de la cita.",
+                "Isaías 40 anuncia consuelo y restauración para Israel: se prepara el camino de YHWH. Marcos aplica esa preparación a la llegada de Jesús. No se limita a presentar una coincidencia verbal: sitúa la venida de Jesús dentro del horizonte de la llegada del Dios de Israel. Esta es una inferencia cristológica fundamentada en la aplicación narrativa de la cita.",
+                "El motivo del nuevo éxodo ayuda a entender la esperanza de restauración, sin exigir que cada detalle del relato reproduzca literalmente el éxodo antiguo."
+              ]
+            },
+            {
+              "id": "juan",
+              "label": "Arrepentimiento y preparación",
+              "reference": "Marcos 1:4–6",
+              "paragraphs": [
+                "Metanoia designa arrepentimiento, una reorientación de la vida ante Dios. Marcos vincula el bautismo de Juan con el perdón y la confesión de pecados. No describe un rito que opere automáticamente al margen del arrepentimiento.",
+                "La expresión sobre toda Judea y Jerusalén comunica la amplitud de la respuesta, no un censo exhaustivo. La vestimenta recuerda a Elías y refuerza la función profética de Juan; Marcos no afirma aquí que sea literalmente Elías."
+              ]
+            },
+            {
+              "id": "espiritu",
+              "label": "El que viene es más poderoso",
+              "reference": "Marcos 1:7–8",
+              "paragraphs": [
+                "Juan se declara indigno incluso de desatar la correa del calzado del que viene, una imagen de profunda subordinación. El comparativo ischyroteros, más fuerte, destaca la superioridad de Jesús.",
+                "El contraste entre bautizar con agua y con Espíritu Santo distingue las respectivas misiones. Las promesas de Isaías 44:3, Ezequiel 36:25–27 y Joel 2:28–29 ofrecen un horizonte canónico de renovación divina. Marcos no especifica aquí la cronología ni todos los mecanismos de esa experiencia; no corresponde resolver desde este versículo todos los debates sobre el bautismo en el Espíritu."
+              ]
+            },
+            {
+              "id": "sintesis",
+              "label": "Síntesis exegética",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [
+                "Marcos presenta el comienzo de la buena noticia de Jesús como cumplimiento de la esperanza profética. Juan prepara al pueblo mediante el arrepentimiento y señala al que posee autoridad superior para bautizar con el Espíritu Santo."
+              ]
+            },
+            {
+              "id": "fuentes",
+              "label": "Referencias y fuentes",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [
+                "Referencias bíblicas: Éxodo 23:20; Malaquías 3:1; Isaías 40:3; 44:3; Ezequiel 36:25–27; Joel 2:28–29; Marcos 1:11.",
+                "Bibliografía de la investigación previa: NET Bible, notas a Marcos 1:1–8; John Dennis, Jesus as the Isaian Stronger One in Mark 1:7: A Contribution to Markan Divine Identity Christology, Tyndale Bulletin 73 (2022). Verificación bibliográfica final pendiente."
+              ]
+            }
+          ]
+        }
+      ],
+      "ensenanza": [
+        {
+          "id": "ens-mrk-1-1",
+          "title": "Preparar el camino para el Señor",
+          "type": "ensenanza",
+          "sections": [
+            {
+              "id": "central",
+              "label": "Verdad central",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [
+                "Dios cumple sus promesas en Jesús y llama a responder con arrepentimiento. Juan enseña que la preparación no es el fin: el centro de la buena noticia es Cristo."
+              ]
+            },
+            {
+              "id": "fidelidad",
+              "label": "Dios cumple sus promesas",
+              "reference": "Marcos 1:2–3",
+              "paragraphs": [
+                "La llegada de Jesús no aparece como un acontecimiento aislado. Marcos la sitúa en continuidad con las promesas de Dios a Israel. Aprendemos a leer la historia bíblica como una historia coherente de la acción divina, sin convertir cada promesa histórica en garantía de nuestros deseos personales."
+              ]
+            },
+            {
+              "id": "respuesta",
+              "label": "El arrepentimiento como respuesta",
+              "reference": "Marcos 1:4–6",
+              "paragraphs": [
+                "El arrepentimiento implica reconocer el pecado y reorientar la vida hacia Dios. La confesión que acompaña el bautismo de Juan muestra que no se trata únicamente de emoción religiosa. Podemos examinar decisiones, relaciones y hábitos a la luz de la Palabra."
+              ]
+            },
+            {
+              "id": "cristo",
+              "label": "Cristo en el centro",
+              "reference": "Marcos 1:7–8",
+              "paragraphs": [
+                "Juan no intenta retener la atención sobre sí mismo. Su misión señala al que viene. El servicio cristiano encuentra su propósito en dirigir a las personas hacia Jesús, no en construir prestigio personal."
+              ]
+            },
+            {
+              "id": "renovacion",
+              "label": "La renovación viene de Dios",
+              "reference": "Marcos 1:8",
+              "paragraphs": [
+                "El contraste entre agua y Espíritu nos recuerda que la renovación prometida no se reduce a esfuerzos externos. Ezequiel 36:25–27 vincula la acción de Dios con un corazón renovado y una vida obediente. Esto no niega el valor del bautismo ni establece por sí solo una doctrina completa sobre sus modalidades."
+              ]
+            },
+            {
+              "id": "preguntas",
+              "label": "Reflexión y aplicación",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [
+                "¿Qué diferencia hay entre reconocer un error y cambiar de dirección? ¿Cómo muestra Juan que Jesús es el centro de su misión? ¿En qué ámbito concreto necesitamos responder a Dios con arrepentimiento?",
+                "Elegí una acción coherente con esa respuesta: reconocer una falta, reparar un daño cuando sea posible o abandonar una práctica contraria a la voluntad de Dios."
+              ]
+            },
+            {
+              "id": "fuentes",
+              "label": "Referencias y fuentes",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [
+                "Referencias bíblicas: Marcos 1:1–8; Isaías 40:3; Ezequiel 36:25–27. Enseñanza derivada de la exégesis del bloque; bibliografía externa registrada en ella."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
