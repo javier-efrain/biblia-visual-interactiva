@@ -116,3 +116,8 @@ Las secciones 1–9 consolidan las decisiones aprobadas hasta el 24 de noviembre
 
 ## 10. Producción por bloques y persistencia
 Planificar el capítulo completo y producir por unidades naturales de sentido. Resolver autónomamente investigación, redacción, revisión y preparación técnica conforme a los manuales. Guardar cada recurso aprobado en develop, sin esperar al cierre del capítulo; registrar fuentes y pendientes. Mantener la aprobación explícita para publicar en main. No sustituir estudios aprobados por resúmenes.
+
+
+## Conservación íntegra del contenido aprobado
+
+La adaptación técnica de un estudio aprobado no autoriza resumir, simplificar ni reducir su contenido. Guardar el texto completo de cada sección inmediatamente después de su aprobación en develop; la previsualización interactiva no sustituye el archivo persistente. Conservar párrafos, subtítulos, comparaciones, referencias y fuentes; adaptar únicamente su presentación. Comparar el contenido de origen con el JSON antes de integrar y registrar cualquier cambio editorial sustantivo para revisión. No publicar en main sin aprobación explícita.
