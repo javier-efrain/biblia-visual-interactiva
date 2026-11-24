@@ -27,3 +27,6 @@ Distinguir lo documentado (texto o evidencia externa), reconstrucción plausible
 8. Probar en develop en móvil y escritorio; solicitar aprobación antes de publicar en main.
 
 Separar manuales, referencias internas y recursos publicados. Aplicar [Checklist editorial](CHECKLIST_EDITORIAL.md). Las pruebas del templo y Gálatas son prototipos, no recursos históricos o editoriales definitivos.
+
+## Criterio de precisión proporcional
+En mapas esquemáticos, priorizar las relaciones geográficas necesarias para el objetivo educativo; indicar ubicaciones y límites aproximados. No exigir precisión cartográfica innecesaria ni presentar con certeza datos desconocidos. Revisar autónomamente y regenerar por errores sustantivos, no por diferencias estéticas menores.
