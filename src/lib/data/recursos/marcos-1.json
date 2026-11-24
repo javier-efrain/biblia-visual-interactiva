@@ -122,7 +122,8 @@
                 "Working Preacher: https://www.workingpreacher.org/commentaries/narrative-lectionary/beginning-of-good-news-2/commentary-on-mark-11-20-4"
               ]
             }
-          ]
+          ],
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-contexto.png"
         }
       ],
       "central": [
@@ -376,7 +377,8 @@
                 "John Dennis (2022): https://doi.org/10.53751/001c.39734"
               ]
             }
-          ]
+          ],
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-exegesis.png"
         },
         {
           "id": "rve-mrk-1-1-01",
@@ -680,7 +682,8 @@
                 "La bibliografía externa correspondiente se encuentra en el estudio exegético del mismo bloque."
               ]
             }
-          ]
+          ],
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-ensenanza.png"
         }
       ]
     }
