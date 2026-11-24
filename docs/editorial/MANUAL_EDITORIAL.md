@@ -1,6 +1,6 @@
 # BVI — Manual editorial y metodológico
 
-**Estado:** borrador de referencia aprobado parcialmente · **Versión:** 0.1 · **Fecha:** 2026-11-23
+**Estado:** metodología aprobada · **Versión:** 1.0 · **Fecha:** 2026-11-24
 
 Este documento registra las decisiones editoriales acordadas para Biblia Visual Interactiva (BVI). Sirve como fuente de referencia para producir contenido coherente a escala. **No sustituye la investigación ni la verificación de fuentes para cada pasaje.**
 
@@ -102,26 +102,14 @@ Pauta de redacción (estructura editorial interna, no encabezados obligatorios):
 
 No convertir cada relato en promesa individual de salud, prosperidad o solución inmediata; no suponer causalidades entre pecado y enfermedad sin sustento textual. Los textos de juicio, lamento o sufrimiento pueden conservar su tensión sin cierre artificialmente optimista.
 
-## 7. Recursos visuales — PENDIENTE DE DEFINICIÓN
+## 7. Recursos visuales
+Aplicar [Manual de recursos visuales](MANUAL_RECURSOS_VISUALES.md). Priorizar comprensión autónoma de la imagen, realismo cinematográfico, texto incorporado cuando aporte y exploración interactiva opcional.
 
-**Esta sección se reserva deliberadamente para la próxima etapa.** Ya existe en la aplicación un visor de imágenes con zoom e información complementaria; eso es infraestructura técnica, **no** una metodología editorial aprobada para elaborar recursos visuales.
+## 8. Fuentes y bibliografía
+Introducción, Contexto, Exégesis, Enseñanza, Devocional y recursos visuales deben ofrecer referencias bíblicas y fuentes efectivamente consultadas cuando corresponda. Distinguir citas bíblicas de bibliografía externa; identificar autor, obra y localización verificable cuando esté disponible. No inventar fuentes. Presentación discreta al final del contenido o en información complementaria; implementación técnica pendiente.
 
-Queda por acordar: tipologías, criterios de selección, estilo, rigor histórico/geográfico, tratamiento de incertidumbres, textos y legibilidad, formatos y flujo de generación/revisión. Podrá incorporarse aquí una síntesis y/o crearse un manual específico `MANUAL_RECURSOS_VISUALES.md` con referencia cruzada, según la complejidad.
+## 9. Control de calidad y publicación
+Aplicar [Checklist editorial](CHECKLIST_EDITORIAL.md). Estudiar antes de diseñar; validar contenido y funcionamiento en develop antes de solicitar aprobación para publicar en main. Marcos 1 será el primer capítulo completo de referencia. No imponer cantidades de recursos ni apartados.
 
-## 8. Control de calidad — desarrollo pendiente
-
-Antes de publicar verificar como mínimo: correspondencia exacta de referencias, separación de hechos e inferencias, fidelidad contextual, interpretación argumentada, claridad, ausencia de redundancias entre recursos, fuentes, coherencia teológica y aplicaciones justificadas.
-
-**Pendiente:** redactar una checklist operativa independiente (`CHECKLIST_EDITORIAL.md`) cuando se complete la metodología de recursos visuales.
-
----
-
-## Registro de decisiones
-
-- Capítulo 0: navegación por secciones; aprobado.
-- Contexto: apartados adaptables y especiales; aprobado.
-- Exégesis: unidades de sentido con análisis integrado y síntesis; aprobado.
-- Enseñanza: opción A, estudio bíblico guiado; aprobado.
-- Devocional: lectura pastoral continua, ~1.000 palabras y preguntas finales; aprobado.
-- Recursos visuales: pendiente.
-- Manual: borrador vivo; modificar con nuevas decisiones explícitamente acordadas, preservando historial de Git.
+## Registro
+Las secciones 1–9 consolidan las decisiones aprobadas hasta el 24 de noviembre de 2026. Manual vivo: conservar historial y registrar cambios acordados. La presentación técnica de fuentes sigue pendiente.
