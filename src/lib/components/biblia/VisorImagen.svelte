@@ -15,6 +15,8 @@
   let altoImagen = $state(0);
   let anchoArea = $state(0);
   let altoArea = $state(0);
+  let tamEtiqueta = $state(1);
+  const etiquetas = $derived(recurso?.visual?.labelMode === true);
   const marcas = $derived(recurso?.visual?.hotspots ?? []);
   const ajuste = $derived(Math.min(anchoArea / (anchoImagen || 1), altoArea / (altoImagen || 1)));
   const marca = $derived(marcas[seleccionado]);
@@ -38,7 +40,7 @@
       dialogo.showModal();
     } else if (!recurso && dialogo?.open) dialogo.close();
   });
-  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; informacionAbierta = false; seleccionado = -1; mostrar = true; } });
+  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; informacionAbierta = false; seleccionado = -1; mostrar = true; tamEtiqueta = 1; } });
 
   function limitar() {
     if (!area) return;
@@ -109,7 +111,7 @@
   }
 </script>
 
-<dialog bind:this={dialogo} onclose={alCerrar} oncancel={alCancelar} aria-label={recurso?.title ?? 'Recurso visual'}>
+<dialog class:composicion={etiquetas} bind:this={dialogo} onclose={alCerrar} oncancel={alCancelar} aria-label={recurso?.title ?? 'Recurso visual'}>
   {#if recurso}
     <div class="barra" aria-label="Controles de imagen">
       <button type="button" onclick={cerrarVisor} aria-label="Cerrar imagen" title="Cerrar">✕</button>
@@ -124,14 +126,15 @@
       {#if imagen}
         <div class="lienzo" style:width="{anchoImagen * ajuste}px" style:height="{altoImagen * ajuste}px" style:transform="translate({x}px, {y}px) scale({escala})">
           <img src={imagen} alt={recurso.visual?.alt ?? recurso.title} draggable="false" onload={(e) => { const img = e.currentTarget as HTMLImageElement; anchoImagen = img.naturalWidth; altoImagen = img.naturalHeight; }} />
-          {#if mostrar}{#each marcas as m,i}<button class="marca" class:elegida={seleccionado === i} style:left="{m.x}%" style:top="{m.y}%" style:transform="translate(-50%, -50%) scale({1/escala})" onclick={() => { seleccionado = i; informacionAbierta = false; }} aria-label={m.title}>{i+1}</button>{/each}{/if}
+          {#if mostrar && etiquetas}<div class="titulo-visual" style:font-size="{Math.max(13, anchoImagen * ajuste * .035)}px">{recurso.title}<small>{referencia}</small></div>{/if}
+          {#if mostrar}{#each marcas as m,i}<button class="marca" class:etiqueta={etiquetas} class:elegida={seleccionado === i} style:left="{m.x}%" style:top="{m.y}%" style:font-size={etiquetas ? `${Math.max(10, anchoImagen * ajuste * .022) * tamEtiqueta}px` : undefined} style:transform="translate(-50%, -50%) scale({etiquetas ? 1 : 1/escala})" onclick={() => { seleccionado = i; informacionAbierta = false; }} aria-label={m.title}>{etiquetas ? m.title : i+1}</button>{/each}{/if}
         </div>
       {:else}
         <p>La imagen todavía no está disponible.</p>
       {/if}
     </div>
     {#if marcas.length}
-      <div class="explorar"><button onclick={() => mostrar = !mostrar}>{mostrar ? 'Ocultar puntos' : 'Mostrar puntos'}</button><select aria-label="Explorar elementos" value={seleccionado} onchange={(e) => { seleccionado = Number(e.currentTarget.value); informacionAbierta = false; }}><option value={-1}>Explorar elementos</option>{#each marcas as m,i}<option value={i}>{i+1}. {m.title}</option>{/each}</select></div>
+      <div class="explorar"><button onclick={() => mostrar = !mostrar}>{mostrar ? (etiquetas ? 'Ocultar textos' : 'Ocultar puntos') : (etiquetas ? 'Mostrar textos' : 'Mostrar puntos')}</button>{#if etiquetas}<button onclick={() => tamEtiqueta = Math.max(.75, tamEtiqueta-.1)} aria-label="Reducir etiquetas">A−</button><button onclick={() => tamEtiqueta = Math.min(1.5, tamEtiqueta+.1)} aria-label="Ampliar etiquetas">A+</button>{/if}<select aria-label="Explorar elementos" value={seleccionado} onchange={(e) => { seleccionado = Number(e.currentTarget.value); informacionAbierta = false; }}><option value={-1}>Explorar elementos</option>{#each marcas as m,i}<option value={i}>{i+1}. {m.title}</option>{/each}</select></div>
     {/if}
     {#if marca && !informacionAbierta}
       <section class="informacion detalle" aria-label={marca.title} style:font-size="{letra}px">
@@ -188,4 +191,9 @@
   .explorar button,.explorar select,.acciones button { background:#242424; color:white; border:1px solid #b58a36; border-radius:8px; padding:9px; }
   .detalle { background:#242424f5; color:white; max-height:42dvh; }
   .acciones { display:flex; align-items:center; gap:12px; margin-top:12px; }
+  .composicion, .composicion .area { background:#151a12; }
+  .titulo-visual { position:absolute; top:2%; left:3%; color:#fff5db; font-family:Georgia,serif; font-weight:bold; text-shadow:0 2px 5px #000,0 0 12px #000; pointer-events:none; }
+  .titulo-visual small { display:block; color:#fff5db; font-size:.55em; }
+  .marca.etiqueta { width:auto; height:auto; min-height:0; padding:.28em .65em; border:1px solid #eac575; border-radius:1em; white-space:nowrap; font-family:Georgia,serif; background:#201b10e8; color:#fff5db; box-shadow:0 2px 7px #0008; }
+  .marca.etiqueta.elegida { background:#b58a36; color:#17130b; }
 </style>
