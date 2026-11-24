@@ -113,3 +113,6 @@ Aplicar [Checklist editorial](CHECKLIST_EDITORIAL.md). Estudiar antes de diseña
 
 ## Registro
 Las secciones 1–9 consolidan las decisiones aprobadas hasta el 24 de noviembre de 2026. Manual vivo: conservar historial y registrar cambios acordados. La presentación técnica de fuentes sigue pendiente.
+
+## 10. Producción por bloques y persistencia
+Planificar el capítulo completo y producir por unidades naturales de sentido. Resolver autónomamente investigación, redacción, revisión y preparación técnica conforme a los manuales. Guardar cada recurso aprobado en develop, sin esperar al cierre del capítulo; registrar fuentes y pendientes. Mantener la aprobación explícita para publicar en main. No sustituir estudios aprobados por resúmenes.
