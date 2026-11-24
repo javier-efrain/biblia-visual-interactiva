@@ -129,6 +129,71 @@
               ]
             }
           ]
+        },
+        {
+          "id": "rve-mrk-1-1-01",
+          "title": "El escenario del ministerio de Juan",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-01.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-01.png",
+            "alt": "El escenario del ministerio de Juan. Mapa esquemático de Judea, Jerusalén y el Jordán. Ubicaciones y límites aproximados; el lugar exacto del bautismo no se especifica.",
+            "reference": "Marcos 1:4–5",
+            "description": "Mapa esquemático de Judea, Jerusalén y el Jordán. Ubicaciones y límites aproximados; el lugar exacto del bautismo no se especifica.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Mapa esquemático de Judea, Jerusalén y el Jordán. Ubicaciones y límites aproximados; el lugar exacto del bautismo no se especifica.</p><h3>Referencias bíblicas</h3><p>Marcos 1:4–5; Mateo 3:1–6</p><p>Recurso visual generado mediante IA y revisado editorialmente. </p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-1-02",
+          "title": "Juan el Bautista: el profeta del desierto",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-02.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-02.png",
+            "alt": "Juan el Bautista: el profeta del desierto. Reconstrucción artística de Juan, basada en su vestimenta y alimentación descritas en el texto. Su apariencia física es desconocida.",
+            "reference": "Marcos 1:6",
+            "description": "Reconstrucción artística de Juan, basada en su vestimenta y alimentación descritas en el texto. Su apariencia física es desconocida.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Reconstrucción artística de Juan, basada en su vestimenta y alimentación descritas en el texto. Su apariencia física es desconocida.</p><h3>Referencias bíblicas</h3><p>Marcos 1:6; 2 Reyes 1:8; Levítico 11:22</p><p>Recurso visual generado mediante IA y revisado editorialmente. </p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-1-03",
+          "title": "Las profecías que prepararon el camino",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-03.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-03.png",
+            "alt": "Las profecías que prepararon el camino. Esquema de las conexiones proféticas que confluyen en la cita de Marcos.",
+            "reference": "Marcos 1:2–3",
+            "description": "Esquema de las conexiones proféticas que confluyen en la cita de Marcos.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Esquema de las conexiones proféticas que confluyen en la cita de Marcos.</p><h3>Referencias bíblicas</h3><p>Éxodo 23:20; Malaquías 3:1; Isaías 40:3</p><p>Recurso visual generado mediante IA y revisado editorialmente. </p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-1-04",
+          "title": "El camino del Señor y la llegada de Jesús",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-04.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-04.png",
+            "alt": "El camino del Señor y la llegada de Jesús. Marcos aplica a la llegada de Jesús la preparación del camino de YHWH en Isaías. Es una conclusión exegética, no una aparición literal del nombre YHWH en el texto griego de Marcos.",
+            "reference": "Marcos 1:2–3",
+            "description": "Marcos aplica a la llegada de Jesús la preparación del camino de YHWH en Isaías. Es una conclusión exegética, no una aparición literal del nombre YHWH en el texto griego de Marcos.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Marcos aplica a la llegada de Jesús la preparación del camino de YHWH en Isaías. Es una conclusión exegética, no una aparición literal del nombre YHWH en el texto griego de Marcos.</p><h3>Referencias bíblicas</h3><p>Isaías 40:3; Marcos 1:2–3, 9–15</p><p>Recurso visual generado mediante IA y revisado editorialmente. Bibliografía de apoyo: John Dennis, Tyndale Bulletin 73 (2022).</p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-1-05",
+          "title": "Del agua al Espíritu Santo",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-05.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-05.png",
+            "alt": "Del agua al Espíritu Santo. Contraste entre el bautismo de arrepentimiento de Juan y el bautismo con el Espíritu Santo anunciado para Jesús. La renovación espiritual es una conexión canónica.",
+            "reference": "Marcos 1:4, 7–8",
+            "description": "Contraste entre el bautismo de arrepentimiento de Juan y el bautismo con el Espíritu Santo anunciado para Jesús. La renovación espiritual es una conexión canónica.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Contraste entre el bautismo de arrepentimiento de Juan y el bautismo con el Espíritu Santo anunciado para Jesús. La renovación espiritual es una conexión canónica.</p><h3>Referencias bíblicas</h3><p>Marcos 1:4, 7–8; Ezequiel 36:25–27; Joel 2:28–29</p><p>Recurso visual generado mediante IA y revisado editorialmente. </p>"
+          }
         }
       ],
       "ensenanza": [
