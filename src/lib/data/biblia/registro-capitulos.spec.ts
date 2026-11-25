@@ -7,7 +7,12 @@ describe('Estudios compartidos', () => {
       const c = obtenerCapituloBVI(book,chapter)!;
       const b = c.blocks.find(x=>x.divisionId===id)!;
       expect(b.afterVerse).toBe(pos);
-      expect(b.central).toHaveLength(6);
+      expect(b.central).toHaveLength(10);
+      expect(b.contexto?.[0].sections).toHaveLength(6);
+      expect(b.central?.[0].sections).toHaveLength(9);
+      expect(b.central?.filter(x=>x.type==='rve')).toHaveLength(9);
+      expect(b.ensenanza?.[0].editorialId).toBe('ens-tentacion');
+      expect(c.devotionals.find(x=>x.divisionId===id)?.devocional?.[0].editorialId).toBe('dev-tentacion');
       expect(c.sections.find(x=>x.id===id)?.bannerImage).toBe('banners/marcos-01-03-banner.webp');
       return {b,d:c.devotionals.find(x=>x.divisionId===id)!};
     });
