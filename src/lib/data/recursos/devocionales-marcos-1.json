@@ -25,18 +25,6 @@
           "editorialId": "dev-mrk-1-2"
         }
       ]
-    },
-    {
-      "divisionId": "mrk-1-3",
-      "devocional": [
-        {
-          "id": "dev-mrk-1-3",
-          "title": "Amado, incluso en el desierto",
-          "type": "devocional",
-          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-03-devocional.webp",
-          "editorialId": "dev-mrk-1-3"
-        }
-      ]
     }
   ]
 }

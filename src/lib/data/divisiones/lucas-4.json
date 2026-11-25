@@ -1,0 +1,14 @@
+{
+  "book": "LUK",
+  "chapter": 4,
+  "sections": [
+    {
+      "id": "luk-4-1",
+      "startVerse": 1,
+      "endVerse": 13,
+      "title": "La tentación de Jesús",
+      "estudioId": "tentacion-de-jesus",
+      "afterVerse": 2
+    }
+  ]
+}
