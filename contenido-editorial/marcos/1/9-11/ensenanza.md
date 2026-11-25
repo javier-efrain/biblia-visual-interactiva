@@ -16,6 +16,8 @@ En el relato de Marcos, esta declaración precede a la predicación pública, a 
 
 El Padre no está premiando una trayectoria de éxitos ministeriales. Está revelando la identidad del Hijo que comienza su misión. Jesús no se convierte en Hijo por haber recibido el bautismo ni necesita conquistar el amor del Padre mediante sus obras.
 
+La voz del Padre no solamente revela que Jesús es amado. Las conexiones con el Salmo 2 e Isaías 42 permiten reconocer al Rey y al Siervo. Su identidad no lo conduce a buscar privilegios, sino a cumplir la voluntad del Padre. Más adelante, Jesús explicará que vino para servir y dar su vida en rescate por muchos (Marcos 10:45).
+
 Esta verdad nos conduce a una pregunta: ¿qué lugar ocupa nuestra identidad en la manera en que vivimos nuestra relación con Dios?
 
 :::verdad-central
@@ -26,11 +28,11 @@ En Cristo no obedecemos para comprar nuestra aceptación delante de Dios; obedec
 
 No podemos tomar las palabras dirigidas a Jesús y aplicárnoslas sin ninguna distinción. Él es el Hijo en un sentido único. Nuestra condición de hijos es un regalo que recibimos por medio de él.
 
-Pablo explica en Romanos 8:14–17 que quienes son guiados por el Espíritu de Dios han recibido el Espíritu de adopción, por el cual claman al Padre. No describe una posición conquistada por méritos personales, sino una relación otorgada por Dios. Gálatas 4:4–7 vincula esa adopción con la misión redentora del Hijo.
+Pablo explica en Romanos 8:14–17 que quienes son guiados por el Espíritu de Dios han recibido el Espíritu de adopción, por el cual claman al Padre. No describe una posición conquistada por méritos personales, sino una relación otorgada por Dios. Gálatas 4:4–7 vincula esa adopción con la misión redentora del Hijo y el envío de su Espíritu a nuestros corazones. El Espíritu que desciende sobre Jesús en el Jordán es también quien guía a los creyentes y da testimonio de nuestra filiación (Romanos 8:14–16). No se trata de igualar nuestra experiencia con la de Jesús, sino de reconocer que nuestra vida como discípulos depende de la acción de Dios, no solamente de nuestra fuerza de voluntad.
 
 Por eso, la seguridad del creyente no descansa en haber tenido una semana espiritualmente impecable. Descansa en Cristo y en su obra. Efesios 2:8–10 presenta el orden de manera esclarecedora: somos salvados por gracia mediante la fe y creados en Cristo para buenas obras.
 
-Las buenas obras tienen un lugar importante, pero no ocupan el lugar del Salvador.
+Las buenas obras tienen un lugar importante, pero no ocupan el lugar del Salvador. Ser recibidos por gracia tampoco significa que toda nuestra conducta agrade a Dios. Pablo exhorta a los creyentes a procurar agradarle (2 Corintios 5:9). La gracia no nos vuelve indiferentes al pecado: nos llama a una vida transformada, en la que obedecemos como respuesta al amor de aquel que nos salvó.
 
 ### Cuando servir se convierte en demostrar
 
@@ -40,7 +42,7 @@ Desde afuera, sus acciones pueden parecer idénticas. Sin embargo, sus motivacio
 
 Cuando el reconocimiento se convierte en nuestra fuente de seguridad, una crítica puede desestabilizarnos y el éxito ajeno puede parecernos una amenaza. Podemos llegar a servir con resentimiento porque nadie nota nuestro esfuerzo.
 
-La gracia nos permite examinar esas motivaciones sin abandonar nuestras responsabilidades. Nos invita a trabajar con excelencia, pero también a reconocer nuestros límites, recibir correcciones y alegrarnos por el crecimiento de otros.
+Seguir al Hijo que vino a servir nos permite examinar esas motivaciones sin abandonar nuestras responsabilidades. Nos invita a trabajar con excelencia, pero también a reconocer nuestros límites, recibir correcciones y alegrarnos por el crecimiento de otros.
 
 Esto no significa que toda búsqueda de reconocimiento sea pecaminosa ni que debamos ignorar la injusticia. Significa que la aprobación humana no puede ocupar el lugar que corresponde a Dios.
 
@@ -67,7 +69,7 @@ La seguridad en Cristo nos permite llevar nuestras preguntas y nuestro dolor del
 
 ### Aprender a vivir como hijos
 
-Esta semana, elegí una responsabilidad concreta: una tarea laboral, familiar o de servicio en la iglesia. Antes de comenzarla, dedicá unos minutos a leer Romanos 8:14–17 y Efesios 2:8–10. Recordá que tu obediencia es una respuesta a la gracia, no el precio de tu adopción.
+Esta semana, elegí una responsabilidad concreta: una tarea laboral, familiar o de servicio en la iglesia. Antes de comenzarla, dedicá unos minutos a leer Romanos 8:14–17 y Efesios 2:8–10. Pedile al Espíritu que te guíe a servir siguiendo el ejemplo de Jesús, con gratitud y sin buscar protagonismo.
 
 Si aparece el deseo de demostrar tu valor, identificá qué aprobación estás buscando. No abandones la tarea por eso: procurá realizarla con honestidad, amor y responsabilidad, poniendo esa motivación delante de Dios.
 
@@ -76,7 +78,7 @@ Si cometés un error, reconocelo, pedí perdón cuando corresponda y repará el 
 Al terminar el día, agradecé a Dios por una oportunidad de servir, incluso si nadie la reconoció. Estas prácticas no son una fórmula para sentir seguridad inmediatamente, sino una manera de orientar nuevamente nuestra vida hacia Cristo.
 
 :::verdad-central
-No necesitamos convertir nuestra vida en una demostración permanente de nuestro valor. En Cristo, la gracia que nos recibe es también la gracia que nos enseña a obedecer.
+La identidad recibida en Cristo se expresa en una vida de servicio, arrepentimiento y obediencia guiada por el Espíritu.
 :::
 
 **No servimos para conquistar un lugar en la familia de Dios; servimos porque, por medio de Cristo, hemos sido recibidos en ella.**
