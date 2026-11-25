@@ -29,6 +29,31 @@
       "archivo": "contexto-fuentes.md",
       "estado": "aprobado",
       "sha256": "6b689927ad0aecdabf7a6e4a90ab89d74f47817fca573360365fa4cb74df4b1c"
+    },
+    {
+      "id": "exe-mrk-1-3-espiritu",
+      "archivo": "exegesis-espiritu.md",
+      "estado": "borrador"
+    },
+    {
+      "id": "exe-mrk-1-3-tentacion",
+      "archivo": "exegesis-tentacion.md",
+      "estado": "borrador"
+    },
+    {
+      "id": "exe-mrk-1-3-fieras",
+      "archivo": "exegesis-fieras.md",
+      "estado": "borrador"
+    },
+    {
+      "id": "exe-mrk-1-3-sintesis",
+      "archivo": "exegesis-sintesis.md",
+      "estado": "borrador"
+    },
+    {
+      "id": "exe-mrk-1-3-fuentes",
+      "archivo": "exegesis-fuentes.md",
+      "estado": "borrador"
     }
   ]
 }
