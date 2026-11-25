@@ -33,6 +33,13 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Generar WebP oficial
+        working-directory: oficial
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y webp
+          bash scripts/optimizar-imagenes.sh
+
       - name: Instalar y verificar oficial
         working-directory: oficial
         run: |
@@ -44,8 +51,6 @@ jobs:
       - name: Generar WebP del laboratorio
         working-directory: laboratorio
         run: |
-          sudo apt-get update
-          sudo apt-get install -y webp
           bash scripts/optimizar-imagenes.sh
 
       - name: Instalar y verificar laboratorio
