@@ -8,7 +8,7 @@ Jesús sale del agua y ve los cielos rasgarse. El relato cambia de la acción de
 **σχιζομένους (schizoménous)** — siendo rasgados. Participio presente pasivo de σχίζω, referido a los cielos. Expresa la acción contemplada por Jesús. El verbo es más gráfico que el simple abrir.
 :::
 
-La traducción tradicional que habla de cielos abiertos comunica el resultado; una traducción que dice rasgados conserva mejor la fuerza de la imagen. No se trata necesariamente de dos textos griegos distintos.
+La traducción tradicional que habla de cielos abiertos comunica el resultado; una traducción que dice rasgados conserva mejor la fuerza de la imagen. RVR1960, NBLA, NVI y DHH expresan apertura; el singular cielo en algunas versiones es una decisión idiomática. No se trata necesariamente de dos textos griegos distintos. El desgarro permite reconocer mejor la relación con 15:38.
 
 ### Una antigua súplica
 
