@@ -15,112 +15,49 @@
               "id": "historico",
               "label": "Histórico",
               "reference": "Marcos 1:1–8",
-              "paragraphs": [
-                "Israel bajo el dominio romano",
-                "Cuando Juan el Bautista comenzó su ministerio, la tierra de Israel se encontraba bajo la influencia política del Imperio romano. No existía un reino judío independiente como en los tiempos de David y Salomón.",
-                "Durante el gobierno del emperador Tiberio, Judea estaba administrada por Poncio Pilato, mientras que Galilea y Perea estaban gobernadas por Herodes Antipas, hijo de Herodes el Grande.",
-                "Lucas 3:1–2 sitúa el comienzo del ministerio de Juan en el año decimoquinto del gobierno de Tiberio, habitualmente fechado alrededor del 28–29 d. C., aunque existen diferencias según el sistema cronológico utilizado.",
-                "En este escenario coexistían distintas expectativas sobre la intervención de Dios en la historia. Algunos esperaban liberación política; otros enfatizaban la restauración religiosa, la justicia o la llegada del Mesías. No todos los judíos compartían una misma expectativa.",
-                "Juan apareció anunciando la necesidad del arrepentimiento y preparando al pueblo para alguien superior a él.",
-                "Juan fuera de los Evangelios",
-                "El historiador judío Flavio Josefo también menciona a Juan el Bautista. Lo presenta como un hombre que exhortaba a practicar la justicia y la piedad, y cuya influencia sobre las multitudes despertó la preocupación de Herodes Antipas.",
-                "Este testimonio constituye una referencia histórica externa a los Evangelios, aunque la descripción que Josefo ofrece del bautismo tiene un énfasis diferente al de Marcos.",
-                "Referencias: Lucas 3:1–2; Marcos 6:17–29; Josefo, Antigüedades judías 18.116–119."
-              ]
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-historico"
             },
             {
               "id": "geografico",
               "label": "Geográfico",
               "reference": "Marcos 1:4–5",
-              "paragraphs": [
-                "El desierto y el río Jordán",
-                "El ministerio de Juan no comenzó en el templo de Jerusalén ni en un centro urbano importante, sino en el desierto, en un entorno relacionado con el río Jordán.",
-                "El desierto de Judea se extiende al este de las montañas de Judea, hacia el mar Muerto y las regiones próximas al valle del Jordán. Su paisaje está formado por terrenos áridos, barrancos y fuertes desniveles.",
-                "Jerusalén se encontraba en una región montañosa. Quienes acudían desde la ciudad hacia el valle del Jordán debían recorrer un camino descendente y atravesar regiones de escasa vegetación.",
-                "Marcos no identifica el punto exacto donde Juan bautizaba. Por lo tanto, cualquier representación cartográfica debe señalar una región aproximada y no un emplazamiento confirmado.",
-                "El desierto en la historia de Israel",
-                "Además de su dimensión geográfica, el desierto tiene una importancia particular en la memoria bíblica. Fue escenario del éxodo, de la formación de Israel como pueblo y de acontecimientos relacionados con Moisés y Elías.",
-                "Isaías 40 también lo presenta como escenario de la preparación del camino para la llegada del Señor."
-              ]
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-geografico"
             },
             {
               "id": "religioso",
               "label": "Religioso",
               "reference": "Marcos 1:4–8",
-              "paragraphs": [
-                "Las purificaciones y el bautismo de Juan",
-                "En el judaísmo del período del Segundo Templo existían prácticas de purificación mediante agua. Su trasfondo se encontraba en las disposiciones de la ley de Moisés relacionadas con la pureza ritual.",
-                "La impureza ritual no equivalía necesariamente a una falta moral. Determinadas circunstancias ordinarias de la vida podían producir un estado temporal de impureza.",
-                "El ministerio de Juan utilizaba el agua en un contexto religioso conocido, pero su bautismo estaba específicamente relacionado con el arrepentimiento, la confesión de los pecados y la preparación para la llegada del Señor.",
-                "Marcos presenta este bautismo como una acción orientada hacia el perdón de los pecados.",
-                "Un ministerio de preparación",
-                "Juan distinguía su propia actividad de la del que vendría después. Su bautismo utilizaba agua, mientras que el anunciado bautizaría con el Espíritu Santo.",
-                "Las promesas proféticas de renovación espiritual constituyen un trasfondo importante para comprender esta expectativa."
-              ]
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-religioso"
             },
             {
               "id": "cultural",
               "label": "Cultural",
               "reference": "Marcos 1:6–7",
-              "paragraphs": [
-                "La vestimenta de un profeta",
-                "Juan llevaba una vestidura de pelo de camello y un cinturón de cuero. Se trataba de una indumentaria sencilla que contrastaba con las prendas asociadas al lujo.",
-                "Para un lector familiarizado con las Escrituras, esta descripción podía recordar al profeta Elías, identificado en 2 Reyes 1:8 por una descripción de su apariencia que incluye un cinturón de cuero.",
-                "La alimentación en el desierto",
-                "Marcos menciona que Juan comía langostas y miel silvestre.",
-                "Las langostas son insectos cuyo consumo estaba permitido dentro de determinadas categorías establecidas por la ley de Moisés. Aunque puedan resultar extrañas para un lector moderno, no constituían necesariamente un alimento insólito en aquel entorno.",
-                "El gesto de desatar las sandalias",
-                "Las sandalias eran un calzado habitual. Quitarlas o desatarlas para otra persona representaba una tarea humilde, vinculada al servicio personal."
-              ]
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-cultural"
             },
             {
               "id": "literario",
               "label": "Literario",
               "reference": "Marcos 1:1–8",
-              "paragraphs": [
-                "El comienzo del Evangelio de Marcos",
-                "Marcos introduce a Jesús sin narrar su nacimiento o presentar una genealogía. Su relato comienza con una declaración acerca del evangelio y con la aparición del mensajero anunciado en las Escrituras.",
-                "Este comienzo sitúa la historia de Jesús dentro de la historia de Israel y de sus expectativas proféticas.",
-                "Juan ocupa un lugar preparatorio. Su aparición conduce directamente al bautismo de Jesús, a la tentación en el desierto y al comienzo del ministerio en Galilea.",
-                "La identidad de Jesús, anunciada desde la apertura del libro, constituye uno de los temas que se desarrollarán a lo largo de todo el relato."
-              ]
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-literario"
             },
             {
               "id": "conexiones",
               "label": "Conexiones bíblicas",
               "reference": "Marcos 1:2–3",
-              "paragraphs": [
-                "El trasfondo de las Escrituras",
-                "Éxodo 23:20",
-                "Dios anuncia el envío de un mensajero delante de Israel durante su camino.",
-                "Isaías 40:1–5",
-                "Anuncia consuelo y restauración para el pueblo de Dios mediante la imagen de un camino preparado para la llegada del Señor.",
-                "Malaquías 3:1",
-                "Presenta a un mensajero que prepara el camino antes de la llegada del Señor.",
-                "2 Reyes 1:8 y Malaquías 4:5–6",
-                "La figura de Elías y la expectativa de su regreso constituyen un trasfondo para comprender la presentación de Juan.",
-                "Mateo 3:1–12 y Lucas 3:1–18",
-                "Los relatos paralelos amplían la descripción de la predicación y del ministerio del Bautista.",
-                "Juan 1:19–34",
-                "Presenta el testimonio de Juan acerca de Jesús y su propia función como precursor."
-              ]
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-conexiones"
             },
             {
               "id": "fuentes",
               "label": "Fuentes",
-              "paragraphs": [
-                "Bibliografía y referencias",
-                "Flavio Josefo. Antigüedades judías, libro XVIII, 116–119. Consultar texto.",
-                "Biblical Studies Press. NET Bible, notas de Marcos 1:1–8. Consultar notas.",
-                "Luther Seminary. Working Preacher, comentarios sobre Marcos 1:1–8 y Marcos 1:1–20. Comentario 1 · Comentario 2.",
-                "Adkins-Jones, Timothy L. (2023). Comentario sobre Marcos 1:1–8. Working Preacher. Consultar comentario.",
-                "Las referencias bíblicas específicas se encuentran al final de cada sección.",
-                "Flavio Josefo: https://www.livius.org/sources/content/josephus/jewish-antiquities/josephus-on-john-the-baptist/",
-                "NET Bible: https://bible.org/sites/bible.org/resources/download/netbible/ondemand/bybook/mar.pdf",
-                "Working Preacher: https://www.workingpreacher.org/commentaries/revised-common-lectionary/second-sunday-of-advent-2/commentary-on-mark-11-8-4",
-                "Timothy L. Adkins-Jones: https://www.workingpreacher.org/commentaries/revised-common-lectionary/second-sunday-of-advent-2/commentary-on-mark-11-8-6",
-                "Working Preacher: https://www.workingpreacher.org/commentaries/narrative-lectionary/beginning-of-good-news-2/commentary-on-mark-11-20-4"
-              ]
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-fuentes"
             }
           ],
           "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-contexto.png"

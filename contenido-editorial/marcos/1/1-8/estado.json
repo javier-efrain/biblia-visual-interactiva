@@ -47,6 +47,48 @@
       "archivo": "devocional.md",
       "estado": "aprobado",
       "sha256": "b32f8db7b781fe2ef1178fc41f9a80461789ba1d4a39b06788c0f19b1c014b2d"
+    },
+    {
+      "id": "ctx-mrk-1-1-historico",
+      "archivo": "contexto-historico.md",
+      "estado": "aprobado",
+      "sha256": "1e2cacb8648271c506d23a97f30a386cdf66124bdb5f513e7ee13319063ac21d"
+    },
+    {
+      "id": "ctx-mrk-1-1-geografico",
+      "archivo": "contexto-geografico.md",
+      "estado": "aprobado",
+      "sha256": "01004e43f4f6e6d7976d9d34c5ef9abfc3e1c48ed814afc5035e24cd0d4110bb"
+    },
+    {
+      "id": "ctx-mrk-1-1-religioso",
+      "archivo": "contexto-religioso.md",
+      "estado": "aprobado",
+      "sha256": "c192a61aa1443e8929c982971162e50fd7bccf325a8b863feeef3db74866f3d4"
+    },
+    {
+      "id": "ctx-mrk-1-1-cultural",
+      "archivo": "contexto-cultural.md",
+      "estado": "aprobado",
+      "sha256": "d6acd61409d2741a4521c34d9f82a5260c5e70608e0a062b366bba1016024795"
+    },
+    {
+      "id": "ctx-mrk-1-1-literario",
+      "archivo": "contexto-literario.md",
+      "estado": "aprobado",
+      "sha256": "95d848a9545dec8019036775fd3ca7d661d42a6d71e52a2c78ebe30145848f55"
+    },
+    {
+      "id": "ctx-mrk-1-1-conexiones",
+      "archivo": "contexto-conexiones.md",
+      "estado": "aprobado",
+      "sha256": "41f3a9c427530ff54ca0494ca47a3352779cc45df4db0a02b2accc616ecf7e40"
+    },
+    {
+      "id": "ctx-mrk-1-1-fuentes",
+      "archivo": "contexto-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "0fa46b7a6113c499c909163abe592e9df7c802325a6430fe0976d5ad89dfd745"
     }
   ]
 }

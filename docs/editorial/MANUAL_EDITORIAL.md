@@ -133,3 +133,6 @@ Reducir aproximadamente un 20 % de extensión innecesaria respecto de un borrado
 
 ## 14. Devocional pastoral integrado
 Mantener relato continuo con hook inicial, contexto histórico y exégesis breve integrados orgánicamente, reflexión pastoral, preguntas personales y oración cuando corresponda. Priorizar comunión con Dios, esperanza y meditación; evitar duplicar la enseñanza formativa. Orientación flexible: 400–600 palabras para pasajes sencillos, 600–900 habituales, 900–1.100 complejos. Reducir extensión innecesaria (prueba de aproximadamente 30 % respecto del original de Marcos 1:1–8), sin imponer cuota. Integrar referencias en el relato y conservar fuentes pertinentes sin apartado final redundante. Guardar el original aprobado íntegro en Markdown.
+
+## 15. Contexto bíblico ágil
+Conservar perspectivas históricas, geográficas, religiosas, culturales, literarias, conexiones bíblicas y fuentes cuando aporten al pasaje. Incorporar preguntas de curiosidad y esquemas sencillos sin duplicar la exégesis. Buscar una reducción flexible del 10–15 % de extensión innecesaria, sin eliminar datos relevantes ni confundir hechos con inferencias. Guardar cada sección aprobada íntegra en Markdown.
