@@ -33,3 +33,6 @@ En mapas esquemáticos, priorizar las relaciones geográficas necesarias para el
 
 ## Experiencia de viaje
 Formato opcional aprobado: paisaje cinematográfico desde la perspectiva del viajero, recorrido geográfico, etapas, distancias, perfil de elevación cuando aporte, condiciones ambientales, fauna regional y contexto histórico. Distinguir itinerarios hipotéticos, ubicaciones tradicionales, estimaciones de marcha y datos verificados; no confundir diferencia neta de altitud con descenso acumulado. Identificar fuentes y referencia bíblica. No imponer todos los elementos a cada recurso. Ejemplo: Marcos 1:4–5, RVE 06.
+
+## Política de calidad y optimización
+Priorizar legibilidad móvil. Conservar resolución original de RVE y mapas en PNG o WebP sin pérdida; no recortar ni reducir resolución para ahorrar peso. Optimizar miniaturas y banners por separado en WebP de alta calidad, previa comprobación visual. Evitar duplicación de recursos: preferir el que aporte mayor valor educativo, conservando identificadores e historial. En Marcos 1:1–8 el RVE 06 sustituye al RVE 01 en la primera posición del carrusel.

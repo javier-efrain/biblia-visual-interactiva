@@ -113,16 +113,16 @@
           "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-exegesis.png"
         },
         {
-          "id": "rve-mrk-1-1-01",
-          "title": "El escenario del ministerio de Juan",
+          "id": "rve-mrk-1-1-06",
+          "title": "De Jerusalén al Jordán",
           "type": "rve",
-          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-01.png",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-06.png",
           "visual": {
-            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-01.png",
-            "alt": "El escenario del ministerio de Juan. Mapa esquemático de Judea, Jerusalén y el Jordán. Ubicaciones y límites aproximados; el lugar exacto del bautismo no se especifica.",
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-06.png",
+            "alt": "Reconstrucción hipotética del viaje desde Jerusalén hasta el bajo Jordán, con etapas, relieve, distancias, condiciones de marcha y fauna regional.",
             "reference": "Marcos 1:4–5",
-            "description": "Mapa esquemático de Judea, Jerusalén y el Jordán. Ubicaciones y límites aproximados; el lugar exacto del bautismo no se especifica.",
-            "infoHtml": "<h3>Clave de lectura</h3><p>Mapa esquemático de Judea, Jerusalén y el Jordán. Ubicaciones y límites aproximados; el lugar exacto del bautismo no se especifica.</p><h3>Referencias bíblicas</h3><p>Marcos 1:4–5; Mateo 3:1–6</p><p>Recurso visual generado mediante IA y revisado editorialmente. </p><h3>Fuentes de apoyo</h3><p>Referencias bíblicas indicadas arriba; NET Bible, notas a Marcos 1:1–8.</p>"
+            "description": "Reconstrucción hipotética del viaje desde Jerusalén hasta el bajo Jordán, con etapas, relieve, distancias, condiciones de marcha y fauna regional.",
+            "infoHtml": "<h3>Experiencia de viaje</h3><p>Reconstrucción hipotética del viaje desde Jerusalén hasta el bajo Jordán, con etapas, relieve, distancias, condiciones de marcha y fauna regional.</p><p>El itinerario y el perfil son esquemáticos. Las 8–12 horas son una estimación de marcha sin descansos; la diferencia de altitud es neta, no descenso acumulado. Al-Maghtas es una localización tradicional, no un destino identificado por Marcos. La fauna ilustra el entorno regional.</p><h3>Referencias bíblicas</h3><p>Marcos 1:4–5.</p><h3>Fuentes de apoyo</h3><p>Marciak et al., The Biblical Annals 15 (2025), DOI 10.31743/ba.18331. UNESCO, sitio del bautismo de Al-Maghtas, lista 1446.</p><p>Recurso generado mediante IA y aprobado visualmente; reconstrucción no cartográfica.</p>"
           }
         },
         {
@@ -175,19 +175,6 @@
             "reference": "Marcos 1:4, 7–8",
             "description": "Contraste entre el bautismo de arrepentimiento de Juan y el bautismo con el Espíritu Santo anunciado para Jesús. La renovación espiritual es una conexión canónica.",
             "infoHtml": "<h3>Clave de lectura</h3><p>Contraste entre el bautismo de arrepentimiento de Juan y el bautismo con el Espíritu Santo anunciado para Jesús. La renovación espiritual es una conexión canónica.</p><h3>Referencias bíblicas</h3><p>Marcos 1:4, 7–8; Ezequiel 36:25–27; Joel 2:28–29</p><p>Recurso visual generado mediante IA y revisado editorialmente. </p><h3>Fuentes de apoyo</h3><p>Referencias bíblicas indicadas arriba; NET Bible, notas a Marcos 1:1–8.</p>"
-          }
-        },
-        {
-          "id": "rve-mrk-1-1-06",
-          "title": "De Jerusalén al Jordán",
-          "type": "rve",
-          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-06.png",
-          "visual": {
-            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-06.png",
-            "alt": "Reconstrucción hipotética del viaje desde Jerusalén hasta el bajo Jordán, con etapas, relieve, distancias, condiciones de marcha y fauna regional.",
-            "reference": "Marcos 1:4–5",
-            "description": "Reconstrucción hipotética del viaje desde Jerusalén hasta el bajo Jordán, con etapas, relieve, distancias, condiciones de marcha y fauna regional.",
-            "infoHtml": "<h3>Experiencia de viaje</h3><p>Reconstrucción hipotética del viaje desde Jerusalén hasta el bajo Jordán, con etapas, relieve, distancias, condiciones de marcha y fauna regional.</p><p>El itinerario y el perfil son esquemáticos. Las 8–12 horas son una estimación de marcha sin descansos; la diferencia de altitud es neta, no descenso acumulado. Al-Maghtas es una localización tradicional, no un destino identificado por Marcos. La fauna ilustra el entorno regional.</p><h3>Referencias bíblicas</h3><p>Marcos 1:4–5.</p><h3>Fuentes de apoyo</h3><p>Marciak et al., The Biblical Annals 15 (2025), DOI 10.31743/ba.18331. UNESCO, sitio del bautismo de Al-Maghtas, lista 1446.</p><p>Recurso generado mediante IA y aprobado visualmente; reconstrucción no cartográfica.</p>"
           }
         }
       ],
