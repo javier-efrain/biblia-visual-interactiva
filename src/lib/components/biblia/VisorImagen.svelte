@@ -5,7 +5,7 @@
 
   let { recurso, cerrar }: { recurso: TarjetaRecurso | null; cerrar: () => void } = $props();
   let dialogo: HTMLDialogElement;
-  let area: HTMLDivElement;
+  let area = $state<HTMLDivElement>();
   let anterior: HTMLElement | null = null;
   let escala = $state(1);
   let seleccionado = $state(-1);

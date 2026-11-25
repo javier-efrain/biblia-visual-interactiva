@@ -7,8 +7,8 @@
 
   let { recurso, cerrar }: { recurso: TarjetaRecurso | null; cerrar: () => void } = $props();
   let dialogo: HTMLDialogElement;
-  let barra: HTMLElement;
-  let lectura: HTMLElement;
+  let barra = $state<HTMLElement>();
+  let lectura = $state<HTMLElement>();
   let anterior: HTMLElement | null = null;
   let pestana = $state('');
   const nombres: Record<string, string> = {
