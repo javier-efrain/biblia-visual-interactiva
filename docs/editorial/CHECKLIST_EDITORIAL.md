@@ -56,3 +56,6 @@ Consultar [Manual editorial](MANUAL_EDITORIAL.md) y [Manual visual](MANUAL_RECUR
 - [ ] Generación y pruebas de integridad exitosas.
 - [ ] Revisar tablas, citas, idiomas originales y recuadros en móvil y escritorio.
 - [ ] Confirmar commit en develop.
+
+## Enseñanza pastoral
+- Verificar los seis momentos, hooks pertinentes, preguntas de confrontación, aplicación concreta y frase memorable identificada como síntesis original. Evitar redundancia con devocional y extensión innecesaria. Conservar fundamento bíblico y original aprobado.

@@ -1,0 +1,10 @@
+{
+  "recursos": [
+    {
+      "id": "ens-mrk-1-1",
+      "archivo": "ensenanza.md",
+      "estado": "aprobado",
+      "sha256": "1d28504e39206abf27c31d090e533ac7010783d9b3e8a5c755d0ba7b6c7b7909"
+    }
+  ]
+}
