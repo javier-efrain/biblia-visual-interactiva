@@ -1,0 +1,6 @@
+# Auditoría integral — tentación de Jesús
+
+- Descriptor único, 6 secciones de contexto, 9 de exégesis, enseñanza y devocional; 9 RVE, banner y 4 miniaturas. 15 originales compartidos aprobados y 2 reutilizados. Verificación editorial oficial exitosa en ejecución 45710466320; Svelte 0 errores y 0 advertencias, 3 pruebas unitarias del laboratorio. Usuario informó prueba del laboratorio, sin detalle por modo/dispositivo.
+- Se corrigen metadatos de revisión pendiente de los cinco RVE reutilizados; no se modifican PNG ni originales textuales. RVE 07: reconstrucción ilustrativa aceptada expresamente, no plano arqueológico.
+- Los 14 PNG están presentes. Identificadores Git de los cuatro nuevos: 06 40d5d064d72412f61e60019c3847be12c3835dbc; 07 309503abe9c0590421af564c18950251c866f45c; 08 65b46f52ee990ddc60c737afdeb98b176c234f30; 09 2aa6caab4152f4ebb39d6ab765fd6915b055af62. No equivalen a SHA-256; comparación SHA-256 remota independiente pendiente. Excepción de carga conjunta autorizada por usuario.
+- Pendientes: nueva ejecución tras ajuste, inspección directa de píxeles/zoom y modos en móvil y escritorio, comprobación de fuentes externas no reabiertas y autorización explícita de publicación. No modificar main.
