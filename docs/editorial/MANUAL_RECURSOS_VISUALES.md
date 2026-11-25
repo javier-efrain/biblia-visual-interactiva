@@ -1,5 +1,5 @@
 # BVI — Manual de recursos visuales
-Versión 2.1 · Criterios aprobados · 2026-11-25
+Versión 2.2 · Criterios aprobados · 2026-11-25
 
 ## Propósito y selección
 Cada recurso responde a una necesidad educativa concreta del pasaje. No existe cuota por capítulo. Familias abiertas: mapas, cronologías, diagramas, reconstrucciones, genealogías, relaciones, comparaciones, infografías y escenas. Profundidad ilustrativa, explicativa o analítica según necesidad, sin categorías obligatorias visibles.
@@ -58,3 +58,11 @@ Formato aprobado: infografía geográfica inmersiva, con paisaje cinematográfic
 Marcos 1:12–13 evidencia la necesidad de estas puertas: errores cartográficos y de fauna, matices interpretativos, reiteración de correcciones y una compilación exitosa sin tarjetas vinculadas. Las excepciones aceptadas para ese bloque no constituyen precedentes de calidad.
 
 **Registro v2.1 (2026-11-25):** actualización posterior a Marcos 1:12–13; conserva los criterios vigentes de v2.0 y añade controles secuenciales y técnicos.
+
+## Recursos visuales compartidos entre relatos paralelos (v2.2)
+- Planificar los RVE después de aprobar el estudio integral. Inventariar y reutilizar recursos aprobados pertinentes; no producir mapas, escenas, miniaturas ni banners repetidos por cada evangelio sin necesidad educativa.
+- Conservar un único archivo definitivo por recurso, ID estable, rutas, originales y fuentes. Compartir banner y miniaturas cuando resulten adecuados; si un pasaje necesita una pieza específica, justificarla. No alterar imágenes aprobadas sin nueva revisión y aprobación.
+- En comparaciones, identificar explícitamente cada testimonio y sus referencias; distinguir ausencia de mención de negación, orden narrativo de cronología histórica y detalles exclusivos de datos comunes. No imponer una secuencia armonizada incierta. Un recurso centrado en un autor puede reutilizarse si su alcance queda claro.
+- Revisar las referencias incorporadas en la imagen y metadatos; ampliar solo cuando aporte y sin ocultar su procedencia. Aplicar íntegramente las puertas secuenciales v2.1, persistencia, calidad, fuentes y optimización. Verificar la misma imagen y sus derivados desde todos los pasajes vinculados, en laboratorio.
+
+**Registro v2.2 (2026-11-25):** incorpora producción integral de relatos paralelos y reutilización técnica; conserva íntegramente las normas anteriores. Piloto técnico: commit ebea2ec, ejecución 45698925494; compilación y despliegue exitosos, cero errores y advertencias Svelte, tres pruebas unitarias aprobadas en develop. Advertencias de infraestructura Node.js 20, punycode y url.parse() registradas. Validación del usuario en los tres libros; no implica inspección exhaustiva de cada visor ni aprobación editorial integral.

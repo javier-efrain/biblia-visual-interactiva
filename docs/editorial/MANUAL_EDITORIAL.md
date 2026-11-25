@@ -1,6 +1,6 @@
 # BVI — Manual editorial y metodológico
 
-**Estado:** metodología aprobada · **Versión:** 2.1 · **Fecha:** 2026-11-25
+**Estado:** metodología aprobada · **Versión:** 2.2 · **Fecha:** 2026-11-25
 
 Este documento registra las decisiones editoriales acordadas para Biblia Visual Interactiva (BVI). Sirve como fuente de referencia para producir contenido coherente a escala. **No sustituye la investigación ni la verificación de fuentes para cada pasaje.**
 
@@ -137,3 +137,15 @@ Versión 2.0 (2026-11-25): consolida las decisiones aprobadas y sustituye las pa
 - Si una herramienta no permite generar, inspeccionar, conservar o ejecutar una prueba, declarar el bloqueo y detener la puerta correspondiente; no sustituir evidencia por afirmaciones.
 
 **Registro v2.1 (2026-11-25):** actualización posterior a Marcos 1:12–13; conserva los criterios vigentes de v2.0 y añade controles secuenciales y técnicos.
+
+## 13. Producción integral de relatos paralelos (v2.2)
+- Antes de planificar un bloque, identificar y verificar relatos paralelos en los 66 libros. Distinguir un mismo acontecimiento de semejanzas temáticas, repeticiones posibles y correspondencias discutidas; no agrupar automáticamente.
+- Para un mismo acontecimiento, planificar un único estudio integral con todas las referencias pertinentes. Conservar divisiones, títulos, rangos y posiciones de inserción propios de cada pasaje. Los estudios independientes mantienen el sistema vigente.
+- Contexto: compartir trasfondo histórico, geográfico, cultural y religioso; integrar el contexto literario y teológico particular de cada autor. Exégesis: organizar por unidades naturales del acontecimiento, analizar cada testimonio en su propio contexto, identificar coincidencias, diferencias, omisiones y secuencias; distinguir síntesis de armonización hipotética. No atribuir a un autor detalles de otro ni imponer cronologías inciertas.
+- Enseñanza y devocional: producir una versión común fundamentada en la exégesis integral, conservando matices pertinentes y evitando repetición. Mantener las pautas de los apartados 5 y 6.
+- Inventariar originales, imágenes y fuentes aprobados antes de ampliar un estudio existente. Reutilizar íntegramente lo pertinente; toda modificación sustantiva requiere nueva aprobación y sello, conservando el historial. No duplicar originales ni generar copias por evangelio.
+- Usar un estudioId estable en cada división vinculada y un único descriptor en src/lib/data/estudios-compartidos/. Mantener afterVerse local dentro del rango, editorialId y rutas existentes cuando proceda. Los originales aprobados pueden conservar su ubicación histórica; para nuevos estudios compartidos usar una carpeta única bajo contenido-editorial/compartidos/<estudioId>/ con estado.json. El generador recursivo vigente admite esta organización.
+- Verificar cada acceso, referencias, banner, tarjetas, devocional, imágenes, integridad, posiciones y compatibilidad con estudios independientes; ejecutar pruebas y validar laboratorio antes de solicitar publicación. La prueba técnica con contenido de un solo autor no equivale a aprobación editorial integral.
+- La tentación de Jesús (Mateo 4:1–11; Marcos 1:12–13; Lucas 4:1–13) es el piloto técnico aprobado por funcionamiento en laboratorio. Su ampliación editorial está pendiente. Cronología general, relato unificado, visor paralelo y progreso quedan fuera de esta fase; conservar identidad estable para su futura incorporación.
+
+**Registro v2.2 (2026-11-25):** incorpora producción integral de relatos paralelos y reutilización técnica; conserva íntegramente las normas anteriores. Piloto técnico: commit ebea2ec, ejecución 45698925494; compilación y despliegue exitosos, cero errores y advertencias Svelte, tres pruebas unitarias aprobadas en develop. Advertencias de infraestructura Node.js 20, punycode y url.parse() registradas. Validación del usuario en los tres libros; no implica inspección exhaustiva de cada visor ni aprobación editorial integral.

@@ -1,5 +1,5 @@
 # BVI — Checklist editorial
-Versión 2.1 · Criterios aprobados · 2026-11-25
+Versión 2.2 · Criterios aprobados · 2026-11-25
 
 Aplicar por recurso y capítulo. Marcar no aplicable con justificación; registrar errores y corregir antes de publicar.
 
@@ -88,3 +88,17 @@ Consultar [Manual editorial](MANUAL_EDITORIAL.md) y [Manual visual](MANUAL_RECUR
 - [ ] Autorización explícita de main; compilación y despliegue oficial verificados; comprobación visual solicitada.
 
 **Registro v2.1 (2026-11-25):** actualización posterior a Marcos 1:12–13; conserva los criterios vigentes de v2.0 y añade controles secuenciales y técnicos.
+
+## Estudios integrales compartidos (v2.2)
+- [ ] Paralelos identificados y correspondencia sustentada; casos discutidos diferenciados.
+- [ ] Un plan integral y un estudioId estable; referencias de todos los testimonios pertinentes.
+- [ ] Contexto común y particularidades literarias de cada autor; exégesis por unidades naturales con diferencias, omisiones y orden narrativo explícitos.
+- [ ] Enseñanza y devocional comunes fundamentados; sin duplicación ni armonización artificial.
+- [ ] Inventario de originales, fuentes e imágenes aprobados; reutilización íntegra y nueva aprobación de cambios sustantivos.
+- [ ] Descriptor único, originales sin copias, editorialId válidos, rutas compartidas y afterVerse local dentro del rango; divisiones y títulos propios.
+- [ ] RVE y metadatos distinguen testimonios; imágenes, banner y miniaturas reutilizados cuando pertinentes.
+- [ ] Pruebas de identidad de recursos, vínculos inexistentes, duplicados y posiciones; compatibilidad con estudios independientes.
+- [ ] Cada pasaje comprobado en laboratorio: modos de lectura, estudio y devocional, referencias, traducciones, banner, tarjetas y zoom; registrar alcance real de pruebas.
+- [ ] Diferenciar piloto técnico de aprobación editorial integral; publicación selectiva solo con autorización explícita.
+
+**Registro v2.2 (2026-11-25):** incorpora producción integral de relatos paralelos y reutilización técnica; conserva íntegramente las normas anteriores. Piloto técnico: commit ebea2ec, ejecución 45698925494; compilación y despliegue exitosos, cero errores y advertencias Svelte, tres pruebas unitarias aprobadas en develop. Advertencias de infraestructura Node.js 20, punycode y url.parse() registradas. Validación del usuario en los tres libros; no implica inspección exhaustiva de cada visor ni aprobación editorial integral.
