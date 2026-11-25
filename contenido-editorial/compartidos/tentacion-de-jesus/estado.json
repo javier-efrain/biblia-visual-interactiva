@@ -77,6 +77,12 @@
       "archivo": "exegesis-fuentes.md",
       "estado": "aprobado",
       "sha256": "fb02bf5f4972476cc4104674dc789f29c344a825192a57562e8e319fca9423fc"
+    },
+    {
+      "id": "ens-tentacion",
+      "archivo": "ensenanza.md",
+      "estado": "aprobado",
+      "sha256": "844d4373b5b1dd104b2865a627b2417ed465bf104fdda41e93f469d6a03393f6"
     }
   ]
 }
