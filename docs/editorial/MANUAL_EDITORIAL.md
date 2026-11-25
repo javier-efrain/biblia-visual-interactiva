@@ -1,6 +1,6 @@
 # BVI — Manual editorial y metodológico
 
-**Estado:** metodología aprobada · **Versión:** 2.0 · **Fecha:** 2026-11-25
+**Estado:** metodología aprobada · **Versión:** 2.1 · **Fecha:** 2026-11-25
 
 Este documento registra las decisiones editoriales acordadas para Biblia Visual Interactiva (BVI). Sirve como fuente de referencia para producir contenido coherente a escala. **No sustituye la investigación ni la verificación de fuentes para cada pasaje.**
 
@@ -127,3 +127,13 @@ Guardar cada original aprobado en contenido-editorial/<libro>/<capítulo>/<rango
 
 ## Registro de versión
 Versión 2.0 (2026-11-25): consolida las decisiones aprobadas y sustituye las pautas anteriores incompatibles. Los porcentajes de reducción son orientaciones de revisión, no requisitos de longitud. Conservar historial en Git. La aprobación editorial no sustituye las pruebas técnicas ni autoriza publicar en main.
+
+## 12. Puertas de aprobación y cierre técnico (v2.1)
+- Planificar el capítulo y el bloque; investigar, redactar, revisar académica y editorialmente, corregir de forma autónoma y verificar la persistencia antes de presentar cada estudio. Tras aprobación explícita, sellar el original íntegro y verificar el commit antes de pasar al siguiente.
+- Planificar los RVE a partir de los estudios aprobados; producir uno por vez conforme al manual visual. No confundir aprobación de un concepto con aprobación del archivo definitivo.
+- La generación editorial exitosa no equivale a integración: verificar división, afterVerse conforme al visor, editorialId de todas las secciones, tarjetas, devocional, banner, miniaturas, rutas y fuentes. Ejecutar generación y comprobación del JSON mediante el script oficial; no editarlo manualmente.
+- Antes de solicitar publicación, verificar logs de compilación y despliegue, integridad SHA-256, pruebas, cero errores y advertencias de Svelte, y funcionamiento real del laboratorio. Distinguir advertencias de infraestructura. Registrar cualquier excepción visual explícitamente aceptada; no declarar revisión visual completa si no se realizó.
+- Comparar árboles finales de main y develop (no solo diferencias desde el ancestro común). Preparar integración selectiva sobre main preservando archivos oficiales y excluyendo experimentos ajenos. Publicar únicamente con autorización explícita; verificar ejecución oficial y solicitar comprobación visual del usuario.
+- Si una herramienta no permite generar, inspeccionar, conservar o ejecutar una prueba, declarar el bloqueo y detener la puerta correspondiente; no sustituir evidencia por afirmaciones.
+
+**Registro v2.1 (2026-11-25):** actualización posterior a Marcos 1:12–13; conserva los criterios vigentes de v2.0 y añade controles secuenciales y técnicos.

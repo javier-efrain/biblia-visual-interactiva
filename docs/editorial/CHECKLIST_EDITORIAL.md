@@ -1,5 +1,5 @@
 # BVI — Checklist editorial
-Versión 2.0 · Criterios aprobados · 2026-11-25
+Versión 2.1 · Criterios aprobados · 2026-11-25
 
 Aplicar por recurso y capítulo. Marcar no aplicable con justificación; registrar errores y corregir antes de publicar.
 
@@ -73,3 +73,18 @@ Consultar [Manual editorial](MANUAL_EDITORIAL.md) y [Manual visual](MANUAL_RECUR
 - [ ] Experiencias de viaje distinguen estimaciones, itinerarios hipotéticos, fauna regional y ubicaciones tradicionales.
 - [ ] Evitar recursos redundantes; conservar historial e identificadores.
 - [ ] Verificar orden del carrusel y legibilidad real en móvil, incluyendo zoom.
+
+## Puertas obligatorias de producción y publicación (v2.1)
+- [ ] Plan y fuentes del bloque revisados; originales íntegros aprobados y sellados individualmente.
+- [ ] Cada RVE tiene pregunta educativa, método pertinente y composición definida; infografía combinada cuando aporte.
+- [ ] Se produjo un solo RVE por vez; inspección real, correcciones y nueva revisión antes de presentar.
+- [ ] Mapas: orientación, hidrografía, posiciones, escala o carácter esquemático; fauna: especie, hábitat y plausibilidad; comparaciones: etiquetas, secuencia y matices interpretativos.
+- [ ] Aprobación explícita del archivo definitivo, PNG persistido y verificado en develop antes del siguiente RVE; excepciones documentadas y aceptadas.
+- [ ] Banner y miniaturas diferenciados; WebP q95 generado y original conservado; rutas y derivados presentes en artefacto.
+- [ ] División, afterVerse, editorialId, tarjetas, devocional, banner, miniaturas, RVE, fuentes y orden comprobados; no basta editorial:check.
+- [ ] Generación oficial del JSON, integridad SHA-256 y pruebas exitosas; cero errores y advertencias Svelte; advertencias de infraestructura registradas.
+- [ ] Despliegue del laboratorio exitoso y comprobación real del visor; pendientes y límites de inspección declarados.
+- [ ] Comparación directa de árboles main/develop; integración selectiva preserva contenidos oficiales y excluye experimentos.
+- [ ] Autorización explícita de main; compilación y despliegue oficial verificados; comprobación visual solicitada.
+
+**Registro v2.1 (2026-11-25):** actualización posterior a Marcos 1:12–13; conserva los criterios vigentes de v2.0 y añade controles secuenciales y técnicos.
