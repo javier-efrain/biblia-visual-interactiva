@@ -29,6 +29,42 @@
       "archivo": "contexto-fuentes.md",
       "estado": "aprobado",
       "sha256": "f65732d15220c3b77e0cba5caa7120584c1a9dac8d3f0675cc74d03e1d4a6fdf"
+    },
+    {
+      "id": "exe-mrk-1-2-bautismo",
+      "archivo": "exegesis-bautismo.md",
+      "estado": "aprobado",
+      "sha256": "c79c26c154e61b7071f85590230485057f44532ec5b1f27ca93793408c640d63"
+    },
+    {
+      "id": "exe-mrk-1-2-cielos",
+      "archivo": "exegesis-cielos.md",
+      "estado": "aprobado",
+      "sha256": "908402f75a02bb2ec6020f2ce5b5cafed33b13b18afbac8d5945974b43efd7ef"
+    },
+    {
+      "id": "exe-mrk-1-2-espiritu",
+      "archivo": "exegesis-espiritu.md",
+      "estado": "aprobado",
+      "sha256": "76b54db23442080d5591c0439e56d0e3d3d8b9cf9e7fc44aee419bdec637acbb"
+    },
+    {
+      "id": "exe-mrk-1-2-hijo",
+      "archivo": "exegesis-hijo.md",
+      "estado": "aprobado",
+      "sha256": "95549107c72965525014ca2fad08f815840e230176c0574022377fd7d04c0279"
+    },
+    {
+      "id": "exe-mrk-1-2-sintesis",
+      "archivo": "exegesis-sintesis.md",
+      "estado": "aprobado",
+      "sha256": "b9b79d29bf28d06466c5f5d4666f4e41314089488fd6838432fd96d5d76d0ff5"
+    },
+    {
+      "id": "exe-mrk-1-2-fuentes",
+      "archivo": "exegesis-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "bb35b2f4b6a97f02c6d7a0164cb623d487e48159d33998f1c2bbb4d672518d38"
     }
   ]
 }
