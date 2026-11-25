@@ -1,0 +1,1 @@
+Pendiente de aprobación. Original histórico conservado íntegramente y ampliado mediante dos inserciones narrativas; tres preguntas y oración originales conservadas. Referencias bíblicas integradas; fundamento en exégesis aprobada. Sin nuevas fuentes externas ni producción visual. Generación e integración pendientes.
