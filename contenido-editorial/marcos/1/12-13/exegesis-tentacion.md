@@ -6,7 +6,7 @@ Marcos no narra una conversación puntual, sino una permanencia prolongada marca
 πειραζόμενος (peirazómenos): siendo tentado o puesto a prueba. Participio presente de forma media/pasiva, con sentido pasivo aquí.
 :::
 
-La construcción con ἦν (era, estaba) puede entenderse como una expresión verbal de duración o como una estancia acompañada por la tentación. En ambos casos, la acción se presenta en desarrollo; no se especifica su frecuencia ni se limita al último día. La expresión ὑπὸ τοῦ Σατανᾶ identifica al agente y orienta el sentido hacia una prueba hostil.
+La construcción con ἦν (era, estaba) puede entenderse como una expresión verbal de duración o como una estancia acompañada por la tentación. Bratcher y Nida (1961) consideran preferible la construcción verbal conjunta por el uso de Marcos. La tentación caracteriza los cuarenta días, sin que se especifique su frecuencia. La expresión ὑπὸ τοῦ Σατανᾶ identifica al agente y orienta el sentido hacia una prueba hostil.
 
 ## El adversario
 
@@ -23,5 +23,5 @@ Los antecedentes de Moisés y Elías, descritos en Contexto, también enriquecen
 Marcos no narra una declaración final de victoria ni la partida de Satanás. El paso a la proclamación del Reino (1:14–15) y la autoridad sobre los espíritus impuros (1:21–28) permiten inferir que la oposición no ha frustrado su misión. Hebreos 4:15 afirma explícitamente, desde el testimonio canónico, su ausencia de pecado. Conviene distinguir esa afirmación de lo que Marcos expresa directamente.
 
 :::nota
-El Textus Receptus incluye ἐκεῖ (allí) y coloca el sustantivo días antes del numeral; SBLGNT omite el adverbio y emplea el orden cuarenta días. Ninguna diferencia altera el sentido central.
+El Textus Receptus de Scrivener (1894) incluye ἐκεῖ (allí) y el orden ἡμέρας τεσσαράκοντα; SBLGNT omite el adverbio y presenta τεσσεράκοντα ἡμέρας. También cambia la grafía del numeral. Bratcher y Nida señalan que la adición del adverbio cuenta con apoyo de manuscritos posteriores. Ninguna diferencia altera el sentido central.
 :::

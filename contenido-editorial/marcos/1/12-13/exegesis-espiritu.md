@@ -21,5 +21,5 @@ Mateo 4:1 presenta a Jesús como llevado al desierto; Lucas 4:1 describe su cond
 En 1:12 el Espíritu es el sujeto de la acción de impulsar; en 1:13 Satanás es el agente de la tentación. No son acciones equivalentes. La distinción concuerda con Santiago 1:13, que niega que Dios induzca al mal. Marcos no explica aquí todos los propósitos de la prueba, pero coloca el conflicto dentro del desarrollo de la misión de Jesús.
 
 :::nota
-Algunas ediciones griegas presentan εὐθέως en lugar de εὐθύς. Ambos adverbios expresan inmediatez; la diferencia no altera la conexión narrativa.
+La edición griega de la Iglesia Ortodoxa de 1904 presenta εὐθέως en lugar de εὐθύς. Ambos adverbios expresan inmediatez; la diferencia no altera la conexión narrativa.
 :::
