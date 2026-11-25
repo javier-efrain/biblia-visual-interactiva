@@ -65,6 +65,12 @@
       "archivo": "exegesis-fuentes.md",
       "estado": "aprobado",
       "sha256": "bb35b2f4b6a97f02c6d7a0164cb623d487e48159d33998f1c2bbb4d672518d38"
+    },
+    {
+      "id": "ens-mrk-1-2",
+      "archivo": "ensenanza.md",
+      "estado": "aprobado",
+      "sha256": "90b56e250a90af21371cf6035d8184d060e6c201e6ed666bf2a9b0d6e9bf1724"
     }
   ]
 }
