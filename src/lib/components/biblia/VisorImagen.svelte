@@ -5,9 +5,21 @@
 
   let { recurso, cerrar }: { recurso: TarjetaRecurso | null; cerrar: () => void } = $props();
   let dialogo: HTMLDialogElement;
-  let area: HTMLDivElement;
+  let area = $state<HTMLDivElement>();
   let anterior: HTMLElement | null = null;
   let escala = $state(1);
+  let seleccionado = $state(-1);
+  let mostrar = $state(true);
+  let letra = $state(16);
+  let anchoImagen = $state(0);
+  let altoImagen = $state(0);
+  let anchoArea = $state(0);
+  let altoArea = $state(0);
+  let tamEtiqueta = $state(1);
+  const etiquetas = $derived(recurso?.visual?.labelMode === true);
+  const marcas = $derived(recurso?.visual?.hotspots ?? []);
+  const ajuste = $derived(Math.min(anchoArea / (anchoImagen || 1), altoArea / (altoImagen || 1)));
+  const marca = $derived(marcas[seleccionado]);
   let informacionAbierta = $state(false);
   let x = $state(0);
   let y = $state(0);
@@ -28,7 +40,7 @@
       dialogo.showModal();
     } else if (!recurso && dialogo?.open) dialogo.close();
   });
-  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; informacionAbierta = false; } });
+  $effect(() => { if (recurso?.id) { escala = 1; x = 0; y = 0; informacionAbierta = false; seleccionado = -1; mostrar = true; tamEtiqueta = 1; } });
 
   function limitar() {
     if (!area) return;
@@ -43,6 +55,7 @@
     limitar();
   }
   function alPunteroAbajo(e: PointerEvent) {
+    if ((e.target as HTMLElement).closest('button')) return;
     if (e.pointerType === 'mouse' && e.button !== 0) return;
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
     puntos.set(e.pointerId, { x: e.clientX, y: e.clientY });
@@ -98,7 +111,7 @@
   }
 </script>
 
-<dialog bind:this={dialogo} onclose={alCerrar} oncancel={alCancelar} aria-label={recurso?.title ?? 'Recurso visual'}>
+<dialog class:composicion={etiquetas} bind:this={dialogo} onclose={alCerrar} oncancel={alCancelar} aria-label={recurso?.title ?? 'Recurso visual'}>
   {#if recurso}
     <div class="barra" aria-label="Controles de imagen">
       <button type="button" onclick={cerrarVisor} aria-label="Cerrar imagen" title="Cerrar">✕</button>
@@ -109,13 +122,27 @@
         <button type="button" class:activo={informacionAbierta} onclick={() => (informacionAbierta = !informacionAbierta)} aria-label="Información del recurso" aria-expanded={informacionAbierta} aria-controls="visual-informacion">ⓘ</button>
       </div>
     </div>
-    <div class="area" bind:this={area} onpointerdown={alPunteroAbajo} onpointermove={alPunteroMover} onpointerup={alPunteroArriba} onpointercancel={alPunteroArriba} onwheel={alRueda} role="group" aria-label="Imagen ampliable con gestos de dos dedos">
+    <div class="area" bind:this={area} bind:clientWidth={anchoArea} bind:clientHeight={altoArea} onpointerdown={alPunteroAbajo} onpointermove={alPunteroMover} onpointerup={alPunteroArriba} onpointercancel={alPunteroArriba} onwheel={alRueda} role="group" aria-label="Imagen ampliable con gestos de dos dedos">
       {#if imagen}
-        <img src={imagen} alt={recurso.visual?.alt ?? recurso.title} draggable="false" style:transform="translate({x}px, {y}px) scale({escala})" />
+        <div class="lienzo" style:width="{anchoImagen * ajuste}px" style:height="{altoImagen * ajuste}px" style:transform="translate({x}px, {y}px) scale({escala})">
+          <img src={imagen} alt={recurso.visual?.alt ?? recurso.title} draggable="false" onload={(e) => { const img = e.currentTarget as HTMLImageElement; anchoImagen = img.naturalWidth; altoImagen = img.naturalHeight; }} />
+          {#if mostrar && etiquetas}<div class="titulo-visual" style:font-size="{Math.max(13, anchoImagen * ajuste * .035)}px">{recurso.title}<small>{referencia}</small></div>{/if}
+          {#if mostrar}{#each marcas as m,i}<button class="marca" class:etiqueta={etiquetas} class:elegida={seleccionado === i} style:left="{m.x}%" style:top="{m.y}%" style:font-size={etiquetas ? `${Math.max(10, anchoImagen * ajuste * .022) * tamEtiqueta}px` : undefined} style:transform="translate(-50%, -50%) scale({etiquetas ? 1 : 1/escala})" onclick={() => { seleccionado = i; informacionAbierta = false; }} aria-label={m.title}>{etiquetas ? m.title : i+1}</button>{/each}{/if}
+        </div>
       {:else}
         <p>La imagen todavía no está disponible.</p>
       {/if}
     </div>
+    {#if marcas.length}
+      <div class="explorar"><button onclick={() => mostrar = !mostrar}>{mostrar ? (etiquetas ? 'Ocultar textos' : 'Ocultar puntos') : (etiquetas ? 'Mostrar textos' : 'Mostrar puntos')}</button>{#if etiquetas}<button onclick={() => tamEtiqueta = Math.max(.75, tamEtiqueta-.1)} aria-label="Reducir etiquetas">A−</button><button onclick={() => tamEtiqueta = Math.min(1.5, tamEtiqueta+.1)} aria-label="Ampliar etiquetas">A+</button>{/if}<select aria-label="Explorar elementos" value={seleccionado} onchange={(e) => { seleccionado = Number(e.currentTarget.value); informacionAbierta = false; }}><option value={-1}>Explorar elementos</option>{#each marcas as m,i}<option value={i}>{i+1}. {m.title}</option>{/each}</select></div>
+    {/if}
+    {#if marca && !informacionAbierta}
+      <section class="informacion detalle" aria-label={marca.title} style:font-size="{letra}px">
+        <div class="info-cabecera"><h2>{seleccionado+1}. {marca.title}</h2><button onclick={() => seleccionado = -1} aria-label="Cerrar explicación">✕</button></div>
+        <p>{marca.description}</p>{#if marca.reference}<p>{marca.reference}</p>{/if}
+        <div class="acciones"><button onclick={() => letra = Math.max(14, letra-2)}>A−</button><button onclick={() => letra = Math.min(28, letra+2)}>A+</button><button onclick={() => seleccionado = (seleccionado+marcas.length-1)%marcas.length}>‹</button><span>{seleccionado+1} / {marcas.length}</span><button onclick={() => seleccionado = (seleccionado+1)%marcas.length}>›</button></div>
+      </section>
+    {/if}
     {#if informacionAbierta}
       <section class="informacion" id="visual-informacion" aria-label="Información del recurso">
         <div class="info-cabecera">
@@ -156,4 +183,17 @@
   .info-texto :global(blockquote) { border-left: 3px solid #397b70; margin: 12px 0; padding-left: 12px; }
   button:focus-visible { outline: 3px solid #bb914e; outline-offset: 3px; }
   @media (max-width: 480px) { .barra { left: 8px; right: 8px; } .derecha { gap: 4px; } .barra button { min-width: 38px; height: 38px; padding: 0 8px; } }
+.lienzo { position: relative; flex: none; }
+  .lienzo img { display:block; width:100%; height:100%; object-fit:contain; }
+  .marca { position:absolute; border:2px solid #eac575; border-radius:50%; width:36px; height:36px; background:#171717e8; color:white; font-weight:bold; cursor:pointer; }
+  .marca.elegida { background:#b58a36; }
+  .explorar { position:absolute; top:65px; right:12px; z-index:3; display:flex; gap:6px; flex-wrap:wrap; justify-content:end; }
+  .explorar button,.explorar select,.acciones button { background:#242424; color:white; border:1px solid #b58a36; border-radius:8px; padding:9px; }
+  .detalle { background:#242424f5; color:white; max-height:42dvh; }
+  .acciones { display:flex; align-items:center; gap:12px; margin-top:12px; }
+  .composicion, .composicion .area { background:#151a12; }
+  .titulo-visual { position:absolute; top:2%; left:3%; color:#fff5db; font-family:Georgia,serif; font-weight:bold; text-shadow:0 2px 5px #000,0 0 12px #000; pointer-events:none; }
+  .titulo-visual small { display:block; color:#fff5db; font-size:.55em; }
+  .marca.etiqueta { width:auto; height:auto; min-height:0; padding:.28em .65em; border:1px solid #eac575; border-radius:1em; white-space:nowrap; font-family:Georgia,serif; background:#201b10e8; color:#fff5db; box-shadow:0 2px 7px #0008; }
+  .marca.etiqueta.elegida { background:#b58a36; color:#17130b; }
 </style>

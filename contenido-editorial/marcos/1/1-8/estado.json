@@ -1,0 +1,94 @@
+{
+  "recursos": [
+    {
+      "id": "ens-mrk-1-1",
+      "archivo": "ensenanza.md",
+      "estado": "aprobado",
+      "sha256": "1d28504e39206abf27c31d090e533ac7010783d9b3e8a5c755d0ba7b6c7b7909"
+    },
+    {
+      "id": "exe-mrk-1-1-inicio",
+      "archivo": "exegesis-inicio.md",
+      "estado": "aprobado",
+      "sha256": "4571a837f829c423419aa6291a699ae0322d842ae60d3a20741af2afc9d01bb8"
+    },
+    {
+      "id": "exe-mrk-1-1-profecias",
+      "archivo": "exegesis-profecias.md",
+      "estado": "aprobado",
+      "sha256": "b35f5f2cba5c1f8a1e4a3851dcc8b2aca7eef15fa91f20d15dcefc59d063d856"
+    },
+    {
+      "id": "exe-mrk-1-1-juan",
+      "archivo": "exegesis-juan.md",
+      "estado": "aprobado",
+      "sha256": "a220933158a7b22b51e6f2d8b6638193db279235ac3da8b04483064b8af08dde"
+    },
+    {
+      "id": "exe-mrk-1-1-espiritu",
+      "archivo": "exegesis-espiritu.md",
+      "estado": "aprobado",
+      "sha256": "35f8af34e67a0bd19ab3ee4af6f467ef028c05d788b3ae377ad8b3ad3f1456d6"
+    },
+    {
+      "id": "exe-mrk-1-1-sintesis",
+      "archivo": "exegesis-sintesis.md",
+      "estado": "aprobado",
+      "sha256": "ebfcbc5aa8c0d2e447bcabe86cd309381b211926b2180653191d955e84533684"
+    },
+    {
+      "id": "exe-mrk-1-1-fuentes",
+      "archivo": "exegesis-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "447123191da607b31d524f3fa6dabe8dcd91ac1e2feb42a35ca55bee1881e048"
+    },
+    {
+      "id": "dev-mrk-1-1",
+      "archivo": "devocional.md",
+      "estado": "aprobado",
+      "sha256": "b32f8db7b781fe2ef1178fc41f9a80461789ba1d4a39b06788c0f19b1c014b2d"
+    },
+    {
+      "id": "ctx-mrk-1-1-historico",
+      "archivo": "contexto-historico.md",
+      "estado": "aprobado",
+      "sha256": "1e2cacb8648271c506d23a97f30a386cdf66124bdb5f513e7ee13319063ac21d"
+    },
+    {
+      "id": "ctx-mrk-1-1-geografico",
+      "archivo": "contexto-geografico.md",
+      "estado": "aprobado",
+      "sha256": "01004e43f4f6e6d7976d9d34c5ef9abfc3e1c48ed814afc5035e24cd0d4110bb"
+    },
+    {
+      "id": "ctx-mrk-1-1-religioso",
+      "archivo": "contexto-religioso.md",
+      "estado": "aprobado",
+      "sha256": "c192a61aa1443e8929c982971162e50fd7bccf325a8b863feeef3db74866f3d4"
+    },
+    {
+      "id": "ctx-mrk-1-1-cultural",
+      "archivo": "contexto-cultural.md",
+      "estado": "aprobado",
+      "sha256": "d6acd61409d2741a4521c34d9f82a5260c5e70608e0a062b366bba1016024795"
+    },
+    {
+      "id": "ctx-mrk-1-1-literario",
+      "archivo": "contexto-literario.md",
+      "estado": "aprobado",
+      "sha256": "95d848a9545dec8019036775fd3ca7d661d42a6d71e52a2c78ebe30145848f55"
+    },
+    {
+      "id": "ctx-mrk-1-1-conexiones",
+      "archivo": "contexto-conexiones.md",
+      "estado": "aprobado",
+      "sha256": "41f3a9c427530ff54ca0494ca47a3352779cc45df4db0a02b2accc616ecf7e40"
+    },
+    {
+      "id": "ctx-mrk-1-1-fuentes",
+      "archivo": "contexto-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "0fa46b7a6113c499c909163abe592e9df7c802325a6430fe0976d5ad89dfd745"
+    }
+  ]
+}

@@ -1,5 +1,18 @@
 {
   "book": "MRK",
   "chapter": 1,
-  "blocks": []
+  "blocks": [
+    {
+      "divisionId": "mrk-1-1",
+      "devocional": [
+        {
+          "id": "dev-mrk-1-1",
+          "title": "Cuando el Señor llega, algo debe cambiar",
+          "type": "devocional",
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-devocional.webp",
+          "editorialId": "dev-mrk-1-1"
+        }
+      ]
+    }
+  ]
 }

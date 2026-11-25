@@ -1,5 +1,9 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
+  import TextoEditorial from '../lib/components/biblia/TextoEditorial.svelte';
+  import originales from '../lib/data/editorial-generado/originales.json';
+  let laboratorioAbierto = $state(false);
+  const esLaboratorio = resolve('/').includes('/pruebas');
   import { onMount } from 'svelte';
   import { obtenerCapituloBVI, idCanonico, numeroCanonico } from '../lib/data/biblia/registro-capitulos';
   import BannerNarrativo from '../lib/components/biblia/BannerNarrativo.svelte';
@@ -256,6 +260,12 @@
   </header>
 
   <main class="contenedor">
+    {#if esLaboratorio}
+    <div class="acceso-editorial"><button type="button" onclick={() => laboratorioAbierto = !laboratorioAbierto} aria-expanded={laboratorioAbierto}>{laboratorioAbierto ? "Cerrar laboratorio editorial" : "Abrir laboratorio editorial"}</button></div>
+    {#if laboratorioAbierto}
+      <section class="demo-editorial"><h2>Laboratorio editorial BVI</h2><p>Demostración independiente. No es un estudio aprobado.</p><TextoEditorial markdown={originales.demo.markdown}/></section>
+    {/if}
+    {/if}
     {#if seccion !== 'Biblia'}
       <section class="proximamente">
         <p class="seccion">BIBLIA VISUAL INTERACTIVA</p>
@@ -301,7 +311,7 @@
           {#if versiculosApi.length}
             {#each versiculosApi as versiculo (versiculo.verse)}
               {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
-                <BannerNarrativo division={division} estilo={estiloDivisiones} libro="Marcos" capitulo={version === 'local' ? capitulo : numeroCapituloApi} imagen={capituloBVI?.bannerImage} />
+                <BannerNarrativo division={division} estilo={estiloDivisiones} libro="Marcos" capitulo={version === 'local' ? capitulo : numeroCapituloApi} imagen={division.bannerImage ?? capituloBVI?.bannerImage} />
               {/each}
               {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
                 {#if modoLectura === 'Estudio'}<RecursosBloque posicion="inicio" tarjetas={bloquesEstudio.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />{/if}
@@ -351,7 +361,7 @@
           <h2 class="titulo-lectura">{libro.name} {capitulo}</h2>
           {#each versiculos as versiculo (versiculo.verse)}
             {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
-              <BannerNarrativo division={division} estilo={estiloDivisiones} libro="Marcos" capitulo={version === 'local' ? capitulo : numeroCapituloApi} imagen={capituloBVI?.bannerImage} />
+              <BannerNarrativo division={division} estilo={estiloDivisiones} libro="Marcos" capitulo={version === 'local' ? capitulo : numeroCapituloApi} imagen={division.bannerImage ?? capituloBVI?.bannerImage} />
             {/each}
             {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
               {#if modoLectura === 'Estudio'}<RecursosBloque posicion="inicio" tarjetas={bloquesEstudio.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />{/if}
@@ -379,6 +389,8 @@
 </div>
 
 <style>
+  .acceso-editorial { margin: 12px 0; } .acceso-editorial button { padding: 9px 14px; border: 1px solid #568e7d; border-radius: 8px; background: transparent; color: inherit; cursor: pointer; } .demo-editorial { max-width: 680px; margin: 12px auto; padding: 18px; border: 1px solid #568e7d; border-radius: 12px; }
+
   :global(body) { background: #f5f7f3; color: #253a36; }
   .app { min-height: 100vh; background: #f5f7f3; transition: background .2s; }
   .header-interior { max-width: 1150px; margin: auto; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
@@ -393,24 +405,24 @@
   .opcion-perfil { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 0; border-top: 1px solid #edf1ed; font-size: 13px; }
   .controles-perfil { display: flex; align-items: center; gap: 7px; }
   .controles-perfil button, .alternar-perfil { padding: 7px 9px; background: #e7f1eb; color: #24695b; }
-  .proximas-preferencias { border-top: 1px solid #edf1ed; padding-top: 15px; font-size: 12px; color: #71827a; }
-  .proximas-preferencias strong { color: #346b5e; }
-  .proximas-preferencias p { margin: 7px 0 0; line-height: 1.5; }
+
+
+
   .lectura-encabezado { display: flex; justify-content: space-between; align-items: center; margin: 0 0 12px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: #478376; }
   .modo-actual { letter-spacing: 0; background: #e4efe7; padding: 6px 11px; border-radius: 20px; }
   .titulo-lectura { font-size: 26px; margin: 0 0 24px; color: #397b70; }
   .oscuro .titulo-lectura { color: #8ac5ad; }
-  .ir-preferido { width: 100%; margin-bottom: 12px; padding: 9px; }
+
   .opcion-perfil select { max-width: 165px; min-width: 110px; padding: 7px; font-size: 12px; }
   .menu { display: flex; align-items: center; gap: 5px; }
   .menu button { background: transparent; color: #667a71; padding: 12px 15px; border-radius: 9px; font-size: 14px; }
   .menu button:hover { background: #f0f5f1; }
   .menu button.activo { background: #e6f1eb; color: #24695b; }
-  .herramientas { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 16px; color: #60756a; font-size: 13px; font-weight: 700; }
-  .acciones-lectura { display: flex; align-items: center; gap: 8px; }
-  .acciones-lectura button { background: white; border: 1px solid #d8e5db; color: #346b5e; padding: 8px 12px; }
-  .acciones-lectura button:disabled { background: #e7ede9; }
-  .acciones-lectura .modo { margin-left: 8px; }
+
+
+
+
+
   .proximamente { background: white; border: 1px solid #e4eae5; border-radius: 18px; padding: 60px 40px; text-align: center; }
   .proximamente p:not(.seccion) { color: #708278; line-height: 1.7; }
   .volver { margin-top: 16px; }
@@ -418,19 +430,19 @@
   .oscuro .contenedor { color: #e5eae5; }
   .oscuro .lector, .oscuro .proximamente { background: #22312d; border-color: #3a4a44; }
   .oscuro .versiculo, .oscuro .contenido-api { color: #e4e8e2; }
-  .oscuro .subtitulo, .oscuro .navegacion, .oscuro .selector { color: #b0c0b5; }
+  .oscuro .navegacion, .oscuro .selector { color: #b0c0b5; }
   .oscuro .barra, .oscuro .versiones, .oscuro .navegacion { border-color: #3a4a44; }
-  .oscuro .acciones-lectura button { background: #2b4139; color: #e5eae5; border-color: #52685b; }
+
   .encabezado { position: sticky; top: 0; z-index: 10; padding: 12px 24px; background: #fff; border-bottom: 1px solid #e4eae5; }
   .marca { display: flex; align-items: center; gap: 9px; font-size: 23px; font-weight: 800; letter-spacing: -.5px; border: 0; background: transparent; color: #253a36; padding: 0; cursor: pointer; white-space: nowrap; }
   .simbolo { color: #397b70; }
   .nombre { font-size: 13px; font-weight: 500; color: #71827a; letter-spacing: 0; padding-left: 8px; border-left: 1px solid #d8e2dc; }
-  .etiqueta { background: #e8f1ec; color: #346b5e; border-radius: 99px; padding: 8px 13px; font-size: 12px; font-weight: 700; }
+
   .contenedor { max-width: 850px; margin: 0 auto; padding: 26px 24px 32px; }
-  .intro { text-align: center; margin-bottom: 40px; }
-  .seccion, .version, .capitulo-titulo { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: #478376; }
+
+  .seccion { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: #478376; }
   h1 { font-size: clamp(28px, 5vw, 42px); letter-spacing: -1.5px; margin: 12px 0; }
-  .subtitulo { color: #75847e; margin: 0; }
+
   .lector { background: #fff; border: 1px solid #e3eae4; border-radius: 18px; box-shadow: 0 14px 45px #253a3610; overflow: hidden; }
   .versiones { padding: 12px 28px; border-bottom: 1px solid #edf1ed; display: flex; flex-direction: column; gap: 8px; }
   .versiones label { color: #478376; font-size: 12px; font-weight: 800; }
@@ -439,13 +451,13 @@
   .barra-api { justify-content: flex-start !important; }
   .contenido-api { white-space: pre-wrap; font: var(--tamano-letra, 19px)/1.85 Georgia, 'Times New Roman', serif; }
   .barra { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 15px 28px; border-bottom: 1px solid #edf1ed; }
-  .version { margin: 0 0 6px; }
+
   h2 { margin: 0; font-size: 29px; letter-spacing: -.7px; }
   .selector { display: flex; align-items: center; gap: 10px; color: #64786e; font-size: 13px; }
   .selector-libro select { max-width: 180px; width: 100%; }
   select { min-width: 76px; border: 1px solid #cbdcd2; background: #f8faf8; border-radius: 9px; padding: 10px; color: #253a36; font: inherit; }
   .texto { padding: 24px 40px 42px; }
-  .capitulo-titulo { margin: 0 0 28px; }
+
   .versiculo { font-family: Georgia, 'Times New Roman', serif; font-size: var(--tamano-letra, 19px); line-height: 1.85; margin: 0 0 15px; color: #2e3834; }
   sup { font-family: Arial, sans-serif; color: #478376; font-size: 11px; font-weight: 700; margin-right: 9px; vertical-align: super; }
   .navegacion { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid #edf1ed; padding: 22px 36px; color: #75847e; font-size: 13px; }
@@ -458,7 +470,7 @@
   @media (max-width: 600px) {
     .nombre { display: none; }
     .contenedor { padding: 16px 12px 20px; }
-    .intro { margin-bottom: 25px; }
+
     .barra { padding: 12px 16px; }
     .versiones { padding: 12px 16px; }
     .selector-libro { flex: 1; width: auto; justify-content: space-between; }
@@ -472,19 +484,19 @@
     .menu { gap: 2px; }
     .perfil summary { min-height: 42px; padding: 9px 12px; }
     .marca { font-size: 21px; }
-    .intro h1 { font-size: 29px; }
+
     .selector { flex-wrap: wrap; }
     .barra-api .selector { width: 100%; justify-content: space-between; }
     .barra-api select { max-width: 65%; }
     .selector-libro select { max-width: 75%; }
     .versiones select { max-width: 100%; }
-    .acciones-lectura { flex-wrap: wrap; }
+
     .navegacion { gap: 6px; }
     .navegacion button { min-height: 44px; }
     .contenido-api { overflow-wrap: anywhere; }
-    .herramientas { flex-wrap: wrap; }
+
     .proximamente { padding: 42px 22px; }
     .navegacion { padding: 18px; }
-    button { padding: 11px 12px; }\n    .panel-perfil { right: 0; }
+    button { padding: 11px 12px; }
   }
 </style>

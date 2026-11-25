@@ -1,5 +1,192 @@
 {
   "book": "MRK",
   "chapter": 1,
-  "blocks": []
+  "blocks": [
+    {
+      "divisionId": "mrk-1-1",
+      "afterVerse": 4,
+      "contexto": [
+        {
+          "id": "ctx-mrk-1-1",
+          "title": "El mundo de Juan el Bautista",
+          "type": "contexto",
+          "sections": [
+            {
+              "id": "historico",
+              "label": "Histórico",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-historico"
+            },
+            {
+              "id": "geografico",
+              "label": "Geográfico",
+              "reference": "Marcos 1:4–5",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-geografico"
+            },
+            {
+              "id": "religioso",
+              "label": "Religioso",
+              "reference": "Marcos 1:4–8",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-religioso"
+            },
+            {
+              "id": "cultural",
+              "label": "Cultural",
+              "reference": "Marcos 1:6–7",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-cultural"
+            },
+            {
+              "id": "literario",
+              "label": "Literario",
+              "reference": "Marcos 1:1–8",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-literario"
+            },
+            {
+              "id": "conexiones",
+              "label": "Conexiones bíblicas",
+              "reference": "Marcos 1:2–3",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-conexiones"
+            },
+            {
+              "id": "fuentes",
+              "label": "Fuentes",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-1-fuentes"
+            }
+          ],
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-contexto.webp"
+        }
+      ],
+      "central": [
+        {
+          "id": "exe-mrk-1-1",
+          "title": "El comienzo del evangelio",
+          "type": "exegesis",
+          "sections": [
+            {
+              "id": "inicio",
+              "label": "1:1",
+              "reference": "Marcos 1:1",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-1-inicio"
+            },
+            {
+              "id": "profecias",
+              "label": "1:2–3",
+              "reference": "Marcos 1:2–3",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-1-profecias"
+            },
+            {
+              "id": "juan",
+              "label": "1:4–6",
+              "reference": "Marcos 1:4–6",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-1-juan"
+            },
+            {
+              "id": "espiritu",
+              "label": "1:7–8",
+              "reference": "Marcos 1:7–8",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-1-espiritu"
+            },
+            {
+              "id": "sintesis",
+              "label": "Síntesis",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-1-sintesis"
+            },
+            {
+              "id": "fuentes",
+              "label": "Fuentes",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-1-fuentes"
+            }
+          ],
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-exegesis.webp"
+        },
+        {
+          "id": "rve-mrk-1-1-06",
+          "title": "De Jerusalén al Jordán",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-06.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-06.png",
+            "alt": "Reconstrucción hipotética del viaje desde Jerusalén hasta el bajo Jordán, con etapas, relieve, distancias, condiciones de marcha y fauna regional.",
+            "reference": "Marcos 1:4–5",
+            "description": "Reconstrucción hipotética del viaje desde Jerusalén hasta el bajo Jordán, con etapas, relieve, distancias, condiciones de marcha y fauna regional.",
+            "infoHtml": "<h3>Experiencia de viaje</h3><p>Reconstrucción hipotética del viaje desde Jerusalén hasta el bajo Jordán, con etapas, relieve, distancias, condiciones de marcha y fauna regional.</p><p>El itinerario y el perfil son esquemáticos. Las 8–12 horas son una estimación de marcha sin descansos; la diferencia de altitud es neta, no descenso acumulado. Al-Maghtas es una localización tradicional, no un destino identificado por Marcos. La fauna ilustra el entorno regional.</p><h3>Referencias bíblicas</h3><p>Marcos 1:4–5.</p><h3>Fuentes de apoyo</h3><p>Marciak et al., The Biblical Annals 15 (2025), DOI 10.31743/ba.18331. UNESCO, sitio del bautismo de Al-Maghtas, lista 1446.</p><p>Recurso generado mediante IA y aprobado visualmente; reconstrucción no cartográfica.</p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-1-02",
+          "title": "Juan el Bautista: el profeta del desierto",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-02.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-02.png",
+            "alt": "Juan el Bautista: el profeta del desierto. Reconstrucción artística de Juan, basada en su vestimenta y alimentación descritas en el texto. Su apariencia física es desconocida.",
+            "reference": "Marcos 1:6",
+            "description": "Reconstrucción artística de Juan, basada en su vestimenta y alimentación descritas en el texto. Su apariencia física es desconocida.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Reconstrucción artística de Juan, basada en su vestimenta y alimentación descritas en el texto. Su apariencia física es desconocida.</p><h3>Referencias bíblicas</h3><p>Marcos 1:6; 2 Reyes 1:8; Levítico 11:22</p><p>Recurso visual generado mediante IA y revisado editorialmente. </p><h3>Fuentes de apoyo</h3><p>Referencias bíblicas indicadas arriba; NET Bible, notas a Marcos 1:1–8.</p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-1-03",
+          "title": "Las profecías que prepararon el camino",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-03.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-03.png",
+            "alt": "Las profecías que prepararon el camino. Esquema de las conexiones proféticas que confluyen en la cita de Marcos.",
+            "reference": "Marcos 1:2–3",
+            "description": "Esquema de las conexiones proféticas que confluyen en la cita de Marcos.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Esquema de las conexiones proféticas que confluyen en la cita de Marcos.</p><h3>Referencias bíblicas</h3><p>Éxodo 23:20; Malaquías 3:1; Isaías 40:3</p><p>Recurso visual generado mediante IA y revisado editorialmente. </p><h3>Fuentes de apoyo</h3><p>Referencias bíblicas indicadas arriba; NET Bible, notas a Marcos 1:1–8.</p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-1-04",
+          "title": "El camino del Señor y la llegada de Jesús",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-04.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-04.png",
+            "alt": "El camino del Señor y la llegada de Jesús. Marcos aplica a la llegada de Jesús la preparación del camino de YHWH en Isaías. Es una conclusión exegética, no una aparición literal del nombre YHWH en el texto griego de Marcos.",
+            "reference": "Marcos 1:2–3",
+            "description": "Marcos aplica a la llegada de Jesús la preparación del camino de YHWH en Isaías. Es una conclusión exegética, no una aparición literal del nombre YHWH en el texto griego de Marcos.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Marcos aplica a la llegada de Jesús la preparación del camino de YHWH en Isaías. Es una conclusión exegética, no una aparición literal del nombre YHWH en el texto griego de Marcos.</p><h3>Referencias bíblicas</h3><p>Isaías 40:3; Marcos 1:2–3, 9–15</p><p>Recurso visual generado mediante IA y revisado editorialmente. Bibliografía de apoyo: John Dennis, Tyndale Bulletin 73 (2022).</p><h3>Fuentes de apoyo</h3><p>Referencias bíblicas indicadas arriba; Dennis (2022), Tyndale Bulletin 73, 149–169, DOI 10.53751/001c.39734.</p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-1-05",
+          "title": "Del agua al Espíritu Santo",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-05.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-01-rve-05.png",
+            "alt": "Del agua al Espíritu Santo. Contraste entre el bautismo de arrepentimiento de Juan y el bautismo con el Espíritu Santo anunciado para Jesús. La renovación espiritual es una conexión canónica.",
+            "reference": "Marcos 1:4, 7–8",
+            "description": "Contraste entre el bautismo de arrepentimiento de Juan y el bautismo con el Espíritu Santo anunciado para Jesús. La renovación espiritual es una conexión canónica.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Contraste entre el bautismo de arrepentimiento de Juan y el bautismo con el Espíritu Santo anunciado para Jesús. La renovación espiritual es una conexión canónica.</p><h3>Referencias bíblicas</h3><p>Marcos 1:4, 7–8; Ezequiel 36:25–27; Joel 2:28–29</p><p>Recurso visual generado mediante IA y revisado editorialmente. </p><h3>Fuentes de apoyo</h3><p>Referencias bíblicas indicadas arriba; NET Bible, notas a Marcos 1:1–8.</p>"
+          }
+        }
+      ],
+      "ensenanza": [
+        {
+          "id": "ens-mrk-1-1",
+          "title": "Preparar el camino para el Señor",
+          "type": "ensenanza",
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-ensenanza.webp",
+          "editorialId": "ens-mrk-1-1"
+        }
+      ]
+    }
+  ]
 }
