@@ -1,5 +1,5 @@
 # BVI — Manual de recursos visuales
-Versión 1.0 · Aprobado · 2026-11-24
+Versión 2.0 · Criterios aprobados · 2026-11-25
 
 ## Propósito y selección
 Cada recurso responde a una necesidad educativa concreta del pasaje. No existe cuota por capítulo. Familias abiertas: mapas, cronologías, diagramas, reconstrucciones, genealogías, relaciones, comparaciones, infografías y escenas. Profundidad ilustrativa, explicativa o analítica según necesidad, sin categorías obligatorias visibles.
@@ -16,7 +16,7 @@ Crear referencias reutilizables a medida que se producen estudios, no como requi
 ## Rigor
 Distinguir lo documentado (texto o evidencia externa), reconstrucción plausible y representación conceptual. Indicar detalles desconocidos, hipótesis y debates. Evitar anacronismos, errores geográficos y confusión entre metáfora y realidad. Consultar texto bíblico, léxicos, documentos antiguos, investigaciones académicas, museos, arqueología, atlas y comentarios según necesidad. IA no es fuente de autoridad. Registrar fuentes realmente consultadas, referencias bíblicas, naturaleza del recurso y observaciones en información complementaria. No inventar citas.
 
-## Flujo
+## Flujo de producción
 1. Estudiar el pasaje.
 2. Identificar necesidades educativas visuales.
 3. Investigar y consultar biblioteca existente.
@@ -24,7 +24,7 @@ Distinguir lo documentado (texto o evidencia externa), reconstrucción plausible
 5. Generar imagen.
 6. Revisar precisión, ortografía, continuidad y legibilidad; corregir o regenerar.
 7. Integrar imagen, título, descripción, referencias y fuentes.
-8. Probar en develop en móvil y escritorio; solicitar aprobación antes de publicar en main.
+8. Guardar progresivamente los recursos aprobados en develop; probar en móvil y escritorio y solicitar aprobación explícita antes de publicar en main.
 
 Separar manuales, referencias internas y recursos publicados. Aplicar [Checklist editorial](CHECKLIST_EDITORIAL.md). Las pruebas del templo y Gálatas son prototipos, no recursos históricos o editoriales definitivos.
 
@@ -36,3 +36,6 @@ Formato opcional aprobado: paisaje cinematográfico desde la perspectiva del via
 
 ## Política de calidad y optimización
 Priorizar legibilidad móvil. Conservar resolución original de RVE y mapas en PNG o WebP sin pérdida; no recortar ni reducir resolución para ahorrar peso. Optimizar miniaturas y banners por separado en WebP de alta calidad, previa comprobación visual. Evitar duplicación de recursos: preferir el que aporte mayor valor educativo, conservando identificadores e historial. En Marcos 1:1–8 el RVE 06 sustituye al RVE 01 en la primera posición del carrusel.
+
+## Registro de versión
+Versión 2.0: consolida identidad, precisión proporcional, experiencia de viaje y calidad visual. La política de optimización no implica que los archivos existentes hayan sido convertidos. Validar miniaturas y banners antes de adoptar conversiones a escala.

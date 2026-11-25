@@ -1,6 +1,6 @@
 # BVI — Manual editorial y metodológico
 
-**Estado:** metodología aprobada · **Versión:** 1.0 · **Fecha:** 2026-11-24
+**Estado:** metodología aprobada · **Versión:** 2.0 · **Fecha:** 2026-11-25
 
 Este documento registra las decisiones editoriales acordadas para Biblia Visual Interactiva (BVI). Sirve como fuente de referencia para producir contenido coherente a escala. **No sustituye la investigación ni la verificación de fuentes para cada pasaje.**
 
@@ -11,6 +11,7 @@ Este documento registra las decisiones editoriales acordadas para Biblia Visual 
 - Distinguir afirmaciones explícitas del texto, evidencia externa, inferencias, tradiciones e hipótesis. Indicar incertidumbre y debates reales sin crear falsa equivalencia.
 - No inventar datos históricos, significados de términos originales, referencias, citas ni promesas divinas. No atribuir al texto conclusiones que no sostiene.
 - Evitar duplicaciones entre visores: cada recurso tiene una pregunta y función específica.
+- Usar hooks naturales según la finalidad: curiosidad en contexto, descubrimiento intelectual en exégesis, confrontación en enseñanza e introspección en devocional. Evitar clickbait y afirmaciones sin sustento.
 - Estructura **flexible y pertinente al género y al pasaje**: no llenar apartados por obligación ni omitir cuestiones relevantes porque no encajen en una plantilla.
 - Referencias bíblicas exactas y bibliografía/fuentes discretas y verificables, particularmente para asuntos discutidos.
 
@@ -35,7 +36,8 @@ La información y profundidad se adaptan a cada libro. Las afirmaciones debatida
 **Pregunta:** ¿Qué necesita conocer el lector sobre el entorno y la ubicación del pasaje para comprenderlo?
 
 Categorías habituales **opcionales, no casillas obligatorias**:
-- Histórico: período, acontecimientos, poderes políticos, geografía y circunstancias.
+- Histórico: período, acontecimientos, poderes políticos y circunstancias.
+- Geográfico: lugares, relieve, distancias y entorno cuando aporten.
 - Cultural y social: costumbres, vida cotidiana, oficios, economía y relaciones sociales.
 - Religioso: instituciones, prácticas, creencias y controversias relevantes.
 - Literario y teológico: lugar del pasaje dentro del libro, entorno narrativo o argumentativo, temas que el autor desarrolla.
@@ -44,6 +46,8 @@ Categorías habituales **opcionales, no casillas obligatorias**:
 **Apartados especiales abiertos:** añadir cualquier dimensión necesaria, sin límite ni nombres predefinidos. Ejemplos: cronología de días y horas, itinerarios, calendario judío y armonización cautelosa de relatos en Semana de la Pasión; paralelismo y género poético en Salmos; destinatarios y situación eclesial en epístolas; reyes y coyunturas políticas en profetas.
 
 En cronologías, distinguir horarios explícitos, aproximaciones, reconstrucciones y divergencias entre testimonios. Pueden incorporarse mapas, diagramas, cronologías y referencias.
+
+Incorporar preguntas naturales de curiosidad histórica o cultural y esquemas sencillos. Reducir aproximadamente 10–15 % de extensión innecesaria respecto de borradores extensos, sin eliminar información relevante. Las siete pestañas de Marcos 1:1–8 son un ejemplo, no una plantilla obligatoria.
 
 **Límite editorial:** Contexto sitúa e informa; no debe repetir el análisis detallado del argumento y el sentido del texto reservado a Exégesis, ni las aplicaciones de Enseñanza o Devocional.
 
@@ -64,25 +68,23 @@ Dentro de cada unidad integrar, **solo cuando corresponda**:
 
 No crear pestañas obligatorias de «Griego», «Teología» u otras categorías técnicas: integrar el análisis donde sea relevante. No duplicar Contexto ni anticipar aplicaciones devocionales.
 
-## 5. Enseñanza
+Incorporar hooks intelectuales naturales y buscar una reducción flexible de aproximadamente 20 % de extensión innecesaria respecto de borradores extensos, conservando densidad, argumentos, variantes, idiomas originales pertinentes, conexiones y fuentes.
 
-**Formato elegido:** **Opción A — estudio bíblico guiado**, profundo y accesible para cualquier lector. No diseñar el recurso principalmente como manual para predicadores o docentes; herramientas especializadas para clases, profesores, pastores y grupos pueden añadirse en el futuro.
+## 5. Enseñanza pastoral y personal
 
-**Pregunta:** ¿Qué verdad enseña el pasaje, qué implica y cómo podemos aprenderla, comunicarla y aplicarla fielmente?
+**Pregunta:** ¿Cómo transforma esta verdad mi manera de vivir?
 
-Apartados posibles, **flexibles**:
-1. Pregunta central o tensión del pasaje.
-2. Verdad central, derivada de la síntesis exegética.
-3. Desarrollo pedagógico de las ideas principales (no necesariamente tres puntos).
-4. Implicaciones teológicas.
-5. Aplicaciones prácticas fundamentadas.
-6. Preguntas de comprensión, reflexión y diálogo.
-7. Actividad o desafío cuando aporte valor.
-8. Síntesis final.
+Estudio guiado, profundo y accesible, orientado a formar al discípulo, no principalmente a predicadores o docentes. Herramientas especializadas podrán añadirse en el futuro.
 
-**Indispensable:** identificar y desarrollar la verdad central fielmente. No imponer ocho secciones a cada pasaje.
+Seis momentos adaptables al pasaje:
+1. Punto de tensión: pregunta o situación que confronte al lector.
+2. Verdad teológica central derivada de la exégesis.
+3. Desarrollo devocional pastoral, con implicaciones teológicas y hooks naturales.
+4. Preguntas de confrontación personal.
+5. Aplicación práctica concreta y fundamentada.
+6. Frase para recordar: síntesis original, no presentada como cita bíblica.
 
-A diferencia de Exégesis, Enseñanza puede reordenar pedagógicamente las ideas para facilitar el aprendizaje, sin distorsionar el texto. La oración no es obligatoria; la meditación íntima y oración corresponden principalmente a Devocional.
+Orientación habitual: 800–1.200 palabras, flexible. Eliminar extensión innecesaria sin perder profundidad. Puede reordenar pedagógicamente las ideas sin distorsionar el texto. Distinguir formación y decisiones concretas de la meditación íntima del devocional. No imponer oración ni actividades artificiales. En futuras enseñanzas omitir el apartado final «Fundamento bíblico» y su nota metodológica; integrar referencias en el desarrollo y conservar fuentes pertinentes.
 
 ## 6. Devocional
 
@@ -98,7 +100,7 @@ Pauta de redacción (estructura editorial interna, no encabezados obligatorios):
 - Dos a cuatro preguntas específicas para meditar al final.
 - Oración final **opcional**, solo cuando resulte auténtica y pertinente.
 
-**Extensión:** referencia habitual ~1.000 palabras. Aproximadamente 400–700 para textos breves, 800–1.200 para pasajes habituales, hasta 1.200–1.500 para pasajes complejos cuando se justifique. Priorizar calidad sobre longitud.
+**Extensión:** orientación flexible de 400–600 palabras para pasajes sencillos, 600–900 habituales y 900–1.100 complejos. La reducción de aproximadamente 30 % probada en Marcos 1:1–8 es una referencia, no una cuota. Priorizar comunión con Dios, esperanza y meditación; evitar duplicar la enseñanza. Integrar referencias y conservar fuentes pertinentes sin apartado final redundante.
 
 No convertir cada relato en promesa individual de salud, prosperidad o solución inmediata; no suponer causalidades entre pecado y enfermedad sin sustento textual. Los textos de juicio, lamento o sufrimiento pueden conservar su tensión sin cierre artificialmente optimista.
 
@@ -106,13 +108,11 @@ No convertir cada relato en promesa individual de salud, prosperidad o solución
 Aplicar [Manual de recursos visuales](MANUAL_RECURSOS_VISUALES.md). Priorizar comprensión autónoma de la imagen, realismo cinematográfico, texto incorporado cuando aporte y exploración interactiva opcional.
 
 ## 8. Fuentes y bibliografía
-Introducción, Contexto, Exégesis, Enseñanza, Devocional y recursos visuales deben ofrecer referencias bíblicas y fuentes efectivamente consultadas cuando corresponda. Distinguir citas bíblicas de bibliografía externa; identificar autor, obra y localización verificable cuando esté disponible. No inventar fuentes. Presentación discreta al final del contenido o en información complementaria; implementación técnica pendiente.
+Introducción, Contexto, Exégesis, Enseñanza, Devocional y recursos visuales deben ofrecer referencias bíblicas y fuentes efectivamente consultadas cuando corresponda. Distinguir citas bíblicas de bibliografía externa; identificar autor, obra y localización verificable cuando esté disponible. No inventar fuentes. Presentación discreta mediante referencias integradas, enlaces al final o información complementaria según el recurso.
 
 ## 9. Control de calidad y publicación
-Aplicar [Checklist editorial](CHECKLIST_EDITORIAL.md). Estudiar antes de diseñar; validar contenido y funcionamiento en develop antes de solicitar aprobación para publicar en main. Marcos 1 será el primer capítulo completo de referencia. No imponer cantidades de recursos ni apartados.
+Aplicar [Checklist editorial](CHECKLIST_EDITORIAL.md). Estudiar antes de diseñar; validar contenido y funcionamiento en develop antes de solicitar aprobación para publicar en main. Marcos 1:1–8 es el primer bloque editorial de referencia; Marcos 1 será el primer capítulo completo de referencia. No imponer cantidades de recursos ni apartados.
 
-## Registro
-Las secciones 1–9 consolidan las decisiones aprobadas hasta el 24 de noviembre de 2026. Manual vivo: conservar historial y registrar cambios acordados. La presentación técnica de fuentes sigue pendiente.
 
 ## 10. Producción por bloques y persistencia
 Planificar el capítulo completo y producir por unidades naturales de sentido. Resolver autónomamente investigación, redacción, revisión y preparación técnica conforme a los manuales. Guardar cada recurso aprobado en develop, sin esperar al cierre del capítulo; registrar fuentes y pendientes. Mantener la aprobación explícita para publicar en main. No sustituir estudios aprobados por resúmenes.
@@ -123,16 +123,7 @@ Planificar el capítulo completo y producir por unidades naturales de sentido. R
 La adaptación técnica de un estudio aprobado no autoriza resumir, simplificar ni reducir su contenido. Guardar el texto completo de cada sección inmediatamente después de su aprobación en develop; la previsualización interactiva no sustituye el archivo persistente. Conservar párrafos, subtítulos, comparaciones, referencias y fuentes; adaptar únicamente su presentación. Comparar el contenido de origen con el JSON antes de integrar y registrar cualquier cambio editorial sustantivo para revisión. No publicar en main sin aprobación explícita.
 
 ## 11. Originales enriquecidos
-Guardar cada original aprobado en contenido-editorial/<libro>/<capítulo>/<rango>/ con estado.json (recursos: id, archivo, estado, sha256). Sellar SHA-256 del archivo aprobado, ejecutar npm run editorial:generar y npm run editorial:check, vincular editorialId a tarjeta o sección y verificar commit en develop. No editar el JSON generado. Markdown admite títulos, énfasis, listas, tablas simples, citas, enlaces HTTP(S), Unicode y recuadros :::palabra, :::verdad-central, :::nota, :::reflexion cerrados con :::. No usar HTML crudo. Demostraciones no son estudios aprobados. Marcos 1:1–8 conserva su formato anterior.
+Guardar cada original aprobado en contenido-editorial/<libro>/<capítulo>/<rango>/ con estado.json (recursos: id, archivo, estado, sha256). Sellar SHA-256 del archivo aprobado, ejecutar npm run editorial:generar y npm run editorial:check, vincular editorialId a tarjeta o sección y verificar commit en develop. No editar el JSON generado. Markdown admite títulos, énfasis, listas, tablas simples, citas, enlaces HTTP(S), Unicode y recuadros :::palabra, :::verdad-central, :::nota, :::reflexion cerrados con :::. No usar HTML crudo. Demostraciones no son estudios aprobados. Marcos 1:1–8 utiliza originales Markdown para contexto, exégesis, enseñanza y devocional. Los recursos visuales conservan sus archivos y metadatos.
 
-## 12. Enseñanza pastoral y personal (25 de noviembre de 2026)
-Esta pauta sustituye el formato anterior de enseñanza. Seis momentos: punto de tensión, verdad teológica central, desarrollo devocional pastoral, preguntas de confrontación, aplicación práctica y frase para recordar (síntesis original, no cita bíblica). Usar hooks naturales vinculados al texto también en otros recursos cuando aporten; evitar clickbait y afirmaciones no sustentadas. Orientación habitual de enseñanza: 800–1.200 palabras, flexible; eliminar extensión innecesaria sin perder profundidad. Distinguir enseñanza formativa del devocional centrado en comunión con Dios. La enseñanza de Marcos 1:1–8 migra al original Markdown aprobado; los demás recursos conservan su formato.
-
-## 13. Densidad exegética
-Reducir aproximadamente un 20 % de extensión innecesaria respecto de un borrador extenso, como objetivo flexible, sin sacrificar argumentos, variantes, griego pertinente, conexiones bíblicas ni fuentes. Incorporar preguntas intelectuales naturales. Conservar divisiones y originales Markdown aprobados. En futuras enseñanzas omitir el apartado final «Fundamento bíblico» y su nota metodológica; integrar referencias en el desarrollo y conservar fuentes pertinentes.
-
-## 14. Devocional pastoral integrado
-Mantener relato continuo con hook inicial, contexto histórico y exégesis breve integrados orgánicamente, reflexión pastoral, preguntas personales y oración cuando corresponda. Priorizar comunión con Dios, esperanza y meditación; evitar duplicar la enseñanza formativa. Orientación flexible: 400–600 palabras para pasajes sencillos, 600–900 habituales, 900–1.100 complejos. Reducir extensión innecesaria (prueba de aproximadamente 30 % respecto del original de Marcos 1:1–8), sin imponer cuota. Integrar referencias en el relato y conservar fuentes pertinentes sin apartado final redundante. Guardar el original aprobado íntegro en Markdown.
-
-## 15. Contexto bíblico ágil
-Conservar perspectivas históricas, geográficas, religiosas, culturales, literarias, conexiones bíblicas y fuentes cuando aporten al pasaje. Incorporar preguntas de curiosidad y esquemas sencillos sin duplicar la exégesis. Buscar una reducción flexible del 10–15 % de extensión innecesaria, sin eliminar datos relevantes ni confundir hechos con inferencias. Guardar cada sección aprobada íntegra en Markdown.
+## Registro de versión
+Versión 2.0 (2026-11-25): consolida las decisiones aprobadas y sustituye las pautas anteriores incompatibles. Los porcentajes de reducción son orientaciones de revisión, no requisitos de longitud. Conservar historial en Git. La aprobación editorial no sustituye las pruebas técnicas ni autoriza publicar en main.
