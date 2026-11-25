@@ -1,0 +1,82 @@
+{
+  "recursos": [
+    {
+      "id": "ctx-mrk-1-2-geografico",
+      "archivo": "contexto-geografico.md",
+      "estado": "aprobado",
+      "sha256": "673ff4dc41a8ea1b54c03165a1f216c9ddf1816a4c94593c8c739d8485a83249"
+    },
+    {
+      "id": "ctx-mrk-1-2-religioso",
+      "archivo": "contexto-religioso.md",
+      "estado": "aprobado",
+      "sha256": "6be12b41cf9312f4b0654b87bb7e315789171a40f991bff4dc77d136aaec0e06"
+    },
+    {
+      "id": "ctx-mrk-1-2-literario",
+      "archivo": "contexto-literario.md",
+      "estado": "aprobado",
+      "sha256": "ae51289ad1d8ff8657f61a153f326cd2cfb6389d70052e9bb1a7e969ff719691"
+    },
+    {
+      "id": "ctx-mrk-1-2-conexiones",
+      "archivo": "contexto-conexiones.md",
+      "estado": "aprobado",
+      "sha256": "be31b6c447c4433a082dbb4953365e8caf298d7d2132e73fac3f71f197c84cd4"
+    },
+    {
+      "id": "ctx-mrk-1-2-fuentes",
+      "archivo": "contexto-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "f65732d15220c3b77e0cba5caa7120584c1a9dac8d3f0675cc74d03e1d4a6fdf"
+    },
+    {
+      "id": "exe-mrk-1-2-bautismo",
+      "archivo": "exegesis-bautismo.md",
+      "estado": "aprobado",
+      "sha256": "c79c26c154e61b7071f85590230485057f44532ec5b1f27ca93793408c640d63"
+    },
+    {
+      "id": "exe-mrk-1-2-cielos",
+      "archivo": "exegesis-cielos.md",
+      "estado": "aprobado",
+      "sha256": "908402f75a02bb2ec6020f2ce5b5cafed33b13b18afbac8d5945974b43efd7ef"
+    },
+    {
+      "id": "exe-mrk-1-2-espiritu",
+      "archivo": "exegesis-espiritu.md",
+      "estado": "aprobado",
+      "sha256": "76b54db23442080d5591c0439e56d0e3d3d8b9cf9e7fc44aee419bdec637acbb"
+    },
+    {
+      "id": "exe-mrk-1-2-hijo",
+      "archivo": "exegesis-hijo.md",
+      "estado": "aprobado",
+      "sha256": "95549107c72965525014ca2fad08f815840e230176c0574022377fd7d04c0279"
+    },
+    {
+      "id": "exe-mrk-1-2-sintesis",
+      "archivo": "exegesis-sintesis.md",
+      "estado": "aprobado",
+      "sha256": "b9b79d29bf28d06466c5f5d4666f4e41314089488fd6838432fd96d5d76d0ff5"
+    },
+    {
+      "id": "exe-mrk-1-2-fuentes",
+      "archivo": "exegesis-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "bb35b2f4b6a97f02c6d7a0164cb623d487e48159d33998f1c2bbb4d672518d38"
+    },
+    {
+      "id": "ens-mrk-1-2",
+      "archivo": "ensenanza.md",
+      "estado": "aprobado",
+      "sha256": "90b56e250a90af21371cf6035d8184d060e6c201e6ed666bf2a9b0d6e9bf1724"
+    },
+    {
+      "id": "dev-mrk-1-2",
+      "archivo": "devocional.md",
+      "estado": "aprobado",
+      "sha256": "4b24d83e2ec44bd915a32f4ef20200cc655ad5fd943e12a55190548f6da7e7e2"
+    }
+  ]
+}
