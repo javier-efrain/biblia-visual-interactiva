@@ -1,0 +1,34 @@
+{
+  "recursos": [
+    {
+      "id": "ctx-mrk-1-2-geografico",
+      "archivo": "contexto-geografico.md",
+      "estado": "aprobado",
+      "sha256": "673ff4dc41a8ea1b54c03165a1f216c9ddf1816a4c94593c8c739d8485a83249"
+    },
+    {
+      "id": "ctx-mrk-1-2-religioso",
+      "archivo": "contexto-religioso.md",
+      "estado": "aprobado",
+      "sha256": "6be12b41cf9312f4b0654b87bb7e315789171a40f991bff4dc77d136aaec0e06"
+    },
+    {
+      "id": "ctx-mrk-1-2-literario",
+      "archivo": "contexto-literario.md",
+      "estado": "aprobado",
+      "sha256": "ae51289ad1d8ff8657f61a153f326cd2cfb6389d70052e9bb1a7e969ff719691"
+    },
+    {
+      "id": "ctx-mrk-1-2-conexiones",
+      "archivo": "contexto-conexiones.md",
+      "estado": "aprobado",
+      "sha256": "be31b6c447c4433a082dbb4953365e8caf298d7d2132e73fac3f71f197c84cd4"
+    },
+    {
+      "id": "ctx-mrk-1-2-fuentes",
+      "archivo": "contexto-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "f65732d15220c3b77e0cba5caa7120584c1a9dac8d3f0675cc74d03e1d4a6fdf"
+    }
+  ]
+}
