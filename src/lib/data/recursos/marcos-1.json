@@ -187,6 +187,165 @@
           "editorialId": "ens-mrk-1-1"
         }
       ]
+    },
+    {
+      "divisionId": "mrk-1-2",
+      "afterVerse": 9,
+      "contexto": [
+        {
+          "id": "ctx-mrk-1-2",
+          "title": "El contexto del bautismo de Jesús",
+          "type": "contexto",
+          "sections": [
+            {
+              "id": "geografico",
+              "label": "Geográfico",
+              "reference": "Marcos 1:9",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-2-geografico"
+            },
+            {
+              "id": "religioso",
+              "label": "Religioso",
+              "reference": "Marcos 1:4–11",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-2-religioso"
+            },
+            {
+              "id": "literario",
+              "label": "Literario",
+              "reference": "Marcos 1:9–11",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-2-literario"
+            },
+            {
+              "id": "conexiones",
+              "label": "Conexiones bíblicas",
+              "reference": "Marcos 1:9–11",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-2-conexiones"
+            },
+            {
+              "id": "fuentes",
+              "label": "Fuentes",
+              "paragraphs": [],
+              "editorialId": "ctx-mrk-1-2-fuentes"
+            }
+          ],
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-02-contexto.webp"
+        }
+      ],
+      "central": [
+        {
+          "id": "exe-mrk-1-2",
+          "title": "La revelación del Hijo de Dios",
+          "type": "exegesis",
+          "sections": [
+            {
+              "id": "bautismo",
+              "label": "1:9",
+              "reference": "Marcos 1:9",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-2-bautismo"
+            },
+            {
+              "id": "cielos",
+              "label": "1:10 — Cielos",
+              "reference": "Marcos 1:10",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-2-cielos"
+            },
+            {
+              "id": "espiritu",
+              "label": "1:10 — Espíritu",
+              "reference": "Marcos 1:10",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-2-espiritu"
+            },
+            {
+              "id": "hijo",
+              "label": "1:11",
+              "reference": "Marcos 1:11",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-2-hijo"
+            },
+            {
+              "id": "sintesis",
+              "label": "Síntesis",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-2-sintesis"
+            },
+            {
+              "id": "fuentes",
+              "label": "Fuentes",
+              "paragraphs": [],
+              "editorialId": "exe-mrk-1-2-fuentes"
+            }
+          ],
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-02-exegesis.webp"
+        },
+        {
+          "id": "rve-mrk-1-2-01",
+          "title": "De Nazaret al Jordán",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-02-rve-01.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-02-rve-01.png",
+            "alt": "De Nazaret al Jordán. Viaje hipotético desde Nazaret hasta la región tradicional del bautismo, con relieve, distancias y entorno natural.",
+            "reference": "Marcos 1:9",
+            "description": "Viaje hipotético desde Nazaret hasta la región tradicional del bautismo, con relieve, distancias y entorno natural.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Viaje hipotético desde Nazaret hasta la región tradicional del bautismo, con relieve, distancias y entorno natural.</p><p>Distancia directa aproximada 99 km; escenario didáctico de 120–140 km y 5–7 jornadas a 20–25 km diarios. No se conoce la ruta ni el lugar exacto. Altitudes modernas aproximadas +350 y −400 m; diferencia neta, no desnivel acumulado. Mapa esquemático no calibrado. Flora y fauna regionales modernas, no avistamientos históricos.</p><h3>Fuentes</h3><p>Marcos 1:9; <a href=\"https://doi.org/10.31743/ba.18331\">Marciak et al. (2025)</a>; <a href=\"https://whc.unesco.org/en/list/1446/\">UNESCO 1446</a>; <a href=\"https://www.geonames.org/search.html?country=IL&amp;q=Naatsaret\">GeoNames</a>; <a href=\"https://documents1.worldbank.org/curated/en/923821468040483602/pdf/38076main0JO0GEFR20071000511.pdf\">Banco Mundial (2007), p. 130</a>.</p><p>Recurso generado mediante IA y aprobado editorialmente. Reconstrucción artística, no registro histórico.</p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-2-02",
+          "title": "El bautismo de Jesús",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-02-rve-02.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-02-rve-02.png",
+            "alt": "El bautismo de Jesús. Jesús recibe el bautismo, los cielos se rasgan, el Espíritu desciende como paloma y la voz del Padre declara su filiación.",
+            "reference": "Marcos 1:9–11",
+            "description": "Jesús recibe el bautismo, los cielos se rasgan, el Espíritu desciende como paloma y la voz del Padre declara su filiación.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Jesús recibe el bautismo, los cielos se rasgan, el Espíritu desciende como paloma y la voz del Padre declara su filiación.</p><p>Marcos no precisa el gesto bautismal, el lugar exacto ni quiénes más percibieron la manifestación. La apariencia de los personajes es hipotética.</p><h3>Fuentes</h3><p>Marcos 1:6, 9–11; Mateo 3:13–17; Lucas 3:21–22; Juan 1:32–34; <a href=\"https://www.biblegateway.com/passage/?search=Mark+1&amp;version=NET%3BSBLGNT\">SBLGNT y NET Bible</a>; <a href=\"https://doi.org/10.53751/001c.39734\">Dennis (2022), Tyndale Bulletin 73, 149–169</a>.</p><p>Recurso generado mediante IA y aprobado editorialmente. Reconstrucción artística, no registro histórico.</p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-2-03",
+          "title": "El Rey y el Siervo",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-02-rve-03.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-02-rve-03.png",
+            "alt": "El Rey y el Siervo. Convergencia de la filiación real del Salmo 2 y el Siervo de Isaías 42 en la voz celestial.",
+            "reference": "Marcos 1:11",
+            "description": "Convergencia de la filiación real del Salmo 2 y el Siervo de Isaías 42 en la voz celestial.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Convergencia de la filiación real del Salmo 2 y el Siervo de Isaías 42 en la voz celestial.</p><p>Son alusiones intertextuales, no una cita literal combinada. Génesis 22:2 es una posible resonancia secundaria.</p><h3>Fuentes</h3><p>Salmo 2:7; Isaías 42:1; Marcos 1:11; <a href=\"https://doi.org/10.53751/001c.39734\">Dennis (2022), Tyndale Bulletin 73, 149–169</a>; <a href=\"https://www.biblegateway.com/passage/?search=Mark+1&amp;version=NET%3BSBLGNT\">SBLGNT y NET Bible</a>.</p><p>Recurso generado mediante IA y aprobado editorialmente. Reconstrucción artística, no registro histórico.</p>"
+          }
+        },
+        {
+          "id": "rve-mrk-1-2-05",
+          "title": "Del Jordán a la cruz",
+          "type": "rve",
+          "image": "/biblia-visual-interactiva/visuales/marcos-01-02-rve-05.png",
+          "visual": {
+            "src": "/biblia-visual-interactiva/visuales/marcos-01-02-rve-05.png",
+            "alt": "Del Jordán a la cruz. Correspondencia literaria entre los cielos rasgados y el velo rasgado, la voz del Padre y la confesión del centurión.",
+            "reference": "Marcos 1:10–11; 15:38–39",
+            "description": "Correspondencia literaria entre los cielos rasgados y el velo rasgado, la voz del Padre y la confesión del centurión.",
+            "infoHtml": "<h3>Clave de lectura</h3><p>Correspondencia literaria entre los cielos rasgados y el velo rasgado, la voz del Padre y la confesión del centurión.</p><p>El verbo σχίζω (rasgar) vincula ambos pasajes. Es una lectura literaria, no una equivalencia literal ni una reconstrucción exacta del templo.</p><h3>Fuentes</h3><p>Marcos 1:10–11; 15:38–39; <a href=\"https://www.biblegateway.com/passage/?search=Mark+1&amp;version=NET%3BSBLGNT\">SBLGNT y NET Bible</a>; <a href=\"https://doi.org/10.53751/001c.39734\">Dennis (2022), Tyndale Bulletin 73, 149–169</a>.</p><p>Recurso generado mediante IA y aprobado editorialmente. Reconstrucción artística, no registro histórico.</p>"
+          }
+        }
+      ],
+      "ensenanza": [
+        {
+          "id": "ens-mrk-1-2",
+          "title": "Vivir desde nuestra identidad en Cristo",
+          "type": "ensenanza",
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-02-ensenanza.webp",
+          "editorialId": "ens-mrk-1-2"
+        }
+      ]
     }
   ]
 }

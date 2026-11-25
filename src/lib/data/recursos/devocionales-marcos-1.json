@@ -13,6 +13,18 @@
           "editorialId": "dev-mrk-1-1"
         }
       ]
+    },
+    {
+      "divisionId": "mrk-1-2",
+      "devocional": [
+        {
+          "id": "dev-mrk-1-2",
+          "title": "Antes de hacer, ser amado",
+          "type": "devocional",
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-02-devocional.webp",
+          "editorialId": "dev-mrk-1-2"
+        }
+      ]
     }
   ]
 }

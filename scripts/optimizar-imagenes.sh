@@ -8,9 +8,11 @@ for folder in static/miniaturas static/banners; do
     cwebp -quiet -q 95 -m 6 "$source" -o "$tmp"
     mv "$tmp" "$target"
     printf '%s: %s -> %s bytes\n' "$source" "$(wc -c < "$source")" "$(wc -c < "$target")"
-  done < <(find "$folder" -type f -name 'marcos-01-01-*.png' -print0)
+  done < <(find "$folder" -type f \( -name 'marcos-01-01-*.png' -o -name 'marcos-01-02-*.png' \) -print0)
 done
-for name in contexto exegesis ensenanza devocional; do
-  test -s "static/miniaturas/marcos-01-01-$name.webp"
+for block in marcos-01-01 marcos-01-02; do
+  for name in contexto exegesis ensenanza devocional; do
+    test -s "static/miniaturas/$block-$name.webp"
+  done
+  test -s "static/banners/$block-banner.webp"
 done
-test -s static/banners/marcos-01-01-banner.webp
