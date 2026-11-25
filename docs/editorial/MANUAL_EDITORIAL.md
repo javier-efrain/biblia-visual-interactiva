@@ -127,3 +127,6 @@ Guardar cada original aprobado en contenido-editorial/<libro>/<capítulo>/<rango
 
 ## 12. Enseñanza pastoral y personal (25 de noviembre de 2026)
 Esta pauta sustituye el formato anterior de enseñanza. Seis momentos: punto de tensión, verdad teológica central, desarrollo devocional pastoral, preguntas de confrontación, aplicación práctica y frase para recordar (síntesis original, no cita bíblica). Usar hooks naturales vinculados al texto también en otros recursos cuando aporten; evitar clickbait y afirmaciones no sustentadas. Orientación habitual de enseñanza: 800–1.200 palabras, flexible; eliminar extensión innecesaria sin perder profundidad. Distinguir enseñanza formativa del devocional centrado en comunión con Dios. La enseñanza de Marcos 1:1–8 migra al original Markdown aprobado; los demás recursos conservan su formato.
+
+## 13. Densidad exegética
+Reducir aproximadamente un 20 % de extensión innecesaria respecto de un borrador extenso, como objetivo flexible, sin sacrificar argumentos, variantes, griego pertinente, conexiones bíblicas ni fuentes. Incorporar preguntas intelectuales naturales. Conservar divisiones y originales Markdown aprobados. En futuras enseñanzas omitir el apartado final «Fundamento bíblico» y su nota metodológica; integrar referencias en el desarrollo y conservar fuentes pertinentes.

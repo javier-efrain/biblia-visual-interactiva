@@ -5,6 +5,42 @@
       "archivo": "ensenanza.md",
       "estado": "aprobado",
       "sha256": "1d28504e39206abf27c31d090e533ac7010783d9b3e8a5c755d0ba7b6c7b7909"
+    },
+    {
+      "id": "exe-mrk-1-1-inicio",
+      "archivo": "exegesis-inicio.md",
+      "estado": "aprobado",
+      "sha256": "4571a837f829c423419aa6291a699ae0322d842ae60d3a20741af2afc9d01bb8"
+    },
+    {
+      "id": "exe-mrk-1-1-profecias",
+      "archivo": "exegesis-profecias.md",
+      "estado": "aprobado",
+      "sha256": "b35f5f2cba5c1f8a1e4a3851dcc8b2aca7eef15fa91f20d15dcefc59d063d856"
+    },
+    {
+      "id": "exe-mrk-1-1-juan",
+      "archivo": "exegesis-juan.md",
+      "estado": "aprobado",
+      "sha256": "a220933158a7b22b51e6f2d8b6638193db279235ac3da8b04483064b8af08dde"
+    },
+    {
+      "id": "exe-mrk-1-1-espiritu",
+      "archivo": "exegesis-espiritu.md",
+      "estado": "aprobado",
+      "sha256": "35f8af34e67a0bd19ab3ee4af6f467ef028c05d788b3ae377ad8b3ad3f1456d6"
+    },
+    {
+      "id": "exe-mrk-1-1-sintesis",
+      "archivo": "exegesis-sintesis.md",
+      "estado": "aprobado",
+      "sha256": "ebfcbc5aa8c0d2e447bcabe86cd309381b211926b2180653191d955e84533684"
+    },
+    {
+      "id": "exe-mrk-1-1-fuentes",
+      "archivo": "exegesis-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "447123191da607b31d524f3fa6dabe8dcd91ac1e2feb42a35ca55bee1881e048"
     }
   ]
 }
