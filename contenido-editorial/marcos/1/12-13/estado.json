@@ -1,0 +1,29 @@
+{
+  "recursos": [
+    {
+      "id": "ctx-mrk-1-3-geografico",
+      "archivo": "contexto-geografico.md",
+      "estado": "borrador"
+    },
+    {
+      "id": "ctx-mrk-1-3-religioso",
+      "archivo": "contexto-religioso.md",
+      "estado": "borrador"
+    },
+    {
+      "id": "ctx-mrk-1-3-literario",
+      "archivo": "contexto-literario.md",
+      "estado": "borrador"
+    },
+    {
+      "id": "ctx-mrk-1-3-conexiones",
+      "archivo": "contexto-conexiones.md",
+      "estado": "borrador"
+    },
+    {
+      "id": "ctx-mrk-1-3-fuentes",
+      "archivo": "contexto-fuentes.md",
+      "estado": "borrador"
+    }
+  ]
+}
