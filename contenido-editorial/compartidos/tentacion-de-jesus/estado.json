@@ -29,6 +29,54 @@
       "archivo": "contexto-fuentes.md",
       "estado": "aprobado",
       "sha256": "fd3675762b809fc0861310fbacf5d43d2e84450feefd0fa1b82fad2ab032361f"
+    },
+    {
+      "id": "exe-tentacion-espiritu",
+      "archivo": "exegesis-espiritu.md",
+      "estado": "aprobado",
+      "sha256": "71ccbcab256f6c8b2b544b996982dc1b8f1d75d567293e6ebf5a224845de16ad"
+    },
+    {
+      "id": "exe-tentacion-tentacion",
+      "archivo": "exegesis-tentacion.md",
+      "estado": "aprobado",
+      "sha256": "ad8b8b1092978a189316d329c2e43b52eb1d95565d7f506b8a2b3764ce52bced"
+    },
+    {
+      "id": "exe-tentacion-pan",
+      "archivo": "exegesis-pan.md",
+      "estado": "aprobado",
+      "sha256": "1ffe6555f17efe8b82e3fe8e63ee8da65cddae1ce19e402639faa034ceac3428"
+    },
+    {
+      "id": "exe-tentacion-templo",
+      "archivo": "exegesis-templo.md",
+      "estado": "aprobado",
+      "sha256": "d7d928f39489b5425392c43cfbd997d556e6cd05732340ae8ecedf6f79db445e"
+    },
+    {
+      "id": "exe-tentacion-reinos",
+      "archivo": "exegesis-reinos.md",
+      "estado": "aprobado",
+      "sha256": "87fc399ff19f203ed93ff65f6a44c9b37328ef23c1e01852ceef91e113ca3cb2"
+    },
+    {
+      "id": "exe-tentacion-conclusion",
+      "archivo": "exegesis-conclusion.md",
+      "estado": "aprobado",
+      "sha256": "7ff9a4e21fc22c4ff630db85a6569c5928f5107438b07450e2b41afb32320c7a"
+    },
+    {
+      "id": "exe-tentacion-sintesis",
+      "archivo": "exegesis-sintesis.md",
+      "estado": "aprobado",
+      "sha256": "30024ac6adbf44eb182d40a8bec22acf20bdfba2995979fcbf5d00b3b137cd52"
+    },
+    {
+      "id": "exe-tentacion-fuentes",
+      "archivo": "exegesis-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "fb02bf5f4972476cc4104674dc789f29c344a825192a57562e8e319fca9423fc"
     }
   ]
 }
