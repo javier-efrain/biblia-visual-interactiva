@@ -11,12 +11,16 @@ La voz interpreta la escena. La identidad de Jesús no depende de la opinión de
 :::
 
 :::palabra
-**ἀγαπητός (agapētós)** — amado. Califica al Hijo como objeto del amor del Padre. El término no significa por sí solo eternidad ni establece toda la doctrina de la filiación divina.
+**ἀγαπητός (agapētós)** — amado. Califica al Hijo como objeto del amor del Padre. El término puede expresar una relación de especial afecto o singularidad, pero no equivale automáticamente a unigénito ni establece por sí solo la eternidad del Hijo.
 :::
 
 :::palabra
 **εὐδόκησα (eudókēsa)** — me complací, hallé agrado. Aoristo de εὐδοκέω. El aoristo no demuestra por sí mismo desde cuándo existe esa complacencia ni obliga a traducirla como una relación terminada.
 :::
+
+### Traducción y variante textual
+
+RVR1960, NBLA y NVI expresan complacencia mediante diferentes tiempos verbales españoles; DHH explicita la elección. Estas opciones no permiten fechar el comienzo del amor del Padre. El texto SBLGNT lee ἐν σοὶ (en ti), mientras Robinson-Pierpont lee ἐν ᾧ (en quien). La variante afecta la formulación de la segunda cláusula, no la identificación del Hijo amado.
 
 ### Dos grandes conexiones bíblicas
 
@@ -31,7 +35,7 @@ Génesis 22:2 también emplea en la Septuaginta el lenguaje del hijo amado en re
 
 ### ¿Identidad revelada o adquirida?
 
-Una lectura de entronización mesiánica tiene apoyo en el Salmo 2. Algunos intérpretes han relacionado la escena con una adopción real. Sin embargo, representar a Jesús como investido para su misión no equivale a afirmar que un hombre ordinario se transforme ontológicamente en Hijo de Dios. Marcos no afirma ese cambio y la declaración usa el presente eres, no una fórmula de devenir.
+Una lectura de entronización mesiánica tiene apoyo en el Salmo 2. Algunos intérpretes han relacionado la escena con una adopción real. Sin embargo, representar a Jesús como investido para su misión no equivale a afirmar que un hombre ordinario se transforme ontológicamente en Hijo de Dios. Marcos no afirma ese cambio y la declaración usa el presente eres, no una fórmula de devenir. Sin embargo, el presente por sí solo tampoco refuta una lectura de investidura mesiánica ni demuestra la filiación eterna.
 
 El evangelio desarrolla posteriormente la relación singular del Hijo con el Padre (12:6; 13:32; 14:36). La filiación eterna se formula desde un horizonte canónico más amplio (Juan 1:1–18), no se demuestra únicamente mediante el tiempo verbal de Marcos 1:11.
 
