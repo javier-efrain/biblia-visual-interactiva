@@ -60,7 +60,7 @@
               "editorialId": "ctx-mrk-1-1-fuentes"
             }
           ],
-          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-contexto.png"
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-contexto.webp"
         }
       ],
       "central": [
@@ -110,7 +110,7 @@
               "editorialId": "exe-mrk-1-1-fuentes"
             }
           ],
-          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-exegesis.png"
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-exegesis.webp"
         },
         {
           "id": "rve-mrk-1-1-06",
@@ -183,7 +183,7 @@
           "id": "ens-mrk-1-1",
           "title": "Preparar el camino para el Señor",
           "type": "ensenanza",
-          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-ensenanza.png",
+          "image": "/biblia-visual-interactiva/miniaturas/marcos-01-01-ensenanza.webp",
           "editorialId": "ens-mrk-1-1"
         }
       ]

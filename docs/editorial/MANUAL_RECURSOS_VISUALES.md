@@ -39,3 +39,6 @@ Priorizar legibilidad móvil. Conservar resolución original de RVE y mapas en P
 
 ## Registro de versión
 Versión 2.0: consolida identidad, precisión proporcional, experiencia de viaje y calidad visual. La política de optimización no implica que los archivos existentes hayan sido convertidos. Validar miniaturas y banners antes de adoptar conversiones a escala.
+
+## Procedimiento WebP aprobado (2026-11-25)
+Miniaturas y banners: calidad 95, resolución original, sin recortes. Conservar PNG originales en Git. Ejecutar `bash scripts/optimizar-imagenes.sh` con cwebp instalado; genera derivados WebP sin modificar originales. La primera integración limita el script a Marcos 1:1–8. Ampliar explícitamente el alcance para próximos bloques tras verificar calidad. GitHub Actions genera los derivados antes de compilar el laboratorio; no se versionan los binarios derivados. Las referencias de las cinco tarjetas y banner apuntan a WebP. Para desarrollo local ejecutar el script antes de iniciar el visor. No procesar static/visuales. Verificar dimensiones, peso y legibilidad en móvil antes de publicar. La calidad 95 es compresión con pérdida, no porcentaje de fidelidad.
