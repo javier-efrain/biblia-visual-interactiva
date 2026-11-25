@@ -1,0 +1,34 @@
+{
+  "recursos": [
+    {
+      "id": "ctx-tentacion-religioso",
+      "archivo": "contexto-religioso.md",
+      "estado": "aprobado",
+      "sha256": "4e2c6a59acfc67cda7430d6ca4a31e13a6ddc32c10629252f5b93122724e6ba2"
+    },
+    {
+      "id": "ctx-tentacion-historico-cultural",
+      "archivo": "contexto-historico-cultural.md",
+      "estado": "aprobado",
+      "sha256": "8a73e7edb88d88a582e702c7a8d099db7b5d316c9edfbae236515e94ec00c741"
+    },
+    {
+      "id": "ctx-tentacion-literario",
+      "archivo": "contexto-literario.md",
+      "estado": "aprobado",
+      "sha256": "ca54a445fd161b85b58e09291d61052ed30584ea0440c4ed89ac26a479a5f9a8"
+    },
+    {
+      "id": "ctx-tentacion-conexiones",
+      "archivo": "contexto-conexiones.md",
+      "estado": "aprobado",
+      "sha256": "50aa9b003848350c011dda6240e7fc12fa33b9d292da3d3c71d1bcba08c3a24d"
+    },
+    {
+      "id": "ctx-tentacion-fuentes",
+      "archivo": "contexto-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "fd3675762b809fc0861310fbacf5d43d2e84450feefd0fa1b82fad2ab032361f"
+    }
+  ]
+}
