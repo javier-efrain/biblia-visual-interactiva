@@ -41,6 +41,12 @@
       "archivo": "exegesis-fuentes.md",
       "estado": "aprobado",
       "sha256": "447123191da607b31d524f3fa6dabe8dcd91ac1e2feb42a35ca55bee1881e048"
+    },
+    {
+      "id": "dev-mrk-1-1",
+      "archivo": "devocional.md",
+      "estado": "aprobado",
+      "sha256": "b32f8db7b781fe2ef1178fc41f9a80461789ba1d4a39b06788c0f19b1c014b2d"
     }
   ]
 }

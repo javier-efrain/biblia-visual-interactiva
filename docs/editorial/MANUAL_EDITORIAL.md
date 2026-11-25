@@ -130,3 +130,6 @@ Esta pauta sustituye el formato anterior de enseñanza. Seis momentos: punto de 
 
 ## 13. Densidad exegética
 Reducir aproximadamente un 20 % de extensión innecesaria respecto de un borrador extenso, como objetivo flexible, sin sacrificar argumentos, variantes, griego pertinente, conexiones bíblicas ni fuentes. Incorporar preguntas intelectuales naturales. Conservar divisiones y originales Markdown aprobados. En futuras enseñanzas omitir el apartado final «Fundamento bíblico» y su nota metodológica; integrar referencias en el desarrollo y conservar fuentes pertinentes.
+
+## 14. Devocional pastoral integrado
+Mantener relato continuo con hook inicial, contexto histórico y exégesis breve integrados orgánicamente, reflexión pastoral, preguntas personales y oración cuando corresponda. Priorizar comunión con Dios, esperanza y meditación; evitar duplicar la enseñanza formativa. Orientación flexible: 400–600 palabras para pasajes sencillos, 600–900 habituales, 900–1.100 complejos. Reducir extensión innecesaria (prueba de aproximadamente 30 % respecto del original de Marcos 1:1–8), sin imponer cuota. Integrar referencias en el relato y conservar fuentes pertinentes sin apartado final redundante. Guardar el original aprobado íntegro en Markdown.
