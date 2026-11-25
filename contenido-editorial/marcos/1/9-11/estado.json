@@ -71,6 +71,12 @@
       "archivo": "ensenanza.md",
       "estado": "aprobado",
       "sha256": "90b56e250a90af21371cf6035d8184d060e6c201e6ed666bf2a9b0d6e9bf1724"
+    },
+    {
+      "id": "dev-mrk-1-2",
+      "archivo": "devocional.md",
+      "estado": "aprobado",
+      "sha256": "4b24d83e2ec44bd915a32f4ef20200cc655ad5fd943e12a55190548f6da7e7e2"
     }
   ]
 }
