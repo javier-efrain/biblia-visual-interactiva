@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import type { Division } from '../../data/biblia/registro-capitulos';
   let { division, estilo, libro, capitulo, imagen }: { division: Division; estilo: 'Editorial' | 'Minimalista' | 'Banner CSS' | 'Banner imagen'; libro: string; capitulo: number; imagen?: string } = $props();
-  let fondo = $derived(imagen ? `${base}/${imagen.replace(/^\/+/, '')}` : undefined);
+  let fondo = $derived(imagen ? `${resolve('/').replace(/\/+$/, '')}/${imagen.replace(/^\/+/, '')}` : undefined);
 </script>
 
 {#if estilo === 'Banner CSS' || estilo === 'Banner imagen'}
