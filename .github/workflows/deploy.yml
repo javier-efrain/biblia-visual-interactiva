@@ -14,6 +14,8 @@ concurrency:
 
 jobs:
   build:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Descargar BVI oficial
@@ -63,6 +65,23 @@ jobs:
           npm run check
           npm test
           npm run build
+
+      - name: Sincronizar índices editoriales versionados
+        if: github.ref == 'refs/heads/develop'
+        working-directory: laboratorio
+        run: |
+          set -euo pipefail
+          git fetch origin develop
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/develop)"
+          git add -- src/lib/data/editorial-generado/originales.json src/lib/data/editorial-generado/revisiones.json
+          if git diff --cached --quiet; then
+            echo "Índices ya sincronizados"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "BVI: sincronizar índices editoriales generados"
+            git push origin HEAD:develop
+          fi
 
       - name: Crear páginas de entrada para ambas versiones
         run: |
