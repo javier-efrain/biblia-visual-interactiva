@@ -16,6 +16,14 @@
       "sha256": "342573a179c5e49e5c306c2e876f4e733ee30e961813c8c9a4c62fde4453e5b3",
       "navegacion": true,
       "tablas": "tarjetas"
+    },
+    {
+      "id": "ens-endemoniado-capernaum",
+      "archivo": "ensenanza.md",
+      "estado": "aprobado",
+      "sha256": "c0282ccf9d5ebf183e4e1b43b18154b8ed519dab1e83968f940cd03a796b2040",
+      "navegacion": false,
+      "tablas": "tabla"
     }
   ]
 }
