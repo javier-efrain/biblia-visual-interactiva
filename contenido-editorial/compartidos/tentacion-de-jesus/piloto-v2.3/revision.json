@@ -2,7 +2,8 @@
   "version": "2.3-piloto",
   "contexto": "borrador aprobado por usuario",
   "exegesis": "borrador aprobado por usuario",
-  "ensenanza": "borrador pendiente de aprobación",
+  "ensenanza": "borrador aprobado por usuario",
+  "devocional": "borrador pendiente de aprobación",
   "publicacion": false,
   "nota": "No sustituye originales sellados; sin estado.json para evitar inclusión automática."
 }
