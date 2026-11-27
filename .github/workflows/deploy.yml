@@ -59,6 +59,7 @@ jobs:
           BVI_BASE_PATH: /biblia-visual-interactiva/pruebas
         run: |
           npm ci
+          npm run editorial:generar
           npm run check
           npm test
           npm run build
