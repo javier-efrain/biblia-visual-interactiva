@@ -5,6 +5,12 @@
       "archivo": "contexto.md",
       "estado": "aprobado",
       "sha256": "9e019970dcebdeaf673e9c8e23a13e65ad300d99ae6efae64ceced5f3787ee8d"
+    },
+    {
+      "id": "exe-endemoniado-capernaum",
+      "archivo": "exegesis.md",
+      "estado": "aprobado",
+      "sha256": "342573a179c5e49e5c306c2e876f4e733ee30e961813c8c9a4c62fde4453e5b3"
     }
   ]
 }
