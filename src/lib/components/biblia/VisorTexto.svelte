@@ -1,6 +1,6 @@
 <script lang="ts">
   import { tick } from 'svelte';
-  import { base } from '$app/paths';
+  import { resolve } from '$app/paths';
   import piloto from '../../data/editorial-generado/piloto-tentacion.json';
   import TextoEditorial from './TextoEditorial.svelte';
   import originales from '../../data/editorial-generado/originales.json';
@@ -18,7 +18,7 @@
   };
   const etiqueta = (tipo: string) => nombres[tipo] ?? 'Recurso';
   const idsPiloto: Record<string, keyof typeof piloto> = {'ctx-mrk-1-3':'contexto','exe-mrk-1-3':'exegesis','ens-mrk-1-3':'ensenanza','dev-mrk-1-3':'devocional'};
-  const pilotoActivo = $derived(base.endsWith('/pruebas') && recurso && idsPiloto[recurso.id] ? piloto[idsPiloto[recurso.id]] : undefined);
+  const pilotoActivo = $derived(resolve('/').includes('/pruebas') && recurso && idsPiloto[recurso.id] ? piloto[idsPiloto[recurso.id]] : undefined);
   const secciones = $derived(pilotoActivo ? [] : ['contexto', 'exegesis', 'ensenanza', 'devocional'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
   const indice = $derived(Math.max(0, secciones.findIndex((s) => s.id === pestana)));
   const activa = $derived(secciones[indice]);
