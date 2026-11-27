@@ -25,7 +25,7 @@
   const activa = $derived(secciones[indice]);
   const parrafos = $derived(activa?.paragraphs ?? recurso?.paragraphs ?? []);
   const editorial = $derived(archivoEditorial[activa?.editorialId ?? recurso?.editorialId ?? '']);
-  const esExegesis = $derived(recurso?.type === 'exegesis' && secciones.length > 0);
+  const esExegesis = $derived((recurso?.type === 'exegesis' || (pilotoActivo && recurso?.type === 'contexto')) && secciones.length > 0);
 
   $effect(() => {
     const id = recurso?.id;
@@ -87,8 +87,8 @@
     {#if secciones.length}
       {#if esExegesis}
         <div class="navegacion-exegesis">
-          <div class="progreso">Análisis {indice + 1} de {secciones.length}</div>
-          <nav class="pestanas-exegesis" bind:this={barra} aria-label="Análisis exegéticos">
+          <div class="progreso">{recurso.type === 'contexto' ? 'Apartado' : 'Análisis'} {indice + 1} de {secciones.length}</div>
+          <nav class="pestanas-exegesis" bind:this={barra} aria-label={recurso.type === 'contexto' ? 'Perspectivas del contexto' : 'Análisis exegéticos'}>
             {#each secciones as seccion (seccion.id)}
               <button data-seccion={seccion.id} type="button" class:activa={activa?.id === seccion.id} aria-current={activa?.id === seccion.id ? 'true' : undefined} onclick={() => seleccionar(seccion.id)}>
                 <span>{seccion.label}</span>

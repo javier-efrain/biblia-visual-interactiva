@@ -34,5 +34,6 @@ export function renderPiloto(source, selected){
  }else if(selected){const n=Number(selected.replace('piloto-',''));body=cite(renderMarkdown((sections[n]??'').replace(/^## .+\n/,'')));}else body=cite(renderMarkdown(parts[0]));
  if(bibliography && (!selected || selected==='piloto-fuentes' || (optional===undefined && selected==='piloto-6'))) body+='<h4>Fuentes</h4>'+renderMarkdown(bibliography);
  for(const [n,html] of refs) body+='<div class="fuente-piloto" id="bvi-fuente-'+n+'" popover><strong>Fuente '+n+'</strong>'+html+'<button type="button" popovertarget="bvi-fuente-'+n+'" popovertargetaction="hide">Cerrar</button></div>';
+ if(!source.includes('\n## Profundización opcional')) return body;
  return body.replace(/<table><thead><tr>(.*?)<\/tr><\/thead><tbody>(.*?)<\/tbody><\/table>/gs,(_,head,rows)=>{const labels=Array.from(head.matchAll(/<th[^>]*>(.*?)<\/th>/gs),m=>m[1]);return '<div class="tarjetas-tabla" role="list">'+Array.from(rows.matchAll(/<tr>(.*?)<\/tr>/gs),m=>'<div class="fila-tabla" role="listitem">'+Array.from(m[1].matchAll(/<td>(.*?)<\/td>/gs),(c,i)=>'<div class="celda-tabla"><span class="etiqueta-tabla">'+labels[i]+'</span><div>'+c[1]+'</div></div>').join('')+'</div>').join('')+'</div>';});
 }

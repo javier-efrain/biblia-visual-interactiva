@@ -27,4 +27,7 @@ let html=$derived(esPiloto ? renderPiloto(markdown,seleccion) : renderMarkdown(m
 .editorial :global(.fila-tabla){border:1px solid color-mix(in srgb,currentColor 25%,transparent);border-radius:12px;padding:14px;display:grid;gap:12px;overflow-wrap:normal}
 .editorial :global(.celda-tabla + .celda-tabla){border-top:1px solid color-mix(in srgb,currentColor 15%,transparent);padding-top:10px;font-weight:600}
 .editorial :global(.celda-tabla + .celda-tabla .etiqueta-tabla){font-weight:400}
+.editorial :global(table){table-layout:fixed;font-size:.85em;line-height:1.45;min-width:260px}
+.editorial :global(th),.editorial :global(td){overflow-wrap:normal;word-break:normal;hyphens:auto;vertical-align:top;padding:.55em}
+.editorial :global(th){background:color-mix(in srgb,currentColor 7%,transparent)}
 </style>
