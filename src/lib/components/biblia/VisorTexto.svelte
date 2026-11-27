@@ -1,5 +1,7 @@
 <script lang="ts">
   import { tick } from 'svelte';
+  import { base } from '$app/paths';
+  import piloto from '../../data/editorial-generado/piloto-tentacion.json';
   import TextoEditorial from './TextoEditorial.svelte';
   import originales from '../../data/editorial-generado/originales.json';
   const archivoEditorial = originales as Record<string, {markdown:string; estado:string}>;
@@ -15,7 +17,9 @@
     contexto: 'Contexto', exegesis: 'Exégesis', ensenanza: 'Enseñanza', devocional: 'Devocional'
   };
   const etiqueta = (tipo: string) => nombres[tipo] ?? 'Recurso';
-  const secciones = $derived(['contexto', 'exegesis', 'ensenanza', 'devocional'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
+  const idsPiloto: Record<string, keyof typeof piloto> = {'ctx-mrk-1-3':'contexto','exe-mrk-1-3':'exegesis','ens-mrk-1-3':'ensenanza','dev-mrk-1-3':'devocional'};
+  const pilotoActivo = $derived(base.endsWith('/pruebas') && recurso && idsPiloto[recurso.id] ? piloto[idsPiloto[recurso.id]] : undefined);
+  const secciones = $derived(pilotoActivo ? [] : ['contexto', 'exegesis', 'ensenanza', 'devocional'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
   const indice = $derived(Math.max(0, secciones.findIndex((s) => s.id === pestana)));
   const activa = $derived(secciones[indice]);
   const parrafos = $derived(activa?.paragraphs ?? recurso?.paragraphs ?? []);
@@ -107,7 +111,9 @@
         {#if activa.reference}<span class="referencia">{activa.reference}</span>{/if}
         <h3>{activa.label}</h3>
       {/if}
-      {#if editorial?.estado === 'aprobado'}
+      {#if pilotoActivo}
+        <TextoEditorial markdown={pilotoActivo} esPiloto={true} />
+      {:else if editorial?.estado === 'aprobado'}
         <TextoEditorial markdown={editorial.markdown} />
       {:else if parrafos.length}
         {#each parrafos as parrafo, i (i)}

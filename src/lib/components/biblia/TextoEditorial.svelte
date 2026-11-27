@@ -1,7 +1,8 @@
 <script lang="ts">
 import {renderMarkdown} from '../../editorial/markdown.mjs';
-let {markdown}:{markdown:string}=$props();
-let html=$derived(renderMarkdown(markdown));
+import {renderPiloto} from '../../editorial/piloto.mjs';
+let {markdown,esPiloto=false}:{markdown:string;esPiloto?:boolean}=$props();
+let html=$derived(esPiloto ? renderPiloto(markdown) : renderMarkdown(markdown));
 </script>
 <div class="editorial">{@html html}</div>
 <style>
@@ -15,4 +16,9 @@ let html=$derived(renderMarkdown(markdown));
 .editorial :global(table){border-collapse:collapse;width:100%}
 .editorial :global(th),.editorial :global(td){border:1px solid #87958b;padding:.5em;text-align:start}
 .editorial :global(a){color:inherit;text-decoration:underline}
+.editorial :global(.profundizacion-piloto){margin:1em 0;padding:.8em;border:1px solid #d7e5dc;border-radius:9px;background:#f5f8f5}
+.editorial :global(summary){cursor:pointer;font:600 14px/1.5 Arial,sans-serif;color:#355a4e}
+.editorial :global(.cita-piloto){border:0;background:transparent;color:#28695c;cursor:pointer;font:700 16px Arial,sans-serif;padding:3px 5px;text-decoration:underline}
+.editorial :global(.fuente-piloto){box-sizing:border-box;width:min(420px,calc(100% - 32px));padding:20px;border:1px solid #d7e5dc;border-radius:12px;background:white;color:#273e35;box-shadow:0 8px 30px #142b2840}
+.editorial :global(.fuente-piloto button){cursor:pointer;padding:8px 14px}
 </style>

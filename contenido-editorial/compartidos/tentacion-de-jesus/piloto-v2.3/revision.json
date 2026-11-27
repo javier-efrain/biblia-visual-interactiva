@@ -3,7 +3,8 @@
   "contexto": "borrador aprobado por usuario",
   "exegesis": "borrador aprobado por usuario",
   "ensenanza": "borrador aprobado por usuario",
-  "devocional": "borrador pendiente de aprobación",
+  "devocional": "borrador aprobado por usuario",
   "publicacion": false,
-  "nota": "No sustituye originales sellados; sin estado.json para evitar inclusión automática."
+  "nota": "No sustituye originales sellados; sin estado.json para evitar inclusión automática.",
+  "integracion": "piloto de laboratorio, pendiente de validación"
 }
