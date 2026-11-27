@@ -1,0 +1,1 @@
+Contexto integral aprobado expresamente por el usuario. Cinco originales nuevos sellados; geográfico reutiliza ctx-mrk-1-3-geografico con su sello histórico. Originales anteriores intactos. Integración y generación pendientes de cierre técnico; no se modifica main.

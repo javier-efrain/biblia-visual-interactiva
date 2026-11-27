@@ -311,7 +311,7 @@
           {#if versiculosApi.length}
             {#each versiculosApi as versiculo (versiculo.verse)}
               {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
-                <BannerNarrativo division={division} estilo={estiloDivisiones} libro="Marcos" capitulo={version === 'local' ? capitulo : numeroCapituloApi} imagen={division.bannerImage ?? capituloBVI?.bannerImage} />
+                <BannerNarrativo division={division} estilo={estiloDivisiones} libro={version === 'local' ? (libro?.name ?? '') : (librosApi.find(item => item.id === libroApiId)?.name ?? 'Biblia')} capitulo={version === 'local' ? capitulo : numeroCapituloApi} imagen={division.bannerImage ?? capituloBVI?.bannerImage} />
               {/each}
               {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
                 {#if modoLectura === 'Estudio'}<RecursosBloque posicion="inicio" tarjetas={bloquesEstudio.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />{/if}
@@ -361,7 +361,7 @@
           <h2 class="titulo-lectura">{libro.name} {capitulo}</h2>
           {#each versiculos as versiculo (versiculo.verse)}
             {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
-              <BannerNarrativo division={division} estilo={estiloDivisiones} libro="Marcos" capitulo={version === 'local' ? capitulo : numeroCapituloApi} imagen={division.bannerImage ?? capituloBVI?.bannerImage} />
+              <BannerNarrativo division={division} estilo={estiloDivisiones} libro={version === 'local' ? (libro?.name ?? '') : (librosApi.find(item => item.id === libroApiId)?.name ?? 'Biblia')} capitulo={version === 'local' ? capitulo : numeroCapituloApi} imagen={division.bannerImage ?? capituloBVI?.bannerImage} />
             {/each}
             {#each divisionesActuales.filter((division) => division.startVerse === versiculo.verse) as division (division.id)}
               {#if modoLectura === 'Estudio'}<RecursosBloque posicion="inicio" tarjetas={bloquesEstudio.find((bloque) => bloque.divisionId === division.id)?.contexto ?? []} />{/if}

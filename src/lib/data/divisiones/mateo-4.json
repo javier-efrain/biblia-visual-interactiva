@@ -1,0 +1,14 @@
+{
+  "book": "MAT",
+  "chapter": 4,
+  "sections": [
+    {
+      "id": "mat-4-1",
+      "startVerse": 1,
+      "endVerse": 11,
+      "title": "La tentación de Jesús",
+      "estudioId": "tentacion-de-jesus",
+      "afterVerse": 2
+    }
+  ]
+}

@@ -21,7 +21,9 @@
       "startVerse": 12,
       "endVerse": 13,
       "title": "La tentación en el desierto",
-      "bannerImage": "banners/marcos-01-03-banner.webp"
+      "bannerImage": "banners/marcos-01-03-banner.webp",
+      "estudioId": "tentacion-de-jesus",
+      "afterVerse": 12
     },
     {
       "id": "mrk-1-4",

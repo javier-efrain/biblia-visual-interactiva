@@ -1,0 +1,1 @@
+Aprobación expresa del usuario. Ocho originales sellados; fieras reutiliza original histórico exe-mrk-1-3-fieras. Cinco sellos de contexto y originales históricos comprobados mediante SHA-256. Generación e integración pendientes.

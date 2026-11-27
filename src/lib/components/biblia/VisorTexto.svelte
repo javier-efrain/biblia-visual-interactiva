@@ -1,5 +1,8 @@
 <script lang="ts">
   import { tick } from 'svelte';
+  import revisiones from '../../data/editorial-generado/revisiones.json';
+  const revisionesEditoriales = revisiones as Record<string,{markdown:string;navegacion:boolean;tablas:'tabla'|'tarjetas'}>;
+  import { seccionesEditorial } from '../../editorial/formato.mjs';
   import TextoEditorial from './TextoEditorial.svelte';
   import originales from '../../data/editorial-generado/originales.json';
   const archivoEditorial = originales as Record<string, {markdown:string; estado:string}>;
@@ -15,12 +18,13 @@
     contexto: 'Contexto', exegesis: 'Exégesis', ensenanza: 'Enseñanza', devocional: 'Devocional'
   };
   const etiqueta = (tipo: string) => nombres[tipo] ?? 'Recurso';
-  const secciones = $derived(['contexto', 'exegesis', 'ensenanza', 'devocional'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
+  const revision = $derived(recurso ? revisionesEditoriales[recurso.id] : undefined);
+  const secciones = $derived(revision ? (revision.navegacion ? seccionesEditorial(revision.markdown) : []) : ['contexto', 'exegesis', 'ensenanza', 'devocional'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
   const indice = $derived(Math.max(0, secciones.findIndex((s) => s.id === pestana)));
   const activa = $derived(secciones[indice]);
   const parrafos = $derived(activa?.paragraphs ?? recurso?.paragraphs ?? []);
   const editorial = $derived(archivoEditorial[activa?.editorialId ?? recurso?.editorialId ?? '']);
-  const esExegesis = $derived(recurso?.type === 'exegesis' && secciones.length > 0);
+  const esExegesis = $derived((recurso?.type === 'exegesis' || (revision && recurso?.type === 'contexto')) && secciones.length > 0);
 
   $effect(() => {
     const id = recurso?.id;
@@ -82,8 +86,8 @@
     {#if secciones.length}
       {#if esExegesis}
         <div class="navegacion-exegesis">
-          <div class="progreso">Análisis {indice + 1} de {secciones.length}</div>
-          <nav class="pestanas-exegesis" bind:this={barra} aria-label="Análisis exegéticos">
+          <div class="progreso">{recurso.type === 'contexto' ? 'Apartado' : 'Análisis'} {indice + 1} de {secciones.length}</div>
+          <nav class="pestanas-exegesis" bind:this={barra} aria-label={recurso.type === 'contexto' ? 'Perspectivas del contexto' : 'Análisis exegéticos'}>
             {#each secciones as seccion (seccion.id)}
               <button data-seccion={seccion.id} type="button" class:activa={activa?.id === seccion.id} aria-current={activa?.id === seccion.id ? 'true' : undefined} onclick={() => seleccionar(seccion.id)}>
                 <span>{seccion.label}</span>
@@ -107,7 +111,9 @@
         {#if activa.reference}<span class="referencia">{activa.reference}</span>{/if}
         <h3>{activa.label}</h3>
       {/if}
-      {#if editorial?.estado === 'aprobado'}
+      {#if revision}
+        <TextoEditorial markdown={revision.markdown} formato23={true} tablas={revision.tablas} seleccion={activa?.id} />
+      {:else if editorial?.estado === 'aprobado'}
         <TextoEditorial markdown={editorial.markdown} />
       {:else if parrafos.length}
         {#each parrafos as parrafo, i (i)}

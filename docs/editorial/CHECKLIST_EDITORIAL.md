@@ -1,5 +1,5 @@
 # BVI — Checklist editorial
-Versión 2.0 · Criterios aprobados · 2026-11-25
+Versión 2.3 · Criterios aprobados · 2026-11-27
 
 Aplicar por recurso y capítulo. Marcar no aplicable con justificación; registrar errores y corregir antes de publicar.
 
@@ -73,3 +73,39 @@ Consultar [Manual editorial](MANUAL_EDITORIAL.md) y [Manual visual](MANUAL_RECUR
 - [ ] Experiencias de viaje distinguen estimaciones, itinerarios hipotéticos, fauna regional y ubicaciones tradicionales.
 - [ ] Evitar recursos redundantes; conservar historial e identificadores.
 - [ ] Verificar orden del carrusel y legibilidad real en móvil, incluyendo zoom.
+
+## Puertas obligatorias de producción y publicación (v2.1)
+- [ ] Plan y fuentes del bloque revisados; originales íntegros aprobados y sellados individualmente.
+- [ ] Cada RVE tiene pregunta educativa, método pertinente y composición definida; infografía combinada cuando aporte.
+- [ ] Se produjo un solo RVE por vez; inspección real, correcciones y nueva revisión antes de presentar.
+- [ ] Mapas: orientación, hidrografía, posiciones, escala o carácter esquemático; fauna: especie, hábitat y plausibilidad; comparaciones: etiquetas, secuencia y matices interpretativos.
+- [ ] Aprobación explícita del archivo definitivo, PNG persistido y verificado en develop antes del siguiente RVE; excepciones documentadas y aceptadas.
+- [ ] Banner y miniaturas diferenciados; WebP q95 generado y original conservado; rutas y derivados presentes en artefacto.
+- [ ] División, afterVerse, editorialId, tarjetas, devocional, banner, miniaturas, RVE, fuentes y orden comprobados; no basta editorial:check.
+- [ ] Generación oficial del JSON, integridad SHA-256 y pruebas exitosas; cero errores y advertencias Svelte; advertencias de infraestructura registradas.
+- [ ] Despliegue del laboratorio exitoso y comprobación real del visor; pendientes y límites de inspección declarados.
+- [ ] Comparación directa de árboles main/develop; integración selectiva preserva contenidos oficiales y excluye experimentos.
+- [ ] Autorización explícita de main; compilación y despliegue oficial verificados; comprobación visual solicitada.
+
+**Registro v2.1 (2026-11-25):** actualización posterior a Marcos 1:12–13; conserva los criterios vigentes de v2.0 y añade controles secuenciales y técnicos.
+
+## Estudios integrales compartidos (v2.2)
+- [ ] Paralelos identificados y correspondencia sustentada; casos discutidos diferenciados.
+- [ ] Un plan integral y un estudioId estable; referencias de todos los testimonios pertinentes.
+- [ ] Contexto común y particularidades literarias de cada autor; exégesis por unidades naturales con diferencias, omisiones y orden narrativo explícitos.
+- [ ] Enseñanza y devocional comunes fundamentados; sin duplicación ni armonización artificial.
+- [ ] Inventario de originales, fuentes e imágenes aprobados; reutilización íntegra y nueva aprobación de cambios sustantivos.
+- [ ] Descriptor único, originales sin copias, editorialId válidos, rutas compartidas y afterVerse local dentro del rango; divisiones y títulos propios.
+- [ ] RVE y metadatos distinguen testimonios; imágenes, banner y miniaturas reutilizados cuando pertinentes.
+- [ ] Pruebas de identidad de recursos, vínculos inexistentes, duplicados y posiciones; compatibilidad con estudios independientes.
+- [ ] Cada pasaje comprobado en laboratorio: modos de lectura, estudio y devocional, referencias, traducciones, banner, tarjetas y zoom; registrar alcance real de pruebas.
+- [ ] Diferenciar piloto técnico de aprobación editorial integral; publicación selectiva solo con autorización explícita.
+
+**Registro v2.2 (2026-11-25):** incorpora producción integral de relatos paralelos y reutilización técnica; conserva íntegramente las normas anteriores. Piloto técnico: commit ebea2ec, ejecución 45698925494; compilación y despliegue exitosos, cero errores y advertencias Svelte, tres pruebas unitarias aprobadas en develop. Advertencias de infraestructura Node.js 20, punycode y url.parse() registradas. Validación del usuario en los tres libros; no implica inspección exhaustiva de cada visor ni aprobación editorial integral.
+
+## Estándar 2.3 — aprobado el 27/11/2026
+
+- [ ] Contexto 500–800, exégesis 900–1400, enseñanza 500–700, devocional 400–600 palabras orientativas; justificar excepciones.
+- [ ] Significado antes de debates; notas académicas visibles, citas numéricas consultables y fuentes finales.
+- [ ] Navegación horizontal, tablas compactas y síntesis en tarjetas cuando aporte; validar móvil.
+- [ ] Revisiones mediante formato23.json e índice generado, sin IDs específicos en componentes; originales históricos intactos.

@@ -1,0 +1,94 @@
+{
+  "recursos": [
+    {
+      "id": "ctx-tentacion-religioso",
+      "archivo": "contexto-religioso.md",
+      "estado": "aprobado",
+      "sha256": "4e2c6a59acfc67cda7430d6ca4a31e13a6ddc32c10629252f5b93122724e6ba2"
+    },
+    {
+      "id": "ctx-tentacion-historico-cultural",
+      "archivo": "contexto-historico-cultural.md",
+      "estado": "aprobado",
+      "sha256": "8a73e7edb88d88a582e702c7a8d099db7b5d316c9edfbae236515e94ec00c741"
+    },
+    {
+      "id": "ctx-tentacion-literario",
+      "archivo": "contexto-literario.md",
+      "estado": "aprobado",
+      "sha256": "ca54a445fd161b85b58e09291d61052ed30584ea0440c4ed89ac26a479a5f9a8"
+    },
+    {
+      "id": "ctx-tentacion-conexiones",
+      "archivo": "contexto-conexiones.md",
+      "estado": "aprobado",
+      "sha256": "50aa9b003848350c011dda6240e7fc12fa33b9d292da3d3c71d1bcba08c3a24d"
+    },
+    {
+      "id": "ctx-tentacion-fuentes",
+      "archivo": "contexto-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "fd3675762b809fc0861310fbacf5d43d2e84450feefd0fa1b82fad2ab032361f"
+    },
+    {
+      "id": "exe-tentacion-espiritu",
+      "archivo": "exegesis-espiritu.md",
+      "estado": "aprobado",
+      "sha256": "71ccbcab256f6c8b2b544b996982dc1b8f1d75d567293e6ebf5a224845de16ad"
+    },
+    {
+      "id": "exe-tentacion-tentacion",
+      "archivo": "exegesis-tentacion.md",
+      "estado": "aprobado",
+      "sha256": "ad8b8b1092978a189316d329c2e43b52eb1d95565d7f506b8a2b3764ce52bced"
+    },
+    {
+      "id": "exe-tentacion-pan",
+      "archivo": "exegesis-pan.md",
+      "estado": "aprobado",
+      "sha256": "1ffe6555f17efe8b82e3fe8e63ee8da65cddae1ce19e402639faa034ceac3428"
+    },
+    {
+      "id": "exe-tentacion-templo",
+      "archivo": "exegesis-templo.md",
+      "estado": "aprobado",
+      "sha256": "d7d928f39489b5425392c43cfbd997d556e6cd05732340ae8ecedf6f79db445e"
+    },
+    {
+      "id": "exe-tentacion-reinos",
+      "archivo": "exegesis-reinos.md",
+      "estado": "aprobado",
+      "sha256": "87fc399ff19f203ed93ff65f6a44c9b37328ef23c1e01852ceef91e113ca3cb2"
+    },
+    {
+      "id": "exe-tentacion-conclusion",
+      "archivo": "exegesis-conclusion.md",
+      "estado": "aprobado",
+      "sha256": "7ff9a4e21fc22c4ff630db85a6569c5928f5107438b07450e2b41afb32320c7a"
+    },
+    {
+      "id": "exe-tentacion-sintesis",
+      "archivo": "exegesis-sintesis.md",
+      "estado": "aprobado",
+      "sha256": "30024ac6adbf44eb182d40a8bec22acf20bdfba2995979fcbf5d00b3b137cd52"
+    },
+    {
+      "id": "exe-tentacion-fuentes",
+      "archivo": "exegesis-fuentes.md",
+      "estado": "aprobado",
+      "sha256": "fb02bf5f4972476cc4104674dc789f29c344a825192a57562e8e319fca9423fc"
+    },
+    {
+      "id": "ens-tentacion",
+      "archivo": "ensenanza.md",
+      "estado": "aprobado",
+      "sha256": "844d4373b5b1dd104b2865a627b2417ed465bf104fdda41e93f469d6a03393f6"
+    },
+    {
+      "id": "dev-tentacion",
+      "archivo": "devocional.md",
+      "estado": "aprobado",
+      "sha256": "5fcfc6e95a14e5ee1e3dd6bdc96d94216898adee77964075aced457c757bdde9"
+    }
+  ]
+}
