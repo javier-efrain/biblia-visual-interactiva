@@ -1,0 +1,13 @@
+{
+  "version": "2.3",
+  "recursos": [
+    {
+      "id": "ctx-endemoniado-capernaum",
+      "archivo": "contexto.md",
+      "estado": "aprobado",
+      "sha256": "9e019970dcebdeaf673e9c8e23a13e65ad300d99ae6efae64ceced5f3787ee8d",
+      "navegacion": true,
+      "tablas": "tabla"
+    }
+  ]
+}
