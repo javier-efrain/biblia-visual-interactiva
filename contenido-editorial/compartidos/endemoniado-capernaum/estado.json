@@ -17,6 +17,12 @@
       "archivo": "ensenanza.md",
       "estado": "aprobado",
       "sha256": "c0282ccf9d5ebf183e4e1b43b18154b8ed519dab1e83968f940cd03a796b2040"
+    },
+    {
+      "id": "dev-endemoniado-capernaum",
+      "archivo": "devocional.md",
+      "estado": "aprobado",
+      "sha256": "d63f4318e459dcd20742e078520b754fe5439fef705e7381cd3f05f30df4e3ac"
     }
   ]
 }
