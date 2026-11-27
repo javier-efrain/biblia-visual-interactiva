@@ -1,8 +1,9 @@
 <script lang="ts">
   import { tick } from 'svelte';
   import { resolve } from '$app/paths';
-  import piloto from '../../data/editorial-generado/piloto-tentacion.json';
-  import { seccionesPiloto } from '../../editorial/piloto.mjs';
+  import revisiones from '../../data/editorial-generado/revisiones.json';
+  const revisionesEditoriales = revisiones as Record<string,{markdown:string;navegacion:boolean;tablas:'tabla'|'tarjetas'}>;
+  import { seccionesEditorial } from '../../editorial/formato.mjs';
   import TextoEditorial from './TextoEditorial.svelte';
   import originales from '../../data/editorial-generado/originales.json';
   const archivoEditorial = originales as Record<string, {markdown:string; estado:string}>;
@@ -18,14 +19,13 @@
     contexto: 'Contexto', exegesis: 'Exégesis', ensenanza: 'Enseñanza', devocional: 'Devocional'
   };
   const etiqueta = (tipo: string) => nombres[tipo] ?? 'Recurso';
-  const idsPiloto: Record<string, keyof typeof piloto> = {'ctx-mrk-1-3':'contexto','exe-mrk-1-3':'exegesis','ens-mrk-1-3':'ensenanza','dev-mrk-1-3':'devocional'};
-  const pilotoActivo = $derived(resolve('/').includes('/pruebas') && recurso && idsPiloto[recurso.id] ? piloto[idsPiloto[recurso.id]] : undefined);
-  const secciones = $derived(pilotoActivo ? seccionesPiloto(pilotoActivo) : ['contexto', 'exegesis', 'ensenanza', 'devocional'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
+  const revision = $derived(resolve('/').includes('/pruebas') && recurso ? revisionesEditoriales[recurso.id] : undefined);
+  const secciones = $derived(revision ? (revision.navegacion ? seccionesEditorial(revision.markdown) : []) : ['contexto', 'exegesis', 'ensenanza', 'devocional'].includes(recurso?.type ?? '') ? (recurso?.sections ?? []) : []);
   const indice = $derived(Math.max(0, secciones.findIndex((s) => s.id === pestana)));
   const activa = $derived(secciones[indice]);
   const parrafos = $derived(activa?.paragraphs ?? recurso?.paragraphs ?? []);
   const editorial = $derived(archivoEditorial[activa?.editorialId ?? recurso?.editorialId ?? '']);
-  const esExegesis = $derived((recurso?.type === 'exegesis' || (pilotoActivo && recurso?.type === 'contexto')) && secciones.length > 0);
+  const esExegesis = $derived((recurso?.type === 'exegesis' || (revision && recurso?.type === 'contexto')) && secciones.length > 0);
 
   $effect(() => {
     const id = recurso?.id;
@@ -112,8 +112,8 @@
         {#if activa.reference}<span class="referencia">{activa.reference}</span>{/if}
         <h3>{activa.label}</h3>
       {/if}
-      {#if pilotoActivo}
-        <TextoEditorial markdown={pilotoActivo} esPiloto={true} seleccion={activa?.id} />
+      {#if revision}
+        <TextoEditorial markdown={revision.markdown} formato23={true} tablas={revision.tablas} seleccion={activa?.id} />
       {:else if editorial?.estado === 'aprobado'}
         <TextoEditorial markdown={editorial.markdown} />
       {:else if parrafos.length}

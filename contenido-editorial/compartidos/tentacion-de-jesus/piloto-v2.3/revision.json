@@ -1,10 +1,9 @@
 {
-  "version": "2.3-piloto",
-  "contexto": "borrador aprobado por usuario",
-  "exegesis": "borrador aprobado por usuario",
-  "ensenanza": "borrador aprobado por usuario",
-  "devocional": "borrador aprobado por usuario",
-  "publicacion": false,
-  "nota": "No sustituye originales sellados; sin estado.json para evitar inclusión automática.",
-  "integracion": "piloto de laboratorio, pendiente de validación"
+  "version": "2.3",
+  "contexto": "aprobado",
+  "exegesis": "aprobado",
+  "ensenanza": "aprobado",
+  "devocional": "aprobado",
+  "integracion": "validada por usuario en laboratorio",
+  "publicacion": false
 }

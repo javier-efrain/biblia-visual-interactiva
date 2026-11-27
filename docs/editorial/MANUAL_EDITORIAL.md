@@ -1,6 +1,6 @@
 # BVI — Manual editorial y metodológico
 
-**Estado:** metodología aprobada · **Versión:** 2.2 · **Fecha:** 2026-11-25
+**Estado:** metodología aprobada · **Versión:** 2.3 · **Fecha:** 2026-11-27
 
 Este documento registra las decisiones editoriales acordadas para Biblia Visual Interactiva (BVI). Sirve como fuente de referencia para producir contenido coherente a escala. **No sustituye la investigación ni la verificación de fuentes para cada pasaje.**
 
@@ -149,3 +149,9 @@ Versión 2.0 (2026-11-25): consolida las decisiones aprobadas y sustituye las pa
 - La tentación de Jesús (Mateo 4:1–11; Marcos 1:12–13; Lucas 4:1–13) es el piloto técnico aprobado por funcionamiento en laboratorio. Su ampliación editorial está pendiente. Cronología general, relato unificado, visor paralelo y progreso quedan fuera de esta fase; conservar identidad estable para su futura incorporación.
 
 **Registro v2.2 (2026-11-25):** incorpora producción integral de relatos paralelos y reutilización técnica; conserva íntegramente las normas anteriores. Piloto técnico: commit ebea2ec, ejecución 45698925494; compilación y despliegue exitosos, cero errores y advertencias Svelte, tres pruebas unitarias aprobadas en develop. Advertencias de infraestructura Node.js 20, punycode y url.parse() registradas. Validación del usuario en los tres libros; no implica inspección exhaustiva de cada visor ni aprobación editorial integral.
+
+## Estándar 2.3 — aprobado el 27/11/2026
+
+- Extensiones orientativas: contexto 500–800, exégesis 900–1400, enseñanza 500–700, devocional 400–600 palabras. Priorizar claridad y pertinencia, justificar excepciones. Estas pautas prevalecen sobre extensiones anteriores.
+- Contexto sitúa; exégesis explica significado y conexiones bíblicas antes de debates; enseñanza aplica; devocional cultiva relación con Dios. Evitar reiteraciones. Griego y hebreo solo si aportan. Notas académicas breves visibles y diferenciadas, no desplegables. Referencias numéricas interactivas y bibliografía final; referencias bíblicas en texto.
+- Formato 2.3: Markdown aprobado, encabezados numerados para navegación, configuración formato23.json con ID de tarjeta, archivo, navegación y modalidad de tablas. Índice revisiones.json generado por editorial:generar y comprobado por editorial:check. Conservar originales históricos y compatibilidad. Activación limitada al laboratorio hasta autorización oficial.

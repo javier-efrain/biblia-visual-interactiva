@@ -1,0 +1,29 @@
+{
+  "version": "2.3",
+  "recursos": [
+    {
+      "id": "ctx-mrk-1-3",
+      "archivo": "contexto.md",
+      "navegacion": true,
+      "tablas": "tabla"
+    },
+    {
+      "id": "exe-mrk-1-3",
+      "archivo": "exegesis.md",
+      "navegacion": true,
+      "tablas": "tarjetas"
+    },
+    {
+      "id": "ens-mrk-1-3",
+      "archivo": "ensenanza.md",
+      "navegacion": false,
+      "tablas": "tabla"
+    },
+    {
+      "id": "dev-mrk-1-3",
+      "archivo": "devocional.md",
+      "navegacion": false,
+      "tablas": "tabla"
+    }
+  ]
+}

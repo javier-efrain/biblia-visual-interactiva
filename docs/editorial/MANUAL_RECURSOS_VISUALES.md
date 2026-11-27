@@ -1,5 +1,5 @@
 # BVI — Manual de recursos visuales
-Versión 2.2 · Criterios aprobados · 2026-11-25
+Versión 2.3 · Criterios aprobados · 2026-11-27
 
 ## Propósito y selección
 Cada recurso responde a una necesidad educativa concreta del pasaje. No existe cuota por capítulo. Familias abiertas: mapas, cronologías, diagramas, reconstrucciones, genealogías, relaciones, comparaciones, infografías y escenas. Profundidad ilustrativa, explicativa o analítica según necesidad, sin categorías obligatorias visibles.
@@ -66,3 +66,8 @@ Marcos 1:12–13 evidencia la necesidad de estas puertas: errores cartográficos
 - Revisar las referencias incorporadas en la imagen y metadatos; ampliar solo cuando aporte y sin ocultar su procedencia. Aplicar íntegramente las puertas secuenciales v2.1, persistencia, calidad, fuentes y optimización. Verificar la misma imagen y sus derivados desde todos los pasajes vinculados, en laboratorio.
 
 **Registro v2.2 (2026-11-25):** incorpora producción integral de relatos paralelos y reutilización técnica; conserva íntegramente las normas anteriores. Piloto técnico: commit ebea2ec, ejecución 45698925494; compilación y despliegue exitosos, cero errores y advertencias Svelte, tres pruebas unitarias aprobadas en develop. Advertencias de infraestructura Node.js 20, punycode y url.parse() registradas. Validación del usuario en los tres libros; no implica inspección exhaustiva de cada visor ni aprobación editorial integral.
+
+## Estándar 2.3 — aprobado el 27/11/2026
+
+- Conservar metodología RVE anterior; no cambiar imágenes aprobadas por ajustes del visor textual.
+- Navegación horizontal para contexto y exégesis 2.3; notas académicas visibles y diferenciadas, sin desplegables. Tablas compactas con desplazamiento; tarjetas para síntesis cuando aporten. Componentes reutilizables, no HTML específico por estudio.

@@ -1,5 +1,5 @@
 # BVI — Checklist editorial
-Versión 2.2 · Criterios aprobados · 2026-11-25
+Versión 2.3 · Criterios aprobados · 2026-11-27
 
 Aplicar por recurso y capítulo. Marcar no aplicable con justificación; registrar errores y corregir antes de publicar.
 
@@ -102,3 +102,10 @@ Consultar [Manual editorial](MANUAL_EDITORIAL.md) y [Manual visual](MANUAL_RECUR
 - [ ] Diferenciar piloto técnico de aprobación editorial integral; publicación selectiva solo con autorización explícita.
 
 **Registro v2.2 (2026-11-25):** incorpora producción integral de relatos paralelos y reutilización técnica; conserva íntegramente las normas anteriores. Piloto técnico: commit ebea2ec, ejecución 45698925494; compilación y despliegue exitosos, cero errores y advertencias Svelte, tres pruebas unitarias aprobadas en develop. Advertencias de infraestructura Node.js 20, punycode y url.parse() registradas. Validación del usuario en los tres libros; no implica inspección exhaustiva de cada visor ni aprobación editorial integral.
+
+## Estándar 2.3 — aprobado el 27/11/2026
+
+- [ ] Contexto 500–800, exégesis 900–1400, enseñanza 500–700, devocional 400–600 palabras orientativas; justificar excepciones.
+- [ ] Significado antes de debates; notas académicas visibles, citas numéricas consultables y fuentes finales.
+- [ ] Navegación horizontal, tablas compactas y síntesis en tarjetas cuando aporte; validar móvil.
+- [ ] Revisiones mediante formato23.json e índice generado, sin IDs específicos en componentes; originales históricos intactos.
