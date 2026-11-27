@@ -1,8 +1,8 @@
 <script lang="ts">
 import {renderMarkdown} from '../../editorial/markdown.mjs';
 import {renderPiloto} from '../../editorial/piloto.mjs';
-let {markdown,esPiloto=false}:{markdown:string;esPiloto?:boolean}=$props();
-let html=$derived(esPiloto ? renderPiloto(markdown) : renderMarkdown(markdown));
+let {markdown,esPiloto=false,seleccion}:{markdown:string;esPiloto?:boolean;seleccion?:string}=$props();
+let html=$derived(esPiloto ? renderPiloto(markdown,seleccion) : renderMarkdown(markdown));
 </script>
 <div class="editorial">{@html html}</div>
 <style>
@@ -21,4 +21,10 @@ let html=$derived(esPiloto ? renderPiloto(markdown) : renderMarkdown(markdown));
 .editorial :global(.cita-piloto){border:0;background:transparent;color:#28695c;cursor:pointer;font:700 16px Arial,sans-serif;padding:3px 5px;text-decoration:underline}
 .editorial :global(.fuente-piloto){box-sizing:border-box;width:min(420px,calc(100% - 32px));padding:20px;border:1px solid #d7e5dc;border-radius:12px;background:white;color:#273e35;box-shadow:0 8px 30px #142b2840}
 .editorial :global(.fuente-piloto button){cursor:pointer;padding:8px 14px}
+.editorial :global(.profundizacion-piloto){background:color-mix(in srgb,currentColor 5%,transparent);border:0;border-inline-start:3px solid #568e7d;font-size:.9em}
+.editorial :global(.nota-titulo),.editorial :global(.etiqueta-tabla){display:block;font:600 13px/1.4 Arial,sans-serif;opacity:.8;margin-bottom:6px}
+.editorial :global(.tarjetas-tabla){display:grid;gap:12px}
+.editorial :global(.fila-tabla){border:1px solid color-mix(in srgb,currentColor 25%,transparent);border-radius:12px;padding:14px;display:grid;gap:12px;overflow-wrap:normal}
+.editorial :global(.celda-tabla + .celda-tabla){border-top:1px solid color-mix(in srgb,currentColor 15%,transparent);padding-top:10px;font-weight:600}
+.editorial :global(.celda-tabla + .celda-tabla .etiqueta-tabla){font-weight:400}
 </style>
