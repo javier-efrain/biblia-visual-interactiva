@@ -155,3 +155,6 @@ Versión 2.0 (2026-11-25): consolida las decisiones aprobadas y sustituye las pa
 - Extensiones orientativas: contexto 500–800, exégesis 900–1400, enseñanza 500–700, devocional 400–600 palabras. Priorizar claridad y pertinencia, justificar excepciones. Estas pautas prevalecen sobre extensiones anteriores.
 - Contexto sitúa; exégesis explica significado y conexiones bíblicas antes de debates; enseñanza aplica; devocional cultiva relación con Dios. Evitar reiteraciones. Griego y hebreo solo si aportan. Notas académicas breves visibles y diferenciadas, no desplegables. Referencias numéricas interactivas y bibliografía final; referencias bíblicas en texto.
 - Formato 2.3: Markdown aprobado, encabezados numerados para navegación, configuración formato23.json con ID de tarjeta, archivo, navegación y modalidad de tablas. Índice revisiones.json generado por editorial:generar y comprobado por editorial:check. Conservar originales históricos y compatibilidad. Activación limitada al laboratorio hasta autorización oficial.
+
+### Integridad de revisiones 2.3
+Cada recurso aprobado en formato23.json debe declarar estado aprobado y sha256 del Markdown UTF-8 exacto. El generador rechaza sellos ausentes, inválidos o discrepantes. Una modificación exige nueva aprobación y nuevo sello; nunca recalcular automáticamente para ocultar cambios.

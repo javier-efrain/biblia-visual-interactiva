@@ -28,7 +28,7 @@ export function renderEditorial(source, selected, tablas='tabla'){
  if(optional !== undefined){
   const notes=parts[0].split('\n').filter(l=>l.startsWith('- '));
   body=sections.map((section,i)=>{
-   const note=notes.find(l=>l.match(/^- (\d+)\. /)?.[1]===sectionId(section)) ?? notes.filter(l=>!/^\- \d+\. /.test(l))[i-1];
+   const note=sectionId(section) ? (notes.find(l=>l.match(/^- (\d+)\. /)?.[1]===sectionId(section)) ?? notes.filter(l=>!/^\- \d+\. /.test(l))[i-1]) : undefined;
    if(selected && selected!=='seccion-'+sectionId(section)) return '';
    return cite(renderMarkdown(selected?section.replace(/^## .+\n/,''):section))+(note?'<aside class="profundizacion-editorial"><strong class="nota-titulo">Profundización académica</strong>'+cite(renderMarkdown(note.replace(/^- (?:\d+\. )?/,'')))+'</aside>':'');
   }).join('\n');
