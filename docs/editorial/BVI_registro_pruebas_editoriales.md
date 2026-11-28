@@ -89,3 +89,14 @@ Reutilizar la investigación y el contexto como antecedentes, verificando las fu
 - Resultado: mejora percibida incluso sobre una versión previamente bien valorada. Los tres ensayos de adaptación pedagógica (Romanos, Verbo eterno y Caná) muestran mejoras cualitativas.
 - Limitaciones: relectura, pequeñas diferencias de extensión, un solo lector, ausencia de medición objetiva de retención; bibliografía pendiente de cotejo. Corregir referencia a la noche de la boda, que el texto no especifica. No inferir que se verificó la profundidad académica mediante la devolución.
 - Próxima prueba sugerida, pendiente de aprobación: Salmo 23, género poético; explorar metáforas, estructura e imágenes, evitando alegorización arbitraria. Manual oficial sin cambios.
+
+## 11. Salmo 23 — Contexto por descubrimiento (28/11/2026)
+
+- Género: poesía hebrea, salmo individual de confianza.
+- Extensión estimada: 650 palabras; rango experimental 500–700.
+- Método: preguntas progresivas, antecedentes históricos y culturales organizados por curiosidad, contrastes visuales y referencias materiales.
+- Tiempo real comunicado: 7 minutos.
+- Devolución: más entretenido y fácil de leer; adquirió información nueva.
+- Resultado: primera evaluación favorable del enfoque de descubrimiento aplicado específicamente al Contexto. Comparación con Nicodemo (7 minutos) solo orientativa: pasajes y recursos diferentes, sin control experimental.
+- Limitaciones: recuento aproximado, imágenes provisionales, fuentes históricas y académicas pendientes de cotejo directo; retención no medida.
+- Siguiente paso acordado: exégesis V1 literaria y simbólica y V2 de descubrimiento experiencial, ambas 800–1200 palabras, con contenido académico comparable. Evaluar comprensión, interés, fluidez, tiempo y retención; considerar efecto de relectura. Manual 2.3 sin modificaciones.
