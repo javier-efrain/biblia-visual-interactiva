@@ -60,7 +60,7 @@ Investigar → seleccionar → diagnosticar dificultad → elegir estrategia →
 
 **Limitaciones:** las referencias académicas de los pilotos no quedaron verificadas de forma trazable; no deben considerarse fuentes comprobadas para publicación. Los recuentos fueron aproximados pese al compromiso de exactitud. Las evaluaciones son cualitativas de un lector, sin prueba independiente de retención. Los diagramas de chat son provisionales. No se modificó el manual ni se integraron estos pilotos al repositorio.
 
-## 7. Próxima prueba — Juan 1:1–5, Exégesis V2
+## 7. Prueba realizada — Juan 1:1–5, Exégesis V2
 Reutilizar la investigación y el contexto como antecedentes, verificando las fuentes antes de publicación. No repetir Contexto. Mantener una extensión comparable a V1 (aprox. 950 palabras, dentro de 800–1200). Aplicar andamiaje, preguntas progresivas y analogías solo cuando sean teológicamente seguras; evitar analogías trinitarias engañosas. Evaluar comprensión e interés por separado, registrar tiempo y recuento exacto. No introducir cambios oficiales todavía.
 
 ## 8. Plantilla para nuevas entradas
@@ -72,3 +72,11 @@ Reutilizar la investigación y el contexto como antecedentes, verificando las fu
 - Devolución del lector: comprensión, interés, redundancia, profundidad.
 - Auditoría: omisiones, fuentes verificadas, correcciones pendientes.
 - Resultado, limitaciones y siguiente decisión.
+
+## 9. Actualización — Juan 1:1–5 V2 y siguiente prueba
+
+- Exégesis V2: aproximadamente 1150 palabras frente a 950 de V1; recuentos no verificados.
+- Estrategia: andamiaje, preguntas progresivas, razonamiento lógico, analogía de luz y oscuridad; se evitaron analogías trinitarias.
+- Devolución del lector: menos aburrido, comprensión un poco mayor; tiempo no medido.
+- Limitaciones: segunda lectura y mayor extensión pueden influir; bibliografía pendiente de cotejo directo.
+- Próxima prueba propuesta: Caná, Juan 2:1–11, Exégesis V3; mantener contexto y contenido esencial de V2, extensión comparable (aprox. 1150 palabras), probar descubrimiento narrativo y preguntas progresivas. Evaluar interés, claridad, profundidad y tiempo. Sin cambios al manual oficial.
