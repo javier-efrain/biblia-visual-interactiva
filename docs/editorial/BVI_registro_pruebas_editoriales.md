@@ -80,3 +80,12 @@ Reutilizar la investigación y el contexto como antecedentes, verificando las fu
 - Devolución del lector: menos aburrido, comprensión un poco mayor; tiempo no medido.
 - Limitaciones: segunda lectura y mayor extensión pueden influir; bibliografía pendiente de cotejo directo.
 - Próxima prueba propuesta: Caná, Juan 2:1–11, Exégesis V3; mantener contexto y contenido esencial de V2, extensión comparable (aprox. 1150 palabras), probar descubrimiento narrativo y preguntas progresivas. Evaluar interés, claridad, profundidad y tiempo. Sin cambios al manual oficial.
+
+## 10. Resultado — Caná, Exégesis V3 (28/11/2026)
+
+- Extensión estimada: 1200 palabras frente a 1150 de V2; sin recuento exacto.
+- Estrategia: descubrimiento narrativo, preguntas progresivas, ironía dramática (diferencias de conocimiento entre personajes y lector), analogía de la señal de tránsito y diagramas conceptuales.
+- Devolución: mayor comprensión que V2, lectura mucho más amigable y fácil de entender. Tiempo no medido.
+- Resultado: mejora percibida incluso sobre una versión previamente bien valorada. Los tres ensayos de adaptación pedagógica (Romanos, Verbo eterno y Caná) muestran mejoras cualitativas.
+- Limitaciones: relectura, pequeñas diferencias de extensión, un solo lector, ausencia de medición objetiva de retención; bibliografía pendiente de cotejo. Corregir referencia a la noche de la boda, que el texto no especifica. No inferir que se verificó la profundidad académica mediante la devolución.
+- Próxima prueba sugerida, pendiente de aprobación: Salmo 23, género poético; explorar metáforas, estructura e imágenes, evitando alegorización arbitraria. Manual oficial sin cambios.
